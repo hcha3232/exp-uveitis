@@ -2,40 +2,45 @@
     "name": "uveitis",
     "short_name": "uveitis",
     "icons": [
-        {
-            "src": "/img/anterior-icon-128_x_128.png",
-            "sizes": "128x128",
-            "type": "image/png"
-        },
-        {
-            "src": "/img/anterior-icon-144_x_144.png",
-            "sizes": "144x144",
-            "type": "image/png"
-        },
-        {
-            "src": "/img/anterior-icon-152_x_152.png",
-            "sizes": "152x152",
-            "type": "image/png"
-        },
-        {
-            "src": "/img/anterior-icon-192_x_192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any maskable"
-        },
-        {
-            "src": "/img/anterior-icon-256_x_256.png",
-            "sizes": "256x256",
-            "type": "image/png"
-        },
-        {
-            "src": "/img/anterior-icon.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
+      {
+        "src": "/img/anterior-icon-128_x_128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/anterior-icon-144_x_144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/anterior-icon-152_x_152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/anterior-icon-192_x_192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/img/anterior-icon-256_x_256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/anterior-icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
     ],
     "start_url": "/",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#ffffff",
-    "theme_color": "#f1718c"
-}
+    "theme_color": "#f9f6f7",
+    "lang": "en",
+    "orientation": "portrait",
+    "display_override": [
+      "fullscreen"
+    ]
+  }
