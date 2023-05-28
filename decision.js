@@ -67,8 +67,8 @@ const questionList = {
         ],
         ddx : {
             most_likely: ``,
-            possible: `${disButtonModal('jia')}${disButtonModal('tinu')}${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')}${disButtonModal('vzv')}${disButtonModal('fus')} ${disButtonModal('hlab27')}`
+            possible: [`${disButtonModal('jia')}`,`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`]
         }   
     },
     chronic_bl_ng_not_jia : {
@@ -89,9 +89,9 @@ const questionList = {
         ],
         ddx: {
             most_likely: ``,
-            possible: `${disButtonModal('jia')}${disButtonModal('tinu')}${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')}${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')} ${disButtonModal('vzv')}
-            ${disButtonModal('fus')}${disButtonModal('hlab27')}`
+            possible: [`${disButtonModal('jia')}`,`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,` ${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`]
         }
     },
     chronic_ul_kp: {
@@ -115,11 +115,10 @@ const questionList = {
         ],
         ddx: {
             most_likely: ``,
-            possible: `${disButtonModal('fus')}${disButtonModal('cmv')}
-            ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}
-            `,
-            less_likely: `${disButtonModal('hsv')}${disButtonModal('vzv')}
-            ${disButtonModal('hlab27')}${disButtonModal('jia')} ${disButtonModal('tinu')}`
+            possible: [`${disButtonModal('fus')}`,`${disButtonModal('cmv')}`,
+            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,
+            `${disButtonModal('hlab27')}`,`${disButtonModal('jia')}`, `${disButtonModal('tinu')}`]
         }
     },
     chronic_ul_ng_ddx : {
@@ -132,9 +131,9 @@ const questionList = {
         ],
         ddx : {
             most_likely: ``,
-            possible: `${disButtonModal('cmv')} ${disButtonModal('hsv')}${disButtonModal('vzv')} ${disButtonModal('fus')}
-            ${disButtonModal('hlab27')} ${disButtonModal('jia')}${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('tinu')}`
+            possible: [`${disButtonModal('cmv')}`, `${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, `${disButtonModal('fus')}`,
+            `${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('tinu')}`]
         }
     },
     chronic_ul_ng_clinical_picture :{
@@ -148,9 +147,9 @@ const questionList = {
         ],
         ddx : {
             most_likely: ``,
-            possible: `${disButtonModal('cmv')} ${disButtonModal('hsv')}${disButtonModal('vzv')} 
-            ${disButtonModal('hlab27')} ${disButtonModal('jia')}${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('fus')} ${disButtonModal('tinu')}`
+            possible: [`${disButtonModal('cmv')}`, `${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, 
+            `${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('fus')}`, `${disButtonModal('tinu')}`]
         }
     },
     is_it_jia: {
@@ -163,8 +162,8 @@ const questionList = {
         ],
         ddx : {
             most_likely: ``,
-            possible: `${disButtonModal('jia')}${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')}${disButtonModal('vzv')} ${disButtonModal('fus')}${disButtonModal('hlab27')}${disButtonModal('tinu')}`
+            possible: [`${disButtonModal('jia')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`,`${disButtonModal('tinu')}`]
         }
     },
     JIA :
@@ -175,9 +174,9 @@ const questionList = {
         options: [
         ],
         ddx : {
-            most_likely: `${disButtonModal('jia')}`,
-            possible: `${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')}${disButtonModal('vzv')} ${disButtonModal('fus')}${disButtonModal('hlab27')}${disButtonModal('tinu')}`
+            most_likely: [`${disButtonModal('jia')}`],
+            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`,`${disButtonModal('tinu')}`]
         }
     },
     NOT_DIAGNOSED_JIA : {
@@ -189,10 +188,10 @@ const questionList = {
         options: [
         ],
         ddx: {
-            most_likely: `${disButtonModal('jia')}`,
-            possible: `${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')} ${disButtonModal('vzv')}
-            ${disButtonModal('fus')}${disButtonModal('hlab27')} ${disButtonModal('tinu')}`
+            most_likely: [`${disButtonModal('jia')}`],
+            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('tinu')}`]
         }
     },
     laterality_m :
@@ -231,9 +230,9 @@ const questionList = {
         ],
         ddx: {
             most_likely: ``,
-            possible: `${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')} ${disButtonModal('vzv')}
-            ${disButtonModal('fus')}${disButtonModal('hlab27')} ${disButtonModal('jia')}${disButtonModal('tinu')}`
+            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
         }
     },
     acute_m_ul_kp : {
@@ -255,10 +254,10 @@ const questionList = {
         ],
         ddx: {
             most_likely: ``,
-            possible: `${disButtonModal('cmv')} ${disButtonModal('hsv')}${disButtonModal('vzv')} 
-            ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('fus')}${disButtonModal('hlab27')} 
-            ${disButtonModal('jia')}${disButtonModal('tinu')}`
+            possible: [`${disButtonModal('cmv')}`, `${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, 
+            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
+            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
         }
     },  
     HSV : {
@@ -267,11 +266,11 @@ const questionList = {
         question: ``,
         options: [],
         ddx: {
-            most_likely: `${disButtonModal('hsv')}`,
-            possible: `${disButtonModal('cmv')}${disButtonModal('vzv')} 
-            ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('fus')}${disButtonModal('hlab27')} 
-            ${disButtonModal('jia')}${disButtonModal('tinu')}`    
+            most_likely: [`${disButtonModal('hsv')}`],
+            possible: [`${disButtonModal('cmv')}`,`${disButtonModal('vzv')}`, 
+            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
+            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]    
         }
     },
     viau_q2 : {
@@ -288,11 +287,11 @@ const questionList = {
         question: ``,
         options: [],
         ddx: {
-            most_likely: `${disButtonModal('vzv')}`,
-            possible: `${disButtonModal('cmv')}${disButtonModal('hsv')} 
-            ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('fus')}${disButtonModal('hlab27')} 
-            ${disButtonModal('jia')}${disButtonModal('tinu')}`    
+            most_likely: [`${disButtonModal('vzv')}`],
+            possible: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, 
+            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
+            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]    
         }
     },
     viau_q3 : {
@@ -311,10 +310,10 @@ const questionList = {
         options: [],
         ddx: {
             most_likely: ``,
-            possible: `${disButtonModal('cmv')}${disButtonModal('hsv')} ${disButtonModal('vzv')} 
-            ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')}${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('fus')}${disButtonModal('hlab27')} 
-            ${disButtonModal('jia')}${disButtonModal('tinu')}`    
+            possible: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`, 
+            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
+            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]    
         }
     },
     hsv_or_vzv : {
@@ -334,11 +333,11 @@ const questionList = {
         options: [
         ],
         ddx: {
-            most_likely: `${disButtonModal('cmv')}`,
-            possible: `${disButtonModal('hsv')}${disButtonModal('vzv')} 
-            ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('fus')}${disButtonModal('hlab27')} 
-            ${disButtonModal('jia')}${disButtonModal('tinu')}`    
+            most_likely: [`${disButtonModal('cmv')}`],
+            possible: [`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, 
+            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
+            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]    
         }
     },
     CMV : {
@@ -348,11 +347,11 @@ const questionList = {
         options: [
         ],
         ddx: {
-            most_likely: `${disButtonModal('cmv')}`,
-            possible: `${disButtonModal('fus')}
-            ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('hsv')}${disButtonModal('vzv')}${disButtonModal('hlab27')} 
-            ${disButtonModal('jia')}${disButtonModal('tinu')}`
+            most_likely: [`${disButtonModal('cmv')}`],
+            possible: [`${disButtonModal('fus')}`,
+            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('hlab27')}`, 
+            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
         }
     },
     FUS: {
@@ -361,11 +360,11 @@ const questionList = {
         question: ``,
         options: [],
         ddx: {
-            most_likely: `${disButtonModal('fus')}`,
-            possible: `${disButtonModal('cmv')}
-            ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('hsv')}${disButtonModal('vzv')}${disButtonModal('hlab27')} 
-            ${disButtonModal('jia')}${disButtonModal('tinu')}`
+            most_likely: [`${disButtonModal('fus')}`],
+            possible: [`${disButtonModal('cmv')}`,
+            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('hlab27')}`, 
+            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
         }
     },
     acute_m_ul_ng_ddx: {
@@ -379,9 +378,9 @@ const questionList = {
         ],
         ddx: {
             most_likely: ``,
-            possible: `${disButtonModal('cmv')}${disButtonModal('hsv')}${disButtonModal('vzv')}${disButtonModal('hlab27')}
-            ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('fus')}${disButtonModal('jia')}${disButtonModal('tinu')}`
+            possible: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('hlab27')}`
+            ,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
         }
     },
     HLA_B27 :
@@ -394,9 +393,9 @@ const questionList = {
         options: [
         ],
         ddx: {
-            most_likely: `${disButtonModal('hlab27')}`,
-            possible: `${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')}${disButtonModal('vzv')}${disButtonModal('fus')}${disButtonModal('jia')}${disButtonModal('tinu')}`
+            most_likely: [`${disButtonModal('hlab27')}`],
+            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('fus')}`,`${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
         }
     },
     acute_m_bl_kp: {
@@ -414,9 +413,9 @@ const questionList = {
         ],
         ddx: {
             most_likely: ``,
-            possible: `${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')} ${disButtonModal('vzv')}
-            ${disButtonModal('fus')}${disButtonModal('hlab27')} ${disButtonModal('jia')}${disButtonModal('tinu')}`
+            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
         }
     },
     acute_m_bl_ng_ddx : {
@@ -429,9 +428,9 @@ const questionList = {
         ],
         ddx: {
             most_likely: ``,
-            possible: `${disButtonModal('tinu')}${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')} ${disButtonModal('vzv')}
-            ${disButtonModal('fus')}${disButtonModal('hlab27')} ${disButtonModal('jia')}`
+            possible: [`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`]
         }
     },
     TINU : {
@@ -443,10 +442,10 @@ const questionList = {
         options: [
         ],
         ddx: {
-            most_likely: `${disButtonModal('tinu')}`,
-            possible: `${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')} ${disButtonModal('vzv')}
-            ${disButtonModal('fus')}${disButtonModal('hlab27')} ${disButtonModal('jia')}`
+            most_likely: [`${disButtonModal('tinu')}`],
+            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`]
         }
     },
     NOT_TINU_a : {
@@ -458,9 +457,9 @@ const questionList = {
         ],
         ddx: {
             most_likely: ``,
-            possible: ` ${disButtonModal('tinu')}${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')}${disButtonModal('uau')}`,
-            less_likely: `${disButtonModal('cmv')}${disButtonModal('hsv')} ${disButtonModal('vzv')}
-            ${disButtonModal('fus')}${disButtonModal('hlab27')} ${disButtonModal('jia')}`
+            possible: [`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`]
         }
     },
     In_progress :
@@ -543,10 +542,10 @@ function questionBoxes(currentQuestion,back){
     if(questionList[currentQuestion].options.length==0){
         box.innerHTML += `
         <div class="back-next" style="">
-            <button type='button' class='btn btn-hayden' id='back-${currentQuestion}'>
+            <button type='button' class='btn btn-outline-primary btn-back shadow-sm' id='back-${currentQuestion}'>
                 Backdsdsd
             </button>
-            <button type='button' class='btn btn-hayden' id='submit-${currentQuestion}'>
+            <button type='button' class='btn btn-outline-primary btn-next shadow-sm' id='submit-${currentQuestion}'>
                 Finish
             </button>
         </div>
@@ -577,9 +576,9 @@ function questionBoxes(currentQuestion,back){
         let ddxBox = document.createElement('div');
         ddxBox.classList = "shadow-sm p-3 mb-3 bg-body rounded"
         ddxBox.style = "background-color: #ffffff;"
-        let mostlikely = questionList[currentQuestion].ddx.most_likely
+        let mostlikely = listify(questionList[currentQuestion].ddx.most_likely)
         let possible = listify(questionList[currentQuestion].ddx.possible)
-        let lesslikely = questionList[currentQuestion].ddx.less_likely
+        let lesslikely = listify(questionList[currentQuestion].ddx.less_likely)
         ddxBox.innerHTML = `<span style="font-weight: 500">Differentials </span><br>`
         ddxBox.innerHTML += '<span style="color:grey; font-size: 0.8rem;">Most likely diagnosis</span><br>'
         ddxBox.innerHTML += mostlikely
@@ -655,7 +654,7 @@ function pastquestions(){
 function buttonModal(btnName,headerName,disName_database,disId){
     let btnModalHTML = 
     `
-    <button type="button" class="text-nowrap btn btn btn-link" data-bs-toggle="modal" data-bs-target="#${disId}"
+    <button type="button" class="text-nowrap btn btn-link" data-bs-toggle="modal" data-bs-target="#${disId}"
         style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
             ${btnName}
     </button>
