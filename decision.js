@@ -543,7 +543,7 @@ function questionBoxes(currentQuestion,back){
         box.innerHTML += `
         <div class="back-next" style="">
             <button type='button' class='btn btn-outline-primary btn-back shadow-sm' id='back-${currentQuestion}'>
-                Backdsdsd
+                Back
             </button>
             <button type='button' class='btn btn-outline-primary btn-next shadow-sm' id='submit-${currentQuestion}'>
                 Finish
