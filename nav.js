@@ -3,7 +3,7 @@ let nav = document.getElementById("nav");
 nav.innerHTML = `
 <nav class=" shadow-sm navbar navbar-light bg-light fixed-top nav-border">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" style="font-weight:600">Uveitis Diagnostic Tree</a>
+    <a class="navbar-brand" href="/" style="font-weight:600">Uveitis Diagnostic Tree</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
