@@ -18,3 +18,8 @@
 .list-p{
     padding: 0;
 }
+
+.nav-border{
+    border-bottom: 0.5px rgb(226, 229, 230) solid;
+}
+
