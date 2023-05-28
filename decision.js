@@ -29,8 +29,10 @@ const questionList = {
         ],
         ddx : {
             most_likely: ``,
-            possible: `${disButtonModal('cmv')} ${disButtonModal('hsv')}${disButtonModal('vzv')} ${disButtonModal('fus')}
-            ${disButtonModal('hlab27')} ${disButtonModal('jia')}${disButtonModal('tinu')} ${disButtonModal('syphilis')}${disButtonModal('sarcoidosis')} ${disButtonModal('uau')}`,
+            possible: [`${disButtonModal('cmv')}`, `${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+             `${disButtonModal('fus')}`, `${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,
+             `${disButtonModal('tinu')}`, `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,
+              `${disButtonModal('uau')}`],
             less_likely: ``
         },
 
@@ -568,17 +570,14 @@ function questionBoxes(currentQuestion,back){
         ddxBox.classList = "shadow-sm p-3 mb-3 bg-body rounded"
         ddxBox.style = "background-color: #ffffff;"
         let mostlikely = questionList[currentQuestion].ddx.most_likely
-        let possible = questionList[currentQuestion].ddx.possible
+        let possible = listify(questionList[currentQuestion].ddx.possible)
         let lesslikely = questionList[currentQuestion].ddx.less_likely
         ddxBox.innerHTML = `<span style="font-weight: 500">Differentials </span><br>`
         ddxBox.innerHTML += '<span style="color:grey; font-size: 0.8rem;">Most likely diagnosis</span><br>'
         ddxBox.innerHTML += mostlikely
-        if(mostlikely != ''){
-            ddxBox.innerHTML += '<br>'
-        }
         ddxBox.innerHTML += '<span style="color:grey; font-size: 0.8rem;">Possible diagnosis</span><br>'
         ddxBox.innerHTML += possible
-        ddxBox.innerHTML += '<span style="color:grey; font-size: 0.8rem;"><br>Less likely diagnosis</span><br>'
+        ddxBox.innerHTML += '<span style="color:grey; font-size: 0.8rem;">Less likely diagnosis</span><br>'
         ddxBox.innerHTML += lesslikely
         differentials.appendChild(ddxBox)
     }
@@ -648,8 +647,8 @@ function pastquestions(){
 function buttonModal(btnName,headerName,disName_database,disId){
     let btnModalHTML = 
     `
-    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#${disId}"
-        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+    <button type="button" class="text-nowrap btn btn btn-link" data-bs-toggle="modal" data-bs-target="#${disId}"
+        style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
             ${btnName}
     </button>
 
@@ -754,4 +753,18 @@ function disButtonModal(dis){
     if(dis==='uau'){
         return buttonModal('Undifferentiated AU','Undifferentiated anterior uveitis',disDatabase('uau'),'uau')
     }
+}
+
+function listify(arr){
+    if(arr.length===0){
+        return
+    }
+    let x = "<ul>"
+    for (let i = 0; i < arr.length; i++){
+        x += "<li>"
+        x += arr[i]
+        x += "</li>"
+    }
+    x += "</ul>"
+    return x;
 }
