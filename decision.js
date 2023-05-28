@@ -543,7 +543,7 @@ function questionBoxes(currentQuestion,back){
     if(questionList[currentQuestion].options.length==0){
         box.innerHTML += `
         <div class="back-next" style="">
-            <button type='button' class='btn bbtn-hayden' id='back-${currentQuestion}'>
+            <button type='button' class='btn btn-hayden' id='back-${currentQuestion}'>
                 Backdsdsd
             </button>
             <button type='button' class='btn btn-hayden' id='submit-${currentQuestion}'>
@@ -556,10 +556,10 @@ function questionBoxes(currentQuestion,back){
     else {
         box.innerHTML += `
         <div class="back-next" style="">
-            <button type='button' class='btn btn-dark btn-back shadow-sm' id='back-${currentQuestion}'>
+            <button type='button' class='btn btn-outline-primary btn-back shadow-sm' id='back-${currentQuestion}'>
                 Back
             </button>
-            <button type='button' class='btn btn-dark btn-next shadow-sm' id='submit-${currentQuestion}'>
+            <button type='button' class='btn btn-outline-primary btn-next shadow-sm' id='submit-${currentQuestion}'>
                 Next
             </button>
         </div>
