@@ -562,6 +562,7 @@ function questionBoxes(currentQuestion,back){
 
     //create differenial container
     let differentials = document.getElementById("differentials")
+    differentials.innerHTML = "";
     if(questionList[currentQuestion].hasOwnProperty('ddx')){
         let ddxBox = document.createElement('div');
         ddxBox.classList = "shadow-sm p-3 mb-3 bg-body rounded"
@@ -631,7 +632,6 @@ function questionBoxes(currentQuestion,back){
 }
 
 questionBoxes("anatomicLocation");
-
 
 
 function pastquestions(){
