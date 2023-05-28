@@ -1,0 +1,24 @@
+{
+  "name": "uveitis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "decision.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "workbox-sw": "^6.6.0"
+  },
+  "devDependencies": {
+    "ftp-deploy": "^2.4.4",
+    "html-webpack-plugin": "^5.5.1",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  }
+}
