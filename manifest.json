@@ -18,7 +18,7 @@
         "type": "image/png"
       },
       {
-        "src": "/img/anterior-icon-192_x_192.png",
+        "src": "/img/icon192.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "any maskable"
@@ -30,7 +30,7 @@
         "purpose" : "any"
       },
       {
-        "src": "/img/anterior-icon.png",
+        "src": "/img/icon512.png",
         "sizes": "512x512",
         "type": "image/png"
       }
