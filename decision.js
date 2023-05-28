@@ -532,29 +532,37 @@ function questionBoxes(currentQuestion,back){
         footerBox.innerHTML += questionList[currentQuestion].footer;
         box.appendChild(footerBox);
     }
+    else{
+        let footerBox = document.createElement('div');
+        footerBox.classList = "container-gap"
+        footerBox.innerHTML = '<br><br>'
+        box.appendChild(footerBox);
+    }
 
     //Create button Back and Next [Finish if no option left]
     if(questionList[currentQuestion].options.length==0){
         box.innerHTML += `
-        <div style="margin-bottom:10px"></div>
-            <button type='button' class='btn btn-primary' id='back-${currentQuestion}'>
-                Back
+        <div class="back-next" style="">
+            <button type='button' class='btn bbtn-hayden' id='back-${currentQuestion}'>
+                Backdsdsd
             </button>
-            <button type='button' class='btn btn-primary' id='submit-${currentQuestion}'>
+            <button type='button' class='btn btn-hayden' id='submit-${currentQuestion}'>
                 Finish
             </button>
+        </div>
         <div id='message-${currentQuestion}' style="color:red;"></div>
         `;
     }
     else {
         box.innerHTML += `
-        <div style="margin-bottom:10px"></div>
-            <button type='button' class='btn btn-primary' id='back-${currentQuestion}'>
+        <div class="back-next" style="">
+            <button type='button' class='btn btn-dark btn-back shadow-sm' id='back-${currentQuestion}'>
                 Back
             </button>
-            <button type='button' class='btn btn-primary' id='submit-${currentQuestion}'>
+            <button type='button' class='btn btn-dark btn-next shadow-sm' id='submit-${currentQuestion}'>
                 Next
             </button>
+        </div>
         <div id='message-${currentQuestion}' style="color:red;"></div>
         `;
     }

@@ -23,3 +23,29 @@
     border-bottom: 0.5px rgb(226, 229, 230) solid;
 }
 
+.back-next {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-back{
+    width: 100%;
+    background-color:rgb(194, 196, 201);
+    border: none;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding: 5px 5px;
+}
+
+.btn-next{
+    width: 100%;
+    background-color:beige;
+    border: none;
+    margin-left: 5px;
+    border-radius: 3px;
+    padding: 5px 5px;
+}
+
+.firstBox{
+    min-height: 292px;
+}
