@@ -32,7 +32,9 @@ nav.innerHTML = `
 navFooter.innerHTML = `
 <ul class="nav bg-light fixed-bottom" style="border-top: 1px rgb(226, 229, 230) solid; padding: 10px 20px 20px 20px;">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/">Home</a>
+    <a class="nav-link active" aria-current="page" href="/">
+        Home
+    </a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Criteria</a>

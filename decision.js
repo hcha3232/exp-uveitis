@@ -763,10 +763,10 @@ function disButtonModal(dis){
 }
 
 function listify(arr){
-    if(arr.length===0){
-        return
+    if(arr.length===0 || arr===``){
+        return "";
     }
-    let x = "<ul>"
+    let x = "<ul class=`list-unstyled`>"
     for (let i = 0; i < arr.length; i++){
         x += "<li>"
         x += arr[i]
