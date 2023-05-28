@@ -489,6 +489,8 @@ function questionBoxes(currentQuestion,back){
 
     let box = document.createElement('div');
     box.id= `box-${currentQuestion}`
+    box.classList = "shadow-sm p-3 mb-3 bg-body rounded"
+    box.style = "background-color: #ffffff;"
     let questionBox = document.createElement('div'); 
     questionBox.id = `question-${currentQuestion}`;
     let optionsBox = document.createElement('div');
@@ -496,7 +498,7 @@ function questionBoxes(currentQuestion,back){
     
     let descriptionBox = document.createElement('div');
     descriptionBox.id = `description-${currentQuestion}`
-    descriptionBox.classList = "lh-lg question-gap"
+    descriptionBox.classList = "lh-lg"
     descriptionBox.innerHTML = questionList[currentQuestion].description;
 
     questionBox.innerHTML = `<h6>${questionList[currentQuestion].question}</h6>`;
@@ -533,31 +535,37 @@ function questionBoxes(currentQuestion,back){
     if(questionList[currentQuestion].options.length==0){
         box.innerHTML += `
         <div style="margin-bottom:10px"></div>
-        <button type='button' class='btn btn-primary' id='back-${currentQuestion}'>
-            Back
-        </button>
-        <button type='button' class='btn btn-primary' id='submit-${currentQuestion}'>
-            Finish
-        </button>
+            <button type='button' class='btn btn-primary' id='back-${currentQuestion}'>
+                Back
+            </button>
+            <button type='button' class='btn btn-primary' id='submit-${currentQuestion}'>
+                Finish
+            </button>
         <div id='message-${currentQuestion}' style="color:red;"></div>
         `;
     }
     else {
         box.innerHTML += `
         <div style="margin-bottom:10px"></div>
-        <button type='button' class='btn btn-primary' id='back-${currentQuestion}'>
-            Back
-        </button>
-        <button type='button' class='btn btn-primary' id='submit-${currentQuestion}'>
-            Next
-        </button>
+            <button type='button' class='btn btn-primary' id='back-${currentQuestion}'>
+                Back
+            </button>
+            <button type='button' class='btn btn-primary' id='submit-${currentQuestion}'>
+                Next
+            </button>
         <div id='message-${currentQuestion}' style="color:red;"></div>
         `;
     }
 
+    //append everything into container
+    document.getElementById("container").appendChild(box);
+
+    //create differenial container
+    let differentials = document.getElementById("differentials")
     if(questionList[currentQuestion].hasOwnProperty('ddx')){
         let ddxBox = document.createElement('div');
-        ddxBox.classList = "container-gap container-gap-top border border-4 p-2 lh-lg";
+        ddxBox.classList = "shadow-sm p-3 mb-3 bg-body rounded"
+        ddxBox.style = "background-color: #ffffff;"
         let mostlikely = questionList[currentQuestion].ddx.most_likely
         let possible = questionList[currentQuestion].ddx.possible
         let lesslikely = questionList[currentQuestion].ddx.less_likely
@@ -571,13 +579,10 @@ function questionBoxes(currentQuestion,back){
         ddxBox.innerHTML += possible
         ddxBox.innerHTML += '<span style="color:grey; font-size: 0.8rem;"><br>Less likely diagnosis</span><br>'
         ddxBox.innerHTML += lesslikely
-        box.appendChild(ddxBox)
+        differentials.appendChild(ddxBox)
     }
 
     
-
-    //append everything into container
-    document.getElementById("container").appendChild(box);
 
     //eventlistener to button
     let submitBtn = document.getElementById(`submit-${currentQuestion}`);
