@@ -1,4 +1,5 @@
 let nav = document.getElementById("nav");
+let navFooter = document.getElementById("nav-footer");
 
 nav.innerHTML = `
 <nav class=" shadow-sm navbar navbar-light bg-light fixed-top nav-border">
@@ -26,6 +27,17 @@ nav.innerHTML = `
     </div>
   </div>
 </nav>
+`
+
+navFooter.innerHTML = `
+<ul class="nav fixed-bottom" style="border-top: 1px rgb(226, 229, 230) solid;">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Criteria</a>
+  </li>
+</ul>
 `
 
 /*nav.innerHTML = `
