@@ -52,26 +52,24 @@ nav.innerHTML = `
 
 navFooter.innerHTML = `
 <nav class="shadow-sm navbar navbar-light bg-light fixed-bottom nav-border" style="border-top: 1px solid #dddddd;">
-  <div class="container-fluid" style="padding: 0px 20px">
+  <div class="container-fluid" style="padding: 0px 30px 20px 30px; color: #444444">
     <a class="nav-link active" aria-current="page" href="/">
-      <div style="display:flex; flex-direction: column; align-items: center;"><i class="bi bi-house-door"></i>Home</div>
+      <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-house-door"></i><span style="font-size:0.9rem;">Home</span></div>
     </a>
 
 
     <a class="nav-link" href="#">
-      <div style="display:flex; flex-direction: column; align-items: center;"><i class="bi bi-card-list"></i>Criteria</div>
+      <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-card-list"></i><span style="font-size:0.9rem;">Criteria</span></div>
     </a>
 
     <a class="nav-link" href="#">
-      <div style="display:flex; flex-direction: column; align-items: center;"><i class="bi bi-diagram-3"></i>Tree</div>
+      <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-diagram-3"></i><span style="font-size:0.9rem;">Tree</span></div>
     </a>
 
 
     <a class="nav-link" href="#">
-      <div style="display:flex; flex-direction: column; align-items: center;"><i class="bi bi-info-circle"></i>Info</div>
+      <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-info-circle"></i><span style="font-size:0.9rem;">Info</span></div>
     </a>
   </div>
 </nav>
-
-
 `
