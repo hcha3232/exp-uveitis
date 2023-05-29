@@ -637,7 +637,7 @@ function questionBoxes(currentQuestion,back){
     })
 }
 
-questionBoxes("anatomicLocation");
+questionBoxes("course");
 
 
 function pastquestions(){
