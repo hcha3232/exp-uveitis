@@ -14,7 +14,7 @@ nav.innerHTML = `
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <div class="d-flex p-2" ><img src="img/qrcode.png" style="max-width:100%;"/></div>
+        <div class="d-flex p-2" ></div>
         <br>
         <div>Use the QR code and share this app!</div>
       </div>
