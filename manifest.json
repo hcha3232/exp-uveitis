@@ -53,8 +53,5 @@
   "background_color": "#ffffff",
   "theme_color": "#f9f6f7",
   "lang": "en",
-  "orientation": "portrait",
-  "display_override": [
-    "standalone"
-  ]
+  "orientation": "portrait"
 }
