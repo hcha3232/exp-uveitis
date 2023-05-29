@@ -58,3 +58,7 @@
     height:201px;
 }
 
+a {
+    touch-action: manipulation;
+  }
+
