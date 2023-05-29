@@ -1,10 +1,31 @@
 let nav = document.getElementById("nav");
 let navFooter = document.getElementById("nav-footer");
-
+//<i class="bi bi-share"></i>
 nav.innerHTML = `
 <nav class=" shadow-sm navbar navbar-light bg-light fixed-top nav-border">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/" style="font-weight:600">Uveitis Diagnostic Tree</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasShare" aria-controls="offcanvasNavbar">
+  <i class="bi bi-share"></i>
+  </button>
+    <div class="offcanvas offcanvas-end" style="width: 80%;" tabindex="-1" id="offcanvasShare" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header nav-border">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Share</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="d-flex p-2" ><img src="img/qrcode.png" style="max-width:100%;"/></div>
+        <br>
+        <div>Use the QR code and share this app!</div>
+      </div>
+    </div>
+
+
+  
+    
+
+
+    <a class="navbar-brand" href="#" style="font-weight:600">Uveitis Diagnostic Tree</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,7 +58,9 @@ navFooter.innerHTML = `
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Criteria</a>
+    <a class="nav-link" href="#">
+      Criteria
+    </a>
   </li>
 </ul>
 `
