@@ -58,7 +58,8 @@
     height:201px;
 }
 
-a {
+body {
     touch-action: manipulation;
+    user-select: none;
   }
 
