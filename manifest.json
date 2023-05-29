@@ -36,12 +36,12 @@
       }
     ],
     "start_url": "/",
-    "display": "fullscreen",
+    "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#f9f6f7",
     "lang": "en",
     "orientation": "portrait",
     "display_override": [
-      "fullscreen"
+      "standalone"
     ]
   }
