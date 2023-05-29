@@ -25,13 +25,13 @@ nav.innerHTML = `
     
 
 
-    <a class="navbar-brand" href="#" style="font-weight:600">Menu</a>
+    <a class="navbar-brand" href="#" style="font-weight:600">Uveitis Diagnostic Tree</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end" style="width: 80%;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header nav-border">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Uveitis Diagnostic Tree</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
