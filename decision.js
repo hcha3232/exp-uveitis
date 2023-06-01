@@ -262,6 +262,9 @@ const questionList = {
     },  
     HSV : {
         description: `
+        <div class="alert alert-info" role="alert">
+            Most likely diagnosis is <b>Herpes Simplex Virus Anterior Uveitis<b>
+        </div>
         `,
         question: ``,
         options: [],
