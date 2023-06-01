@@ -713,7 +713,7 @@ function disDatabase(dis){
                 <br>
                 <div class="exclusion-box" id="exclusion-box">
                     <div class="exclusion-title">
-                        <div class="alert alert-warning" role="alert" style="font-weight:700">Exclude if any criterion below is fulfilled</div>
+                        <div class="alert alert-warning" role="alert" style="font-weight:700">Exlusion criteria</div>
                     </div>
                     <ul>
                         <li>Positive serology for syphilis using a treponemal test</li>
