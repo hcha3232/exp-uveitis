@@ -694,8 +694,7 @@ function disDatabase(dis){
             <!--div class="class-title">Classification Criteria for</div>-->
             <!--div class="table-of-contents">Cytomegalovirus Anterior Uveitis</div>-->
             <div class="main-table">
-                <div style="font-weight:700">Should satisfy #1 AND #2</div>
-                <br>
+                <div class="alert alert-primary" role="alert" style="font-weight:700">Should satisfy #1 AND #2</div>
                 <ol style="font-weight:500;">
                     <li>Evidence of anterior uveitis
                         <ol type="a" style="font-weight:400;">
@@ -714,16 +713,15 @@ function disDatabase(dis){
                 <br>
                 <div class="exclusion-box" id="exclusion-box">
                     <div class="exclusion-title">
-                        <!--img src="../../../img/warning-icon.png"-->
-                        <div style="font-weight:700">Exclude if any criterion below is fulfilled</div>
+                        <div class="alert alert-warning" role="alert" style="font-weight:700">Exclude if any criterion below is fulfilled</div>
                     </div>
-                    <br>
                     <ul>
                         <li>Positive serology for syphilis using a treponemal test</li>
                         <li>Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)</li>
                         <li>Aqueous specimen PCR positive for herpes simplex virus or varicella zoster virus</li>
                     </ul>
                 </div>
+                <br>
                 <div class="citation">
                     <span style="font-size:1rem; font-weight: 500;">References </span><br>
                     Standardization of Uveitis Nomenclature Working Group.  Classification criteria for cytomegalovirus anterior uveitis.  Am J Ophthalmol 2021;228:89-95.                
