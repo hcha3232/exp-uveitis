@@ -601,6 +601,9 @@ function questionBoxes(currentQuestion,back){
         //if the question reaches last => go to index, if the question has no answer, ask for a click
         if (selected === null && questionList[currentQuestion].options.length!=0) {
             document.getElementById(`message-${currentQuestion}`).innerHTML = "please select an option";
+            setTimeout(function() {
+                document.getElementById(`message-${currentQuestion}`).innerHTML = '';
+            }, 1500);
             return;
         }
         if (selected === null && questionList[currentQuestion].options.length==0){
@@ -629,6 +632,9 @@ function questionBoxes(currentQuestion,back){
         //check if first question 
         if(answers.length == 0){
             document.getElementById(`message-${currentQuestion}`).innerHTML = "There is no previous question";
+            setTimeout(function() {
+                document.getElementById(`message-${currentQuestion}`).innerHTML = '';
+            }, 1500);
             return;
         }
         
@@ -637,8 +643,9 @@ function questionBoxes(currentQuestion,back){
     })
 }
 
+/////////////////////////////////////// START OF THE QUESTION ////////////////////
 questionBoxes("course");
-
+///////////////////////////////////////////////////////////////////////////////////
 
 function pastquestions(){
     //retrieve entire pastquestions and display
@@ -682,7 +689,48 @@ function buttonModal(btnName,headerName,disName_database,disId){
 function disDatabase(dis){
     database = {
         cmv : `
-        <img src="/img/SUN-CMV.png" class="img-fluid container-gap"></img>
+        <!--<img src="/img/SUN-CMV.png" class="img-fluid container-gap"></img>-->
+        <div class="main" id="main-article">
+            <!--div class="class-title">Classification Criteria for</div>-->
+            <!--div class="table-of-contents">Cytomegalovirus Anterior Uveitis</div>-->
+            <div class="main-table">
+                <div style="font-weight:700">Should satisfy #1 AND #2</div>
+                <br>
+                <ol style="font-weight:500;">
+                    <li>Evidence of anterior uveitis
+                        <ol type="a" style="font-weight:400;">
+                            <li>Anterior chamber cells</li>
+                            <li>If anterior vitreous cells are present, anterior chamber inflammation should be present</li>
+                            <li>No evidence of retinitis</li>
+                        </ol>
+                    </li>
+                    <br>
+                    <li>Evidence of cytomegalovirus infection in the eye
+                        <ol type="a" style="font-weight:400;">
+                            <li>Positive PCR for cytomegalovirus on aqueous specimen</li>
+                        </ol>
+                    </li>
+                </ol>
+                <br>
+                <div class="exclusion-box" id="exclusion-box">
+                    <div class="exclusion-title">
+                        <!--img src="../../../img/warning-icon.png"-->
+                        <div style="font-weight:700">Exclude if any criterion below is fulfilled</div>
+                    </div>
+                    <br>
+                    <ul>
+                        <li>Positive serology for syphilis using a treponemal test</li>
+                        <li>Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)</li>
+                        <li>Aqueous specimen PCR positive for herpes simplex virus or varicella zoster virus</li>
+                    </ul>
+                </div>
+                <div class="citation">
+                    <span style="font-size:1rem; font-weight: 500;">References </span><br>
+                    Standardization of Uveitis Nomenclature Working Group.  Classification criteria for cytomegalovirus anterior uveitis.  Am J Ophthalmol 2021;228:89-95.                
+                </div>
+            </div>
+        </div>
+
         `,
         hsv : `
         <img src="/img/SUN-HSV.png" class="img-fluid container-gap"></img>
