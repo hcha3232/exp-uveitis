@@ -262,7 +262,7 @@ const questionList = {
     },  
     HSV : {
         description: `
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-light" role="alert">
             Most likely diagnosis is <b>Herpes Simplex Virus Anterior Uveitis<b>
         </div>
         `,
@@ -665,7 +665,7 @@ function buttonModal(btnName,headerName,disName_database,disId){
     let btnModalHTML = 
     `
     <button type="button" class="text-nowrap btn btn-link" data-bs-toggle="modal" data-bs-target="#${disId}"
-        style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+        style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem; --bs-btn-font-size: .75rem;">
             ${btnName}
     </button>
 
@@ -700,7 +700,12 @@ function disDatabase(dis){
                 <div class="alert alert-primary" role="alert" style="font-weight:700">Should satisfy #1 AND #2</div>
                 <ol style="font-weight:500;">
                     <li>Evidence of anterior uveitis
-                        <ol type="a" style="font-weight:400;">
+                        <!--ol type="a" style="font-weight:400;">
+                            <li>Anterior chamber cells</li>
+                            <li>If anterior vitreous cells are present, anterior chamber inflammation should be present</li>
+                            <li>No evidence of retinitis</li>
+                        </ol-->
+                        <ol type="a" style="font-weight:400; padding-left: 0;">
                             <li>Anterior chamber cells</li>
                             <li>If anterior vitreous cells are present, anterior chamber inflammation should be present</li>
                             <li>No evidence of retinitis</li>
@@ -708,7 +713,7 @@ function disDatabase(dis){
                     </li>
                     <br>
                     <li>Evidence of cytomegalovirus infection in the eye
-                        <ol type="a" style="font-weight:400;">
+                        <ol type="a" style="font-weight:400; padding-left: 0;">
                             <li>Positive PCR for cytomegalovirus on aqueous specimen</li>
                         </ol>
                     </li>
@@ -815,12 +820,11 @@ function listify(arr){
     if(arr.length===0 || arr===``){
         return "";
     }
-    let x = "<ul class=`list-unstyled`>"
+    let x = ""
     for (let i = 0; i < arr.length; i++){
-        x += "<li>"
+        x += "<div>"
         x += arr[i]
-        x += "</li>"
+        x += "<i class='bi bi-tag'></i></div>"
     }
-    x += "</ul>"
     return x;
 }
