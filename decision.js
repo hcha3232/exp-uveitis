@@ -5,19 +5,6 @@ let answers = [
 let DDx = [];
 
 const questionList = {
-    anatomicLocation :
-    {
-        description: `
-        `,
-        question: "What is the anatomic location of the uveitis?",
-        options: [
-            { label: "Anterior uveitis (only available)", nextQuestion: "course" },
-            { label: "Intermediate uveitis", nextQuestion: "In_progress" },
-            { label: "Posterior uveitis", nextQuestion: "In_progress" },
-            { label: "Panuveitis", nextQuestion: "In_progress" }
-        ],
-        footer: `${buttonModal('Anatomic Classification','Anatomic Classification',disDatabase('anatLoc'),'anatLoc')}`
-    },
     course :
     {   
         description: ``,
@@ -161,14 +148,17 @@ const questionList = {
             { label: "No", nextQuestion: "NOT_DIAGNOSED_JIA"}
         ],
         ddx : {
-            most_likely: ``,
-            possible: [`${disButtonModal('jia')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
+            most_likely: [`${disButtonModal('jia')}`],
+            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
             less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`,`${disButtonModal('tinu')}`]
         }
     },
     JIA :
     {
-        description: ``,
+        description: `
+        <div class="alert alert-primary" role="alert">
+            Most likely diagnosis is <b>Juvenile idiopathic arthritis-associated chronic anterior uveitis</b>. 
+        </div>`,
         question: `
         `,
         options: [
@@ -181,7 +171,9 @@ const questionList = {
     },
     NOT_DIAGNOSED_JIA : {
         description: `
-        Consult with the paediatrician
+        <div class="alert alert-primary" role="alert">
+            Most likely diagnosis is <b>Juvenile idiopathic arthritis-associated chronic anterior uveitis</b>. Consult with the paediatrician.
+        </div>
         `,
         question: `
         `,
@@ -224,7 +216,11 @@ const questionList = {
     },
     acute_r_al_g_ddx :{
         description: `
-        `,
+        <div class="alert alert-primary" role="alert">
+            Rule out <b>Syphilis-associated anterior uveitis</b> and <b>Sarcoidosis-associated anterior uveitis</b>. 
+            If both are not the case, most likely diagnosis is <b>Undifferentiated anterior uveitis</b>
+        </div>
+            `,
         question: "",
         options: [
         ],
@@ -262,7 +258,7 @@ const questionList = {
     },  
     HSV : {
         description: `
-        <div class="alert alert-light" role="alert">
+        <div class="alert alert-primary" role="alert">
             Most likely diagnosis is <b>Herpes Simplex Virus Anterior Uveitis<b>
         </div>
         `,
@@ -286,6 +282,9 @@ const questionList = {
     },
     VZV : {
         description: `
+        <div class="alert alert-primary" role="alert">
+            Most likely diagnosis is <b>Varicella Zoster Virus Anterior Uveitis<b>
+        </div>
         `,
         question: ``,
         options: [],
@@ -308,6 +307,11 @@ const questionList = {
     },
     NO_VIRAL_PICTURE : {
         description: `
+        <div class="alert alert-primary" role="alert">
+            Uveitis is likely to be viral-induced. Rule out <b>Herpes Simplex Virus Anterior Uveitis</b>, <b>Varicella Zoster Virus Anterior Uveitis</b>, 
+            and <b>Cytomegalovirus Anterior Uveitis</b>. Then, rule out <b>Syphilis-associated anterior uveitis</b> and <b>Sarcoidosis-associated anterior uveitis</b>. 
+            If all uveitis are not the case, most likely diagnosis is <b>Undifferentiated anterior uveitis</b>.
+        </div>
         `,
         question: ``,
         options: [],
@@ -331,7 +335,9 @@ const questionList = {
     },
     pss_like_cmv : {
         description: `
-        To diagnose Cytomegalovirus anterior uveitis, a positive PCR should be obtained`,
+        <div class="alert alert-primary" role="alert">
+            To diagnose Cytomegalovirus anterior uveitis, a positive PCR should be obtained
+        </div>`,
         question: ``,
         options: [
         ],
@@ -345,7 +351,9 @@ const questionList = {
     },
     CMV : {
         description: `
-        To diagnose Cytomegalovirus anterior uveitis, a positive PCR should be obtained`,
+        <div class="alert alert-primary" role="alert">
+            To diagnose Cytomegalovirus anterior uveitis, a positive PCR should be obtained
+        </div>`,
         question: ``,
         options: [
         ],
@@ -359,6 +367,9 @@ const questionList = {
     },
     FUS: {
         description: `
+        <div class="alert alert-primary" role="alert">
+            Most likely diagnosis is <b>Fuchs Uveitis Syndrome</b>.
+        </div>
         `,
         question: ``,
         options: [],
@@ -373,7 +384,7 @@ const questionList = {
     acute_m_ul_ng_ddx: {
         description: `
         `,
-        question: `Increased IOP in the absence of prior steroid treatment or iris atrophy/transillumination?`,
+        question: `Does the patient have elevated IOP in the absence of prior steroid treatment or iris atrophy/transillumination?`,
         options: [
             { label: "Yes", nextQuestion: "acute_m_ul_g_ddx"},
             //going to acute_m_ul_g because it ask whether the user wants to do VIAU algorithm
@@ -389,7 +400,9 @@ const questionList = {
     HLA_B27 :
     {
         description: `
-        <span style='font-weight:400'>We recommend following DUET algorithm</span>
+        <div class="alert alert-primary" role="alert">
+        <span style='font-weight:400'>Most likely diagnosis is <b>HLA-B27 Spondyloarthropathies-associated Anterior Uveitis</b>. We recommend following the DUET algorithm</span>
+        </div>  
         <br>
         <img src="/img/duet.png" class="img-fluid"></img>`,
         question: ``,
@@ -410,7 +423,12 @@ const questionList = {
         ]
     },
     acute_m_bl_g_ddx :{
-        description: ``,
+        description: `
+        <div class="alert alert-primary" role="alert">
+            Rule out <b>Syphilis-associated anterior uveitis</b> and <b>Sarcoidosis-associated anterior uveitis</b>. 
+            If both are not the case, most likely diagnosis is <b>Undifferentiated anterior uveitis</b>
+        </div>
+        `,
         question: "",
         options: [
         ],
@@ -438,7 +456,9 @@ const questionList = {
     },
     TINU : {
         description: `
-        Consult with the nephrologist
+        <div class="alert alert-primary" role="alert">
+            Most likely diagnosis is <b>Tubulointerstitial Nephritis with Uveitis</b>. Consult with the nephrologist
+        </div>
         `,
         question: `
         `,
@@ -453,6 +473,10 @@ const questionList = {
     },
     NOT_TINU_a : {
         description: `
+        <div class="alert alert-primary" role="alert">
+            Rule out <b>Syphilis-associated anterior uveitis</b> and <b>Sarcoidosis-associated anterior uveitis</b>. 
+            If both are not the case, most likely diagnosis is <b>Undifferentiated anterior uveitis</b>.
+        </div>
         `,
         question: `
         `,
@@ -817,14 +841,17 @@ function disButtonModal(dis){
 }
 
 function listify(arr){
-    if(arr.length===0 || arr===``){
-        return "";
-    }
     let x = ""
-    for (let i = 0; i < arr.length; i++){
-        x += "<div>"
-        x += arr[i]
-        x += "<i class='bi bi-tag'></i></div>"
+    if(arr.length===0 || arr===``){
+        x += "<div style='font-size:12px;'>N/A</div>"
+        return x;
     }
-    return x;
+    else {
+        for (let i = 0; i < arr.length; i++){
+            x += "<div>"
+            x += arr[i]
+            x += "<i class='bi bi-tag' style='font-size: 12px; color:#7d99c7; '></i></div>"
+        }
+        return x;
+    }
 }
