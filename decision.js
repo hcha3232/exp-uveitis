@@ -37,7 +37,7 @@ const questionList = {
     },
     chronic_bl_kp : {
         description: ``,
-        question: "What is the KPs of the uveitis?",
+        question: "What are the types of keratic precipitates seen in uveitis?",
         options: [
             { label: "Granulomatous", nextQuestion: "acute_m_bl_g_ddx"},
             //chronic granulomatous bilateral AU is just acute_m_bl_g_ddx
@@ -83,7 +83,7 @@ const questionList = {
     },
     chronic_ul_kp: {
         description: ``,
-        question: "What is the KPs of the uveitis?",
+        question: "What are the types of keratic precipitates seen in uveitis?",
         options: [
             { label: "Granulomatous", nextQuestion: "acute_m_ul_g_ddx"},
             //chronic granulomatous unilateral AU is viral algorithm
@@ -207,7 +207,7 @@ const questionList = {
     },
     acute_r_al_kp:{
         description: ``,
-        question: "What is the KPs of the uveitis?",
+        question: "What are the types of keratic precipitates seen in uveitis?",
         options: [
             { label: "Granulomatous", nextQuestion: "acute_r_al_g_ddx"},
             { label: "Non-granulomatous", nextQuestion: "HLA_B27" }
@@ -233,7 +233,7 @@ const questionList = {
     },
     acute_m_ul_kp : {
         description: ``,
-        question: "What is the KPs of the uveitis?",
+        question: "What are the types of keratic precipitates seen in uveitis?",
         options: [
             { label: "Granulomatous", nextQuestion: "acute_m_ul_g_ddx"},
             { label: "Non-granulomatous", nextQuestion: "acute_m_ul_ng_ddx" }
@@ -416,7 +416,7 @@ const questionList = {
     },
     acute_m_bl_kp: {
         description: ``,
-        question: "What is the KPs of the uveitis?",
+        question: "What are the types of keratic precipitates seen in uveitis?",
         options: [
             { label: "Granulomatous", nextQuestion: "acute_m_bl_g_ddx"},
             { label: "Non-granulomatous", nextQuestion: "acute_m_bl_ng_ddx" }
