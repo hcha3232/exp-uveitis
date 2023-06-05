@@ -62,9 +62,9 @@ navFooter.innerHTML = `
       <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-card-list"></i><span style="font-size:0.9rem;">Criteria</span></div>
     </a>
 
-    <a class="nav-link" href="#">
+    <!--a class="nav-link" href="#">
       <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-diagram-3"></i><span style="font-size:0.9rem;">Tree</span></div>
-    </a>
+    </a-->
 
 
     <a class="nav-link" href="#">

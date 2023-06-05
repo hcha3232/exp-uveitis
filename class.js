@@ -1,5 +1,6 @@
 const diseases = {
     cmv : {
+        realName: 'Cytomegalovirus Anterior Uveitis',
         satisfy: 'rule #1 and #2',
         rules: [
             {
@@ -15,6 +16,7 @@ const diseases = {
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for cytomegalovirus anterior uveitis.  Am J Ophthalmol 2021;228:89-95.'
     },
     hsv : {
+        realName: 'Herpes Simplex Virus Anterior Uveitis',
         satisfy: 'rule #1, #2 and #3',
         rules: [
             {
@@ -34,6 +36,7 @@ const diseases = {
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for herpes simplex virus anterior uveitis.  Am J Ophthalmol 2021;228:231-6.'
     },
     vzv : {
+        realName: 'Varicella Zoster Virus Anterior Uveitis',
         satisfy: 'rule #1, #2 and #3',
         rules: [
             {
@@ -53,6 +56,7 @@ const diseases = {
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for varicella zoster virus anterior uveitis.  Am J Ophthalmol 2021;228;165-73.'
     },
     fus : {
+        realName: 'Fuchs Uveitis Syndrome',
         satisfy: '#1, #2, #3, and #4',
         rules: [
             {
@@ -76,6 +80,7 @@ const diseases = {
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for Fuchs uveitis syndrome.  Am J Ophthalmol 2021;228:262-7.'
     },
     jia : {
+        realName: 'Juvenile Idiopathic Arthritis Anterior Uveitis',
         satisfy: '#1, #2 and #3',
         rules: [
             {
@@ -95,6 +100,7 @@ const diseases = {
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for juvenile idiopathic arthritis-associated chronic anterior uveitis.  Am J Ophthalmol 2021;228:192-7.'
     },
     hlab27 : {
+        realName: 'HLA-B27 Spondyloarthritis Anterior Uveitis',
         satisfy: '#1 and either (both #2 and #3) or #4',
         rules: [
             {
@@ -118,6 +124,7 @@ const diseases = {
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for spondyloarthritis/HLA-B27-associated anterior uveitis.  Am J Ophthalmol 2021;228:117-125.'
     },
     tinu : {
+        realName: 'Tubulointerstitial Nephritis with Uveitis',
         satisfy: '#1 and #2',
         rules: [
             {
