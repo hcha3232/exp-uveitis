@@ -151,7 +151,7 @@ const diseases = {
         satisfy: '#1 and #2',
         rules: [
             {
-                title: '>Uveitis with a compatible uveitic presentation, including',
+                title: 'Uveitis with a compatible uveitic presentation, including',
                 list: ['<b>Anterior uveitis</b> OR','Intermediate uveitis or anterior/intermediate uveitis OR',`Posterior or panuveitis with one of the following presentations <ol type="i" style="font-weight:400;">
                 <li>Placoid inflammation of the retinal pigment epithelium or</li>
                 <li>Multifocal inflammation of the retina/retinal pigment epithelium or</li>
