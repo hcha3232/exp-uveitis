@@ -23,7 +23,7 @@ const questionList = {
             less_likely: ``
         },
 
-        footer: `${buttonModal('Course','Course',disDatabase('course'),'course')}`
+        footer: `${buttonModal('Course','Course',database['course'],'course')}`
     },
     laterality_c : {
         description: ``,
@@ -713,130 +713,39 @@ function buttonModal(btnName,headerName,disName_database,disId){
     return btnModalHTML;
 }
 
-function disDatabase(dis){
-    database = {
-        cmv : `
-        <!--<img src="/img/SUN-CMV.png" class="img-fluid container-gap"></img>-->
-        <div class="main" id="main-article">
-            <!--div class="class-title">Classification Criteria for</div>-->
-            <!--div class="table-of-contents">Cytomegalovirus Anterior Uveitis</div>-->
-            <div class="main-table">
-                <div class="alert alert-primary" role="alert" style="font-weight:700">Should satisfy #1 AND #2</div>
-                <ol style="font-weight:500;">
-                    <li>Evidence of anterior uveitis
-                        <!--ol type="a" style="font-weight:400;">
-                            <li>Anterior chamber cells</li>
-                            <li>If anterior vitreous cells are present, anterior chamber inflammation should be present</li>
-                            <li>No evidence of retinitis</li>
-                        </ol-->
-                        <ol type="a" style="font-weight:400; padding-left: 0;">
-                            <li>Anterior chamber cells</li>
-                            <li>If anterior vitreous cells are present, anterior chamber inflammation should be present</li>
-                            <li>No evidence of retinitis</li>
-                        </ol>
-                    </li>
-                    <br>
-                    <li>Evidence of cytomegalovirus infection in the eye
-                        <ol type="a" style="font-weight:400; padding-left: 0;">
-                            <li>Positive PCR for cytomegalovirus on aqueous specimen</li>
-                        </ol>
-                    </li>
-                </ol>
-                <br>
-                <div class="exclusion-box" id="exclusion-box">
-                    <div class="exclusion-title">
-                        <div class="alert alert-warning" role="alert" style="font-weight:700">Exlusion criteria</div>
-                    </div>
-                    <ul>
-                        <li>Positive serology for syphilis using a treponemal test</li>
-                        <li>Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)</li>
-                        <li>Aqueous specimen PCR positive for herpes simplex virus or varicella zoster virus</li>
-                    </ul>
-                </div>
-                <br>
-                <div class="citation">
-                    <span style="font-size:1rem; font-weight: 500;">References </span><br>
-                    Standardization of Uveitis Nomenclature Working Group.  Classification criteria for cytomegalovirus anterior uveitis.  Am J Ophthalmol 2021;228:89-95.                
-                </div>
-            </div>
-        </div>
 
-        `,
-        hsv : `
-        <img src="/img/SUN-HSV.png" class="img-fluid container-gap"></img>
-        `,
-        vzv : `
-        <img src="/img/SUN-VZV.png" class="img-fluid container-gap"></img>
-        `,
-        fus : `
-        <img src="/img/SUN-FUS.png" class="img-fluid container-gap"></img>
-        `,
-        jia : `
-        <img src="/img/SUN-JIA.png" class="img-fluid container-gap"></img>
-        <img src="/img/SUN-JIA-Category.png" class="img-fluid container-gap"></img>
-        `,
-        hlab27 : `
-            <img src="/img/SUN-HLAB27.png" class="img-fluid container-gap"></img>
-            <img src="/img/SUN-ASAS.png" class="img-fluid container-gap"></img>
-            <img src="/img/SUN-ASAS2.png" class="img-fluid container-gap"></img>
-        `,
-        tinu : `
-        <img src="/img/SUN-TINU.png" class="img-fluid container-gap"></img>
-        `,
-        sarcoidosis : `
-        <img src="/img/SUN-SARCOIDOSIS.png" class="img-fluid container-gap"></img>
-        `,
-        tb : `
-            <img src="/img/SUN-TB.png" class="img-fluid container-gap"></img>
-        `,
-        syphilis : `
-        <img src="/img/SUN-SYPHILIS.png" class="img-fluid container-gap"></img>
-        <img src="/img/SUN-SYPHILIS-SCREENING.png" class="img-fluid container-gap"></img>
-        `,
-        uau : `
-        Undifferentiated uveitis accounts for 50% of cases among uveitis patients.
-        `,
-        //SUN table and images
-        anatLoc : `
-        <img src="/img/SUN-ANATOMIC-LOCATION.png" class="img-fluid container-gap"></img>
-        `,
-        course : `
-        <img src="/img/SUN-COURSE.png" class="img-fluid container-gap"></img>
-        `
-    }
-    return database[dis]
-}
+    
 
 function disButtonModal(dis){
     if(dis==='cmv'){
-        return buttonModal('CMV AU','Cytomegalovirus Anterior Uveitis',disDatabase('cmv'),'cmv')
+        return buttonModal('CMV AU','Cytomegalovirus Anterior Uveitis',database['cmv'],'cmv')
     }
     if(dis==='hsv'){
-        return buttonModal('HSV AU','Herpes Simplex Virus Anterior Uveitis',disDatabase('hsv'),'hsv')
+        return buttonModal('HSV AU','Herpes Simplex Virus Anterior Uveitis',database['hsv'],'hsv')
     }
     if(dis==='vzv'){
-        return buttonModal('VZV AU','Varicella Zoster Virus Anterior Uveitis',disDatabase('vzv'),'vzv')
+        return buttonModal('VZV AU','Varicella Zoster Virus Anterior Uveitis',database['vzv'],'vzv')
     }
     if(dis==='fus'){
-        return buttonModal('FUS','Fuchs Uveitis Syndrom',disDatabase('fus'),'fus')
+        return buttonModal('FUS','Fuchs Uveitis Syndrom',database['fus'],'fus')
     }
     if(dis==='hlab27'){
-        return buttonModal('HLA-B27 SpA AU','HLA-B27 Spondyloarthritis Anterior Uveitis',disDatabase('hlab27'),'hlab27')
+        return buttonModal('HLA-B27 SpA AU','HLA-B27 Spondyloarthritis Anterior Uveitis',database['hlab27'],'hlab27')
     }
     if(dis==='jia'){
-        return buttonModal('JIA AU','Juvenile Idiopathic Arthritis Anterior Uveitis',disDatabase('jia'),'jia')
+        return buttonModal('JIA AU','Juvenile Idiopathic Arthritis Anterior Uveitis',database['jia'],'jia')
     }
     if(dis==='tinu'){
-        return buttonModal('TINU','Tubulointerstitial Nephritis Uveitis',disDatabase('tinu'),'tinu')
+        return buttonModal('TINU','Tubulointerstitial Nephritis Uveitis',database['tinu'],'tinu')
     }
     if(dis==='sarcoidosis'){
-        return buttonModal('Sarcoid AU','Sarcoid Uveitis',disDatabase('sarcoidosis'),'sarcoidosis')
+        return buttonModal('Sarcoid AU','Sarcoid Uveitis',database['sarcoidosis'],'sarcoidosis')
     }
     if(dis==='syphilis'){
-        return buttonModal('Syphilitic AU','Syphilitic Uveitis',disDatabase('syphilis'),'syphilis')
+        return buttonModal('Syphilitic AU','Syphilitic Uveitis',database['syphilis'],'syphilis')
     }
     if(dis==='uau'){
-        return buttonModal('Undifferentiated AU','Undifferentiated anterior uveitis',disDatabase('uau'),'uau')
+        return buttonModal('Undifferentiated AU','Undifferentiated anterior uveitis',database['uau'],'uau')
     }
 }
 
@@ -855,3 +764,4 @@ function listify(arr){
         return x;
     }
 }
+
