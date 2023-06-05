@@ -58,7 +58,7 @@ navFooter.innerHTML = `
     </a>
 
 
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="/classification.html">
       <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-card-list"></i><span style="font-size:0.9rem;">Criteria</span></div>
     </a>
 
