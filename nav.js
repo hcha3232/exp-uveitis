@@ -9,7 +9,7 @@ nav.innerHTML = `
 
 
   
-  <div></div>
+  <div style="padding-right: 32px;" ></div>
 
 
     <a class="navbar-brand" href="#" style="font-weight:600">Uveitis Tree</a>
