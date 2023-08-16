@@ -64,7 +64,8 @@ body {
 
 @media all and (display-mode: standalone) {
     .install-btn{
-        display: none;
+        display: block;
+        padding-left: 32px;
     }
 }
 
