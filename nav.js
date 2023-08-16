@@ -15,8 +15,35 @@ nav.innerHTML = `
       </div>
       <div class="offcanvas-body">
         <div class="d-flex p-2" ></div>
-        <br>
-        <div>Use the QR code and share this app!</div>
+        
+        <div>
+          How to install UVEITIS TREE</b>
+          <br><br><b>On iOS</b><br><br>
+          <ol>
+            <li>Tap the share icon <i class="bi bi-box-arrow-up"></i> located at the bottom centre or top right corner of the browser.</li>
+            <li>Scroll down in the share sheet and look for the "Add to Home Screen" option.</li>
+            <li>Tap on "Add to Home Screen <i class="bi bi-plus-square"></i>."</li>
+            <li>A confirmation message will appear, asking if you want to add <b>Uveitis Tree</b> to your home screen. Tap "Add" or "Install."</li>
+            <li>The app icon will now be added to your iOS device's home screen for quick access.</li>
+          </ol>
+          <br><br><b>On Android</b><br>
+          <div><i>Some devices recognize Uveitis Tree as PWA and will automatically ask users for installation.</i></div><br>
+          <ol>
+            <li>Tap the menu icon (usually three dots) located at the top right corner of the browser.</li>
+            <li>From the menu options, select "Add to Home screen"</li>
+            <li>A confirmation message will appear, asking if you want to add <b>Uveitis Tree</b> to your home screen. Tap "Add" or "Install."</li>
+            <li>The app icon will now be added to your Android device's home screen for quick access.</li>
+          </ol>
+
+          <br><br><b>On Windows</b><br><br>
+          <ol>
+            <li>Tap the install icon located at the top right corner of the browser.</li>
+            <li>A pop up will appear, asking if you want to add <b>Uveitis Tree</b>, click "install"</li>
+            <li><b>Uveitis Tree</b> PWA will appear</li>
+            <li>The app icon will now be added to your Desktop home screen for quick access.</li>
+          </ol>
+        </div>
+        
       </div>
     </div>
 
@@ -57,10 +84,11 @@ navFooter.innerHTML = `
       <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-house-door"></i><span style="font-size:0.9rem;">Home</span></div>
     </a>
 
-
+    <div class="nav-icon">
     <a class="nav-link" href="/classification.html">
       <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-card-list"></i><span style="font-size:0.9rem;">Criteria</span></div>
     </a>
+    </div>
 
     <!--a class="nav-link" href="#">
       <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-diagram-3"></i><span style="font-size:0.9rem;">Tree</span></div>
