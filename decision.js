@@ -251,7 +251,7 @@ const questionList = {
             { label: "None", nextQuestion: "acute_m_ul_ng_ddx" }
         ],
 
-        footer: 'Stellate KPs are hardly seen in Acute, monophasic unilateral anterior uveitis'
+        footer: 'Stellate KPs are hardly seen in Acute unilateral anterior uveitis'
     },
     acute_m_ul_g_ddx :
     {
@@ -438,7 +438,7 @@ const questionList = {
             { label: "None", nextQuestion: "acute_m_bl_ng_ddx" }
         ],
 
-        footer: 'Stellate KPs are hardly seen in Acute, monophasic bilateral anterior uveitis'
+        footer: 'Stellate KPs are hardly seen in Acute bilateral anterior uveitis'
     },
     acute_m_bl_g_ddx :{
         description: `
