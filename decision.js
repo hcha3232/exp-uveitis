@@ -42,6 +42,8 @@ const questionList = {
             { label: "Granulomatous", nextQuestion: "acute_m_bl_g_ddx"},
             //chronic granulomatous bilateral AU is just acute_m_bl_g_ddx
             { label: "Non-granulomatous", nextQuestion: "chronic_bl_ng_ddx" },
+            { label: "Endothelial dusting", nextQuestion: "chronic_bl_ng_ddx" },
+            { label: "None", nextQuestion: "chronic_bl_ng_ddx" }
         ]
     },
     chronic_bl_ng_ddx : {
@@ -87,8 +89,10 @@ const questionList = {
         options: [
             { label: "Granulomatous", nextQuestion: "acute_m_ul_g_ddx"},
             //chronic granulomatous unilateral AU is viral algorithm
+            { label: "Stellate", nextQuestion: "fus_algorithm"},
             { label: "Non-granulomatous", nextQuestion: "chronic_ul_ng_ddx" },
-            { label: "Stellate", nextQuestion: "fus_algorithm"}
+            { label: "Endothelial dusting", nextQuestion: "chronic_ul_ng_ddx" },
+            { label: "None", nextQuestion: "chronic_ul_ng_ddx" }
             //non-granulomatous alternating is HLA_B27
         ]
     },
@@ -210,7 +214,9 @@ const questionList = {
         question: "What are the types of keratic precipitates seen in the uveitis?",
         options: [
             { label: "Granulomatous", nextQuestion: "acute_r_al_g_ddx"},
-            { label: "Non-granulomatous", nextQuestion: "HLA_B27" }
+            { label: "Non-granulomatous", nextQuestion: "HLA_B27" },
+            { label: "Endothelial dusting", nextQuestion: "HLA_B27" },
+            { label: "None", nextQuestion: "HLA_B27" }
             //non-granulomatous alternating is HLA_B27
         ]
     },
@@ -236,7 +242,9 @@ const questionList = {
         question: "What are the types of keratic precipitates seen in the uveitis?",
         options: [
             { label: "Granulomatous", nextQuestion: "acute_m_ul_g_ddx"},
-            { label: "Non-granulomatous", nextQuestion: "acute_m_ul_ng_ddx" }
+            { label: "Non-granulomatous", nextQuestion: "acute_m_ul_ng_ddx" },
+            { label: "Endothelial dusting", nextQuestion: "acute_m_ul_ng_ddx" },
+            { label: "None", nextQuestion: "acute_m_ul_ng_ddx" }
         ]
     },
     acute_m_ul_g_ddx :
@@ -419,7 +427,9 @@ const questionList = {
         question: "What are the types of keratic precipitates seen in the uveitis?",
         options: [
             { label: "Granulomatous", nextQuestion: "acute_m_bl_g_ddx"},
-            { label: "Non-granulomatous", nextQuestion: "acute_m_bl_ng_ddx" }
+            { label: "Non-granulomatous", nextQuestion: "acute_m_bl_ng_ddx" },
+            { label: "Endothelial dusting", nextQuestion: "acute_m_bl_ng_ddx" },
+            { label: "None", nextQuestion: "acute_m_bl_ng_ddx" }
         ]
     },
     acute_m_bl_g_ddx :{
@@ -606,7 +616,7 @@ function questionBoxes(currentQuestion,back){
         let mostlikely = listify(questionList[currentQuestion].ddx.most_likely)
         let possible = listify(questionList[currentQuestion].ddx.possible)
         let lesslikely = listify(questionList[currentQuestion].ddx.less_likely)
-        ddxBox.innerHTML = `<span style="font-weight: 500">Differentials </span><br>`
+        ddxBox.innerHTML = `<span style="font-weight: 500">Differential Diagnosis </span><br>`
         ddxBox.innerHTML += '<span style="color:grey; font-size: 0.8rem;">Most likely diagnosis</span><br>'
         ddxBox.innerHTML += mostlikely
         ddxBox.innerHTML += '<span style="color:grey; font-size: 0.8rem;">Possible diagnosis</span><br>'
