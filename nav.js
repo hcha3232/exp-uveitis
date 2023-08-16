@@ -22,7 +22,7 @@ nav.innerHTML = `
           <ol>
             <li>Tap the share icon <i class="bi bi-box-arrow-up"></i> located at the bottom centre or top right corner of the browser.</li>
             <li>Scroll down in the share sheet and look for the "Add to Home Screen" option.</li>
-            <li>Tap on "Add to Home Screen <i class="bi bi-plus-square"></i>."</li>
+            <li>Tap on "Add to Home Screen <i class="bi bi-plus-square"></i>".</li>
             <li>A confirmation message will appear, asking if you want to add <b>Uveitis Tree</b> to your home screen. Tap "Add" or "Install."</li>
             <li>The app icon will now be added to your iOS device's home screen for quick access.</li>
           </ol>
