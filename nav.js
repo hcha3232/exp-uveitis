@@ -6,18 +6,18 @@ nav.innerHTML = `
   <div class="container-fluid">
 
   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasShare" aria-controls="offcanvasNavbar">
-  <i class="bi bi-share"></i>
+  <i class="bi bi-download"></i>
   </button>
-    <div class="offcanvas offcanvas-end" style="width: 80%;" tabindex="-1" id="offcanvasShare" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-end" style="width: 100%;" tabindex="-1" id="offcanvasShare" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header nav-border">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Share</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Installation</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <div class="d-flex p-2" ></div>
         
-        <div>
-          How to install UVEITIS TREE</b>
+        <div style="padding-bottom: 100px">
+          <span style="font-size: 1.25rem;">How to install UVEITIS TREE</span>
           <br><br><b>On iOS</b><br><br>
           <ol>
             <li>Tap the share icon <i class="bi bi-box-arrow-up"></i> located at the bottom centre or top right corner of the browser.</li>
@@ -43,7 +43,6 @@ nav.innerHTML = `
             <li>The app icon will now be added to your Desktop home screen for quick access.</li>
           </ol>
         </div>
-        
       </div>
     </div>
 
