@@ -222,7 +222,7 @@ const questionList = {
             //non-granulomatous alternating is HLA_B27
         ],
 
-        footer: 'Stellate KPs are hardly seen in Acute, recurrent alternating anterior uveitis'
+        footer: 'Stellate KPs are hardly seen in Alternating anterior uveitis'
     },
     acute_r_al_g_ddx :{
         description: `
