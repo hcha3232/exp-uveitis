@@ -62,5 +62,11 @@ body {
     -webkit-touch-callout: none;
 }
 
+@media all and (display-mode: standalone) {
+    .install-btn{
+        display: none;
+    }
+}
+
 
 

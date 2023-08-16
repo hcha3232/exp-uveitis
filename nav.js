@@ -14,7 +14,7 @@ nav.innerHTML = `
 
     <a class="navbar-brand" href="#" style="font-weight:600">Uveitis Tree</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasShare" aria-controls="offcanvasNavbar">
+    <button class="navbar-toggler install-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasShare" aria-controls="offcanvasNavbar">
   <i class="bi bi-download"></i>
   </button>
     <div class="offcanvas offcanvas-end" style="width: 100%;" tabindex="-1" id="offcanvasShare" aria-labelledby="offcanvasNavbarLabel">
