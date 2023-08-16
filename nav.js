@@ -27,7 +27,7 @@ nav.innerHTML = `
         
         <div style="padding-bottom: 100px">
           <span style="font-size: 1.25rem;">How to install UVEITIS TREE</span>
-          <br><br><b>On iOS</b><br><br>
+          <br><br><b>On iOS</b> (Safari only)<br><br>
           <ol>
             <li>Tap the share icon <i class="bi bi-box-arrow-up"></i> located at the bottom centre or top right corner of the browser.</li>
             <li>Scroll down in the share sheet and look for the "Add to Home Screen" option.</li>
@@ -35,7 +35,7 @@ nav.innerHTML = `
             <li>A confirmation message will appear, asking if you want to add <b>Uveitis Tree</b> to your home screen. Tap "Add" or "Install."</li>
             <li>The app icon will now be added to your iOS device's home screen for quick access.</li>
           </ol>
-          <br><br><b>On Android</b><br>
+          <br><br><b>On Android</b> (Chrome)<br>
           <div><i>Some devices recognize Uveitis Tree as PWA and will automatically ask users for installation.</i></div><br>
           <ol>
             <li>Tap the menu icon (usually three dots) located at the top right corner of the browser.</li>
