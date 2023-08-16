@@ -44,7 +44,9 @@ const questionList = {
             { label: "Non-granulomatous", nextQuestion: "chronic_bl_ng_ddx" },
             { label: "Endothelial dusting", nextQuestion: "chronic_bl_ng_ddx" },
             { label: "None", nextQuestion: "chronic_bl_ng_ddx" }
-        ]
+        ],
+
+        footer: 'Stellate KPs are hardly seen in Chronic bilateral anterior uveitis'
     },
     chronic_bl_ng_ddx : {
         description: `
@@ -218,7 +220,9 @@ const questionList = {
             { label: "Endothelial dusting", nextQuestion: "HLA_B27" },
             { label: "None", nextQuestion: "HLA_B27" }
             //non-granulomatous alternating is HLA_B27
-        ]
+        ],
+
+        footer: 'Stellate KPs are hardly seen in Acute, recurrent alternating anterior uveitis'
     },
     acute_r_al_g_ddx :{
         description: `
@@ -245,7 +249,9 @@ const questionList = {
             { label: "Non-granulomatous", nextQuestion: "acute_m_ul_ng_ddx" },
             { label: "Endothelial dusting", nextQuestion: "acute_m_ul_ng_ddx" },
             { label: "None", nextQuestion: "acute_m_ul_ng_ddx" }
-        ]
+        ],
+
+        footer: 'Stellate KPs are hardly seen in Acute, monophasic unilateral anterior uveitis'
     },
     acute_m_ul_g_ddx :
     {
@@ -430,7 +436,9 @@ const questionList = {
             { label: "Non-granulomatous", nextQuestion: "acute_m_bl_ng_ddx" },
             { label: "Endothelial dusting", nextQuestion: "acute_m_bl_ng_ddx" },
             { label: "None", nextQuestion: "acute_m_bl_ng_ddx" }
-        ]
+        ],
+
+        footer: 'Stellate KPs are hardly seen in Acute, monophasic bilateral anterior uveitis'
     },
     acute_m_bl_g_ddx :{
         description: `
