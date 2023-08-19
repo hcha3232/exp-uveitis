@@ -16,12 +16,6 @@
     },
     
     {
-      "src": "output/manifest-icon-512.maskable.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
       "src": "/img/anterior-icon-128_x_128.png",
       "sizes": "128x128",
       "type": "image/png"
