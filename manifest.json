@@ -2,13 +2,52 @@
   "name": "uveitis",
   "short_name": "uveitis",
   "icons": [
-    
+    {
+      "src": "output/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "output/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "output/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "output/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/img/anterior-icon-128_x_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
     {
       "src": "/img/144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/img/anterior-icon-152_x_152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/anterior-icon-256_x_256.png",
+      "sizes": "256x256",
+      "type": "image/png"
     }
+
   ],
   "start_url": "/",
   "display": "standalone",
