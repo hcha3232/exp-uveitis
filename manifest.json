@@ -34,7 +34,8 @@
     {
       "src": "/img/144.png",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/img/anterior-icon-152_x_152.png",
@@ -44,8 +45,7 @@
     {
       "src": "/img/anterior-icon-256_x_256.png",
       "sizes": "256x256",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     }
   ],
   "start_url": "/",
