@@ -315,7 +315,7 @@ const questionList = {
         question: `Which clinical feature is most similar to the patient's presentation`,
         options: [
             { label: "Granulomatous cluster of small and medium-sized KPs in Arlt's triangle [with or without corneal scars]", nextQuestion: "hsv_or_vzv"},
-            { label: "PSS with few medium-sized KPs, minimal anterior chamber cells and extremely high IOP", nextQuestion: "pss_like_cmv"},
+            { label: "Few medium-sized KPs, minimal anterior chamber cells and extremely high IOP", nextQuestion: "pss_like_cmv"},
             { label: "None above", nextQuestion: "NO_VIRAL_PICTURE"}
         ]
     },
