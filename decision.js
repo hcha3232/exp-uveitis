@@ -64,7 +64,7 @@ const questionList = {
     },
     chronic_bl_ng_not_jia : {
         description: ``,
-        question: "(under development) Does the patient have systemic symptoms? (anorexia, fever, weight loss, fatigue, and polyuria)",
+        question: "Does the patient have a history of recent acute renal dysfunction that presents systemic symptoms (i.e., anorexia, fever, weight loss, fatigue, and polyuria) and lab findings consistent with abnormal urinalysis tests, reduced renal function, and/or elevated urinary β-2 microglobulin? ",
         options: [
             //CCBAU => childrean chronic bilateral anterior uveitis
             { label: "Yes", nextQuestion: "TINU"},
@@ -460,7 +460,7 @@ const questionList = {
     acute_m_bl_ng_ddx : {
         description: `
         `,
-        question: "(under development) Does the patient have systemic symptoms? (anorexia, fever, weight loss, fatigue, and polyuria)",
+        question: "Does the patient have a history of recent acute renal dysfunction that presents systemic symptoms (i.e., anorexia, fever, weight loss, fatigue, and polyuria) and lab findings consistent with abnormal urinalysis tests, reduced renal function, and/or elevated urinary β-2 microglobulin?",
         options: [
             { label: "Yes", nextQuestion: "TINU"},
             { label: "No", nextQuestion: "NOT_TINU_a" }
