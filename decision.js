@@ -460,7 +460,7 @@ const questionList = {
     acute_m_bl_ng_ddx : {
         description: `
         `,
-        question: "Does the patient have a history of recent acute renal dysfunction that presents systemic symptoms (i.e., anorexia, fever, weight loss, fatigue, and polyuria) and lab findings consistent with abnormal urinalysis tests, reduced renal function, and/or elevated urinary β-2 microglobulin?",
+        question: "Does the patient have a history of recent acute renal dysfunction that presents systemic symptoms and lab findings consistent with abnormal urinalysis tests, reduced renal function, and/or elevated urinary β-2 microglobulin?",
         options: [
             { label: "Yes", nextQuestion: "TINU"},
             { label: "No", nextQuestion: "NOT_TINU_a" }
@@ -470,7 +470,8 @@ const questionList = {
             possible: [`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
             less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
             `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`]
-        }
+        },
+        footer: 'Systemic symptoms including anorexia, fever, weight loss, fatigue, and polyuria'
     },
     TINU : {
         description: `
