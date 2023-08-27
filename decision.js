@@ -69,6 +69,7 @@ const questionList = {
             //CCBAU => childrean chronic bilateral anterior uveitis
             { label: "Yes", nextQuestion: "TINU"},
             { label: "No", nextQuestion: "NOT_TINU_c"},
+            { label: "Indeterminate", nextQuestion: "NOT_YET_TINU_c"},
         ],
         footer: 'Systemic symptoms including anorexia, fever, weight loss, fatigue, and polyuria'
     },
@@ -84,6 +85,24 @@ const questionList = {
             possible: [`${disButtonModal('jia')}`,`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
             less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,` ${disButtonModal('vzv')}`,
             `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`]
+        }
+    },
+    NOT_YET_TINU_c:{
+        description: `
+        <div class="alert alert-primary" role="alert">
+            Rule out <b>TINU</b>, <b>Syphilis-associated anterior uveitis</b>, and <b>Sarcoidosis-associated anterior uveitis</b>. 
+            If all are not the case, most likely diagnosis is <b>Undifferentiated anterior uveitis</b>.
+        </div>
+        `,
+        question: `
+        `,
+        options: [
+        ],
+        ddx: {
+            most_likely: ``,
+            possible: [`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`]
         }
     },
     chronic_ul_kp: {
@@ -464,7 +483,8 @@ const questionList = {
         question: "Does the patient have a history of recent acute renal dysfunction that presents systemic symptoms and lab findings consistent with abnormal urinalysis tests, reduced renal function, and/or elevated urinary β-2 microglobulin?",
         options: [
             { label: "Yes", nextQuestion: "TINU"},
-            { label: "No", nextQuestion: "NOT_TINU_a" }
+            { label: "No", nextQuestion: "NOT_TINU_a" },
+            { label: "Indeterminate", nextQuestion: "NOT_YET_TINU_a" }
         ],
         ddx: {
             most_likely: ``,
@@ -496,6 +516,24 @@ const questionList = {
         <div class="alert alert-primary" role="alert">
             Rule out <b>Syphilis-associated anterior uveitis</b> and <b>Sarcoidosis-associated anterior uveitis</b>. 
             If both are not the case, most likely diagnosis is <b>Undifferentiated anterior uveitis</b>.
+        </div>
+        `,
+        question: `
+        `,
+        options: [
+        ],
+        ddx: {
+            most_likely: ``,
+            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
+        }
+    },
+    NOT_YET_TINU_a:{
+        description: `
+        <div class="alert alert-primary" role="alert">
+            Rule out <b>TINU</b>, <b>Syphilis-associated anterior uveitis</b>, and <b>Sarcoidosis-associated anterior uveitis</b>. 
+            If all are not the case, most likely diagnosis is <b>Undifferentiated anterior uveitis</b>.
         </div>
         `,
         question: `
