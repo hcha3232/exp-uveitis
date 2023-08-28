@@ -73,8 +73,12 @@ const questionList = {
         ],
         footer: 'Systemic symptoms including anorexia, fever, weight loss, fatigue, and polyuria'
     },
-    NOT_TINU_c:{
+    NOT_TINU_c : {
         description: `
+        <div class="alert alert-primary" role="alert">
+            Rule out <b>Syphilis-associated anterior uveitis</b> and <b>Sarcoidosis-associated anterior uveitis</b>. 
+            If both are not the case, most likely diagnosis is <b>Undifferentiated anterior uveitis</b>.
+        </div>
         `,
         question: `
         `,
@@ -82,9 +86,9 @@ const questionList = {
         ],
         ddx: {
             most_likely: ``,
-            possible: [`${disButtonModal('jia')}`,`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,` ${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`]
+            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
+            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
+            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
         }
     },
     NOT_YET_TINU_c:{
