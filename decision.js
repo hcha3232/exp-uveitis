@@ -5,6 +5,14 @@ let answers = [
 let DDx = [];
 
 const questionList = {
+    intro :
+    {   
+        description: `<b>Warning!</b><br>The use of Uveitis Tree does NOT replace clinical judgement. By selecting YES I confirm that I am using Uveitis Tree with this understanding.`,
+        question: "",
+        options: [
+            { label: "Yes", nextQuestion: "course"},
+        ]
+    },
     course :
     {   
         description: ``,
@@ -55,12 +63,7 @@ const questionList = {
         options: [
             { label: "Yes", nextQuestion: "is_it_jia"},
             { label: "No", nextQuestion: "chronic_bl_ng_not_jia"}
-        ],
-        ddx : {
-            most_likely: ``,
-            possible: [`${disButtonModal('jia')}`,`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`]
-        }   
+        ]  
     },
     chronic_bl_ng_not_jia : {
         description: ``,
@@ -83,13 +86,7 @@ const questionList = {
         question: `
         `,
         options: [
-        ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     NOT_YET_TINU_c:{
         description: `
@@ -101,13 +98,7 @@ const questionList = {
         question: `
         `,
         options: [
-        ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`]
-        }
+        ]
     },
     chronic_ul_kp: {
         description: ``,
@@ -129,14 +120,7 @@ const questionList = {
         options: [
             { label: "Yes", nextQuestion: "CMV"},
             { label: "No", nextQuestion: "FUS"}
-        ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('fus')}`,`${disButtonModal('cmv')}`,
-            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,
-            `${disButtonModal('hlab27')}`,`${disButtonModal('jia')}`, `${disButtonModal('tinu')}`]
-        }
+        ]
     },
     chronic_ul_ng_ddx : {
         description: `
@@ -145,29 +129,17 @@ const questionList = {
         options: [
             { label: "Yes", nextQuestion: "fus_algorithm"},
             { label: "No", nextQuestion: "chronic_ul_ng_clinical_picture"}
-        ],
-        ddx : {
-            most_likely: ``,
-            possible: [`${disButtonModal('cmv')}`, `${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, `${disButtonModal('fus')}`,
-            `${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     chronic_ul_ng_clinical_picture :{
         description: `
         `,
         question: "Which clinical feature is most similar to the patient's presentation",
         options: [
-            { label: "History of symptomatic attacks", nextQuestion: "acute_m_ul_ng_ddx"},
+            { label: "History of symptomatic attacks", nextQuestion: "acute_m_ul_ng_ddx2"},
             //asking if it is viau or hlab27
             { label: "Age < 16 with insidious onset and mostly asymptomatic/minimally symptomatic history", nextQuestion: "is_it_jia"}
-        ],
-        ddx : {
-            most_likely: ``,
-            possible: [`${disButtonModal('cmv')}`, `${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, 
-            `${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('fus')}`, `${disButtonModal('tinu')}`]
-        }
+        ]
     },
     is_it_jia: {
         description: `
@@ -176,12 +148,7 @@ const questionList = {
         options: [
             { label: "Yes", nextQuestion: "JIA"},
             { label: "No", nextQuestion: "NOT_DIAGNOSED_JIA"}
-        ],
-        ddx : {
-            most_likely: [`${disButtonModal('jia')}`],
-            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     JIA :
     {
@@ -192,12 +159,7 @@ const questionList = {
         question: `
         `,
         options: [
-        ],
-        ddx : {
-            most_likely: [`${disButtonModal('jia')}`],
-            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     NOT_DIAGNOSED_JIA : {
         description: `
@@ -208,13 +170,7 @@ const questionList = {
         question: `
         `,
         options: [
-        ],
-        ddx: {
-            most_likely: [`${disButtonModal('jia')}`],
-            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('tinu')}`]
-        }
+        ]
     },
     laterality_m :
     {
@@ -246,7 +202,7 @@ const questionList = {
             //non-granulomatous alternating is HLA_B27
         ],
 
-        footer: 'Stellate KPs are hardly seen in Alternating anterior uveitis'
+        
     },
     acute_r_al_g_ddx :{
         description: `
@@ -257,25 +213,20 @@ const questionList = {
             `,
         question: "",
         options: [
-        ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     acute_m_ul_kp : {
         description: ``,
         question: "What are the types of keratic precipitates seen in the uveitis?",
         options: [
             { label: "Granulomatous", nextQuestion: "acute_m_ul_g_ddx"},
-            { label: "Non-granulomatous", nextQuestion: "acute_m_ul_ng_ddx" },
-            { label: "Endothelial dusting", nextQuestion: "acute_m_ul_ng_ddx" },
-            { label: "None", nextQuestion: "acute_m_ul_ng_ddx" }
+            { label: "Stellate", nextQuestion: "fus_algorithm"},
+            { label: "Non-granulomatous", nextQuestion: "acute_m_ul_ng_ddx1" },
+            { label: "Endothelial dusting", nextQuestion: "acute_m_ul_ng_ddx1" },
+            { label: "None", nextQuestion: "acute_m_ul_ng_ddx1" }
         ],
 
-        footer: 'Stellate KPs are hardly seen in Acute unilateral anterior uveitis'
+        footer: 'Stellate KPs could be seen in acute on chronic unilateral anterior uveitis'
     },
     acute_m_ul_g_ddx :
     {
@@ -285,14 +236,7 @@ const questionList = {
         options: [
             { label: "Yes", nextQuestion: "HSV"},
             { label: "No", nextQuestion: "viau_q2"}
-        ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('cmv')}`, `${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, 
-            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
-            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },  
     HSV : {
         description: `
@@ -301,14 +245,7 @@ const questionList = {
         </div>
         `,
         question: ``,
-        options: [],
-        ddx: {
-            most_likely: [`${disButtonModal('hsv')}`],
-            possible: [`${disButtonModal('cmv')}`,`${disButtonModal('vzv')}`, 
-            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
-            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]    
-        }
+        options: []
     },
     viau_q2 : {
         description: ``,
@@ -325,14 +262,7 @@ const questionList = {
         </div>
         `,
         question: ``,
-        options: [],
-        ddx: {
-            most_likely: [`${disButtonModal('vzv')}`],
-            possible: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, 
-            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}` ,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
-            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]    
-        }
+        options: []
     },
     viau_q3 : {
         description: ``,
@@ -352,14 +282,7 @@ const questionList = {
         </div>
         `,
         question: ``,
-        options: [],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`, 
-            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
-            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]    
-        }
+        options: []
     },
     hsv_or_vzv : {
         description: `
@@ -378,14 +301,7 @@ const questionList = {
         </div>`,
         question: ``,
         options: [
-        ],
-        ddx: {
-            most_likely: [`${disButtonModal('cmv')}`],
-            possible: [`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`, 
-            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, 
-            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]    
-        }
+        ]
     },
     CMV : {
         description: `
@@ -394,14 +310,7 @@ const questionList = {
         </div>`,
         question: ``,
         options: [
-        ],
-        ddx: {
-            most_likely: [`${disButtonModal('cmv')}`],
-            possible: [`${disButtonModal('fus')}`,
-            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('hlab27')}`, 
-            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     FUS: {
         description: `
@@ -410,16 +319,19 @@ const questionList = {
         </div>
         `,
         question: ``,
-        options: [],
-        ddx: {
-            most_likely: [`${disButtonModal('fus')}`],
-            possible: [`${disButtonModal('cmv')}`,
-            `${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('hlab27')}`, 
-            `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
-        }
+        options: []
     },
-    acute_m_ul_ng_ddx: {
+    acute_m_ul_ng_ddx1: {
+        description: `
+        `,
+        question: `Does the patient have heterochromia?`,
+        options: [
+            { label: "Yes", nextQuestion: "fus_algorithm"},
+            //going to acute_m_ul_g because it ask whether the user wants to do VIAU algorithm
+            { label: "No", nextQuestion: "acute_m_ul_ng_ddx2" }
+        ],
+    },
+    acute_m_ul_ng_ddx2: {
         description: `
         `,
         question: `Does the patient have elevated IOP in the absence of prior steroid treatment or iris atrophy/transillumination?`,
@@ -427,13 +339,7 @@ const questionList = {
             { label: "Yes", nextQuestion: "acute_m_ul_g_ddx"},
             //going to acute_m_ul_g because it ask whether the user wants to do VIAU algorithm
             { label: "No", nextQuestion: "HLA_B27" }
-        ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('hlab27')}`
-            ,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('fus')}`,`${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     HLA_B27 :
     {
@@ -445,12 +351,7 @@ const questionList = {
         <img src="/img/duet.png" class="img-fluid"></img>`,
         question: ``,
         options: [
-        ],
-        ddx: {
-            most_likely: [`${disButtonModal('hlab27')}`],
-            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`,`${disButtonModal('vzv')}`,`${disButtonModal('fus')}`,`${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     acute_m_bl_kp: {
         description: ``,
@@ -473,13 +374,7 @@ const questionList = {
         `,
         question: "",
         options: [
-        ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     acute_m_bl_ng_ddx : {
         description: `
@@ -490,12 +385,6 @@ const questionList = {
             { label: "No", nextQuestion: "NOT_TINU_a" },
             { label: "Indeterminate", nextQuestion: "NOT_YET_TINU_a" }
         ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`]
-        },
         footer: 'Systemic symptoms including anorexia, fever, weight loss, fatigue, and polyuria'
     },
     TINU : {
@@ -507,13 +396,7 @@ const questionList = {
         question: `
         `,
         options: [
-        ],
-        ddx: {
-            most_likely: [`${disButtonModal('tinu')}`],
-            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`, `${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`]
-        }
+        ]
     },
     NOT_TINU_a : {
         description: `
@@ -525,13 +408,7 @@ const questionList = {
         question: `
         `,
         options: [
-        ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`,`${disButtonModal('tinu')}`]
-        }
+        ]
     },
     NOT_YET_TINU_a:{
         description: `
@@ -543,13 +420,7 @@ const questionList = {
         question: `
         `,
         options: [
-        ],
-        ddx: {
-            most_likely: ``,
-            possible: [`${disButtonModal('tinu')}`,`${disButtonModal('syphilis')}`,`${disButtonModal('sarcoidosis')}`,`${disButtonModal('uau')}`],
-            less_likely: [`${disButtonModal('cmv')}`,`${disButtonModal('hsv')}`, `${disButtonModal('vzv')}`,
-            `${disButtonModal('fus')}`,`${disButtonModal('hlab27')}`, `${disButtonModal('jia')}`]
-        }
+        ]
     },
     In_progress :
     {
