@@ -240,9 +240,7 @@ const questionList = {
     },  
     HSV : {
         description: `
-        <div class="alert alert-primary" role="alert">
-            Most likely diagnosis is <b>Herpes Simplex Virus Anterior Uveitis<b>
-        </div>
+        ${topDiff('Herpes simplex virus anterior uveitis')}
         `,
         question: ``,
         options: []
@@ -698,3 +696,21 @@ function listify(arr){
     }
 }
 
+function topDiff(topDis){
+    let aetiology = ['Cytomegalovirus anterior uveitis','Herpes simplex virus anterior uveitis','Varicella zoster virus anterior uveitis','Fuchs uveitis syndrome','Spondyloarthritis/HLA-B27-associated anterior uveitis','Juvenile idiopathic arthritis-associated anterior uveitis','Tubulointerstitial nephritis with uveitis','Syphilitic anterior uveitis','Sarcoidosis-associated anterior uveitis','Undifferentiated anterior uveitis']
+    for (let i = 0; i < aetiology.length; i++){
+        if(aetiology[i]===topDis){
+            aetiology[i] = '<span style="color: #0000ff;">' + aetiology[i] + '</span>'
+        }
+    }
+    let acmt = `
+    <span style='font-size: 1.25rem;'><b>Differential diagnosis</b></span><br>
+    <b>Infectious</b><br> ${aetiology[0]}<br> ${aetiology[1]}<br> ${aetiology[2]}<br> ${aetiology[7]}<br>
+    <b>Systemic disease associated</b><br> ${aetiology[4]}<br> ${aetiology[5]}<br> ${aetiology[6]}<br> ${aetiology[8]}<br>
+    <b>Eye-limited</b><br> ${aetiology[3]}<br> ${aetiology[9]}
+    <div style="color: blue;">
+    <i class="bi bi-check-square"></i> top differential diagnosis<br>
+    </div>
+    `
+    return acmt;
+}

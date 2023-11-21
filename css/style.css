@@ -68,4 +68,43 @@ body {
     }
 }
 
+.question-text {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 
+.question-description {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1rem;
+}
+
+.form-check {
+    margin-bottom: 30px;
+}
+
+#diff-container h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.diagnosis-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.high-probability {
+    background-color: #4CAF50; /* Green for high probability */
+}
+
+.moderate-probability {
+    background-color: #FFC107; /* Amber for moderate probability */
+}
+
+.low-probability {
+    background-color: #F44336; /* Red for low probability */
+}
