@@ -209,15 +209,44 @@ export class UIHandler {
             sectionTitle.textContent = title;
             container.appendChild(sectionTitle);
 
-            phenotypes.forEach(phenotype => {
-                const item = document.createElement('div');
-                item.className = `diagnosis-item ${probabilityLevel}`;
-                item.textContent = phenotype.name;
-                container.appendChild(item);
+            phenotypes.forEach((phenotype, index) => {
+                const modalItem = this.createModalItem(phenotype, index, probabilityLevel);
+                container.appendChild(modalItem);
             });
         }
     }
 
+    createModalItem(phenotype, index, probabilityLevel) {
+        // Create a unique ID for the modal
+        const modalId = `modal-${phenotype.name.replace(/\s+/g, '-')}-${index}`;
+    
+        const item = document.createElement('div');
+        item.className = `diagnosis-item ${probabilityLevel}`;
+        item.innerHTML = `
+            <button type="button" class="text-nowrap btn" data-bs-toggle="modal" data-bs-target="#${modalId}"
+            style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem; --bs-btn-font-size: .75rem; color: white; ">
+                <strong>+ ${phenotype.name}</strong>
+            </button>
+            <div class="modal" id="${modalId}" tabindex="-1">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5">${phenotype.name}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ${phenotype.criteria}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        return item;
+    }
+    
     sortPhenotypes() {
         return {
             high: this.decisionTree.phenotypes.filter(p => p.probability === "high"),
