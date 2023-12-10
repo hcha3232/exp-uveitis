@@ -9,7 +9,9 @@ export const dummyQuestions = {
             { label: "No", nextQuestion: "q3" }
         ],
         "",
-        {}
+        {
+
+        }
     ),
     'q2': new Question(
         "<b>Question 2:</b> Is the uveitis acute or chronic?",
@@ -28,6 +30,10 @@ export const dummyQuestions = {
         "<b>Question 4:</b> Finished",
         "Select the type of uveitis:",
         [],
-        "Acute uveitis is characterized by..."
+        "Acute uveitis is characterized by...",
+        {
+            "VZV Anterior uveitis" : "high",
+            "JIA Anterior uveitis" : "low"
+        }
     )
 };

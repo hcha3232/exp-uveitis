@@ -1,3 +1,5 @@
+import { Phenotype } from "./phenotype.js";
+
 export class Question {
     constructor(description, question, options, footer, phenotypeImpact){
         this.description = description;
@@ -47,6 +49,7 @@ export class DecisionTree {
     constructor(questions, phenotypes){
         this.questions = questions;
         this.phenotypes = phenotypes;
+        this.initialPhenotypes = structuredClone(phenotypes);
         this.currentQuestion = null;
         this.uiHandler = null;
         this.selectedAnswer = null;
@@ -62,29 +65,29 @@ export class DecisionTree {
         this.uiHandler.updateUI(this.currentQuestion.render())
     }
 
-    selectAnswer(answer){
-        this.selectedAnswer = answer;
-    }
-
-    goBack() {
-        // Move to the previous question 
-        if(this.questionHistory.length > 0) {
-            console.log('here')
-            // Remove the last question from history and set it as the current question 
-            this.currentQuestion = this.questionHistory[this.questionHistory.length - 1]['question'];
-            this.questionHistory.pop()
+    goBack() { // Move to the previous question 
+        if (this.questionHistory.length > 0) {
+            const lastState = this.questionHistory.pop();
+            this.currentQuestion = lastState.storedQuestion;
+            this.phenotypes = lastState.storedPhenotypes;
             this.uiHandler.updateUI(this.currentQuestion.render());
         } else {
-            // If no previous questions, show a message 
             this.uiHandler.showMessage("There is no previous question");
         }
+    } 
+
+    selectAnswer(answer){
+        this.selectedAnswer = answer;
+        console.log("selectedAnswer", this.selectedAnswer)
     }
 
-    goNext() {
-        // Move to the next question based on the stored answer
+    goNext() { // Move to the next question based on the stored answer
         if(this.selectedAnswer) {
-            console.log(this.selectedAnswer)
-            this.questionHistory.push({question: this.currentQuestion, selectedAnswer: this.selectedAnswer});
+            this.questionHistory.push({
+                storedQuestion: this.currentQuestion, 
+                storedSelectedAnswer: this.selectedAnswer,
+                storedPhenotypes: structuredClone(this.phenotypes)
+            });
             this.nextQuestion(this.selectedAnswer);
             this.selectedAnswer = null;
         } else {
@@ -95,7 +98,6 @@ export class DecisionTree {
 
     // Navigate to the next question based on the current answer
     nextQuestion(answer) {
-        console.log(this.questionHistory)
         // Update this.currentQuestion
         let nextQuestionKey = this.currentQuestion.options.find(option => option.label === answer).nextQuestion;
         this.currentQuestion = this.questions[nextQuestionKey];
@@ -105,27 +107,25 @@ export class DecisionTree {
             return;
         }
 
-        this.updatePhenotypes(answer);
+        this.updatePhenotypes();
 
         // <div container>.innerHTML = Current question's HTML
         // + attach the event listener 
-        this.uiHandler.updateUI(this.currentQuestion.render())
+        this.uiHandler.updateUI(this.currentQuestion.render());
     }
 
-    updatePhenotypes(answer) {
-        const impact = this.currentQuestion.phenotypeImpact;
-        if(impact){    
-            this.phenotypes.forEach(phenotype => {
-                if(impact[phenotype.name]) {
-                    phenotype.updateProbability(impact[phenotype.name]);
-                }
-            })
+    updatePhenotypes() {
+        let impact = this.currentQuestion.phenotypeImpact;
+        if (impact) {
+            this.phenotypes = this.phenotypes.map(item => {
+                // Ensure item is a Phenotype instance
+                const phenotypeItem = new Phenotype(item.name, item.criteria, item.probability);
+                return impact[item.name] ? phenotypeItem.updateProbability(impact[item.name]) : phenotypeItem;
+            });
         }
+        console.log("Phenotypes in DecisionTree after update:", this.phenotypes);
     }
-
-    getCurrentPhenotypes(){
-        return this.phenotypes;
-    }
+    
 }
 
 export class UIHandler {
@@ -141,6 +141,8 @@ export class UIHandler {
         this.attachEventListener();
         this.displayPastQuestions();
         this.updateDifferentialUI();
+        console.log("Current History:", this.decisionTree.questionHistory);
+
     }
 
     attachEventListener() {
@@ -162,6 +164,7 @@ export class UIHandler {
         const nextButton = this.container.querySelector('.btn-next');
         nextButton.addEventListener('click', () => {
             if(nextButton.textContent === 'Next') {
+                console.log("tempSelectedOption: ", this.tempSelectedOption)
                 this.decisionTree.selectAnswer(this.tempSelectedOption);
                 this.decisionTree.goNext();
                 this.tempSelectedOption = null;
@@ -184,19 +187,17 @@ export class UIHandler {
         if (historyContainer) {
             let historyHtmlContent = '';
             this.decisionTree.questionHistory.forEach(item => {
-                historyHtmlContent += `<div>${item.question.question}<br>&nbsp&nbsp<i>${item.selectedAnswer}</i></div>`;
+                historyHtmlContent += `<div>${item.storedQuestion.question}<br>&nbsp&nbsp<i>${item.storedSelectedAnswer}</i></div>`;
             });
             historyContainer.innerHTML = historyHtmlContent;
         }
     }
 
     updateDifferentialUI() {
-        const phenotypes = this.decisionTree.getCurrentPhenotypes();
         const differentialContainer = document.getElementById("diff-container");
         differentialContainer.innerHTML = '';
-        
         const sortedPhenotypes = this.sortPhenotypes();
-
+        console.log("Sorted Phenotypes after update:", sortedPhenotypes);
         // Create and append sections for each probability category
         this.createDiagnosisSection(differentialContainer, 'High Probability', sortedPhenotypes.high,'high-probability');
         this.createDiagnosisSection(differentialContainer, 'Moderate Probability', sortedPhenotypes.moderate,'moderate-probability');
@@ -223,8 +224,8 @@ export class UIHandler {
         const item = document.createElement('div');
         item.className = `diagnosis-item ${probabilityLevel}`;
         item.innerHTML = `
-            <button type="button" class="text-nowrap btn" data-bs-toggle="modal" data-bs-target="#${modalId}"
-            style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem; --bs-btn-font-size: .75rem; color: white; ">
+            <button type="button" class="btn-full-width" data-bs-toggle="modal" data-bs-target="#${modalId}"
+            style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem; --bs-btn-font-size: .75rem; color: #EFEFEF; ">
                 <strong>+ ${phenotype.name}</strong>
             </button>
             <div class="modal" id="${modalId}" tabindex="-1">
@@ -252,7 +253,7 @@ export class UIHandler {
             high: this.decisionTree.phenotypes.filter(p => p.probability === "high"),
             moderate: this.decisionTree.phenotypes.filter(p => p.probability === "moderate"),
             low: this.decisionTree.phenotypes.filter(p => p.probability === "low")
-        }
+        };
     }
 
 
