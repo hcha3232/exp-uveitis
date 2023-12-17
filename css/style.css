@@ -70,13 +70,13 @@ body {
 
 .question-text {
     margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 .question-description {
     margin-bottom: 10px;
-    color: #555;
+    font-weight: 500;
     font-size: 1rem;
 }
 
@@ -113,13 +113,32 @@ body {
 
 
 .high-probability {
-    background-color: #4CAF50; /* Green for high probability */
+    border: 2px solid #4CAF50;
+    background-color: #73da76; /* Green for high probability */
 }
 
 .moderate-probability {
-    background-color: #FFC107; /* Amber for moderate probability */
+    border: 2px solid #FFC107;
+    background-color: #fcd664; /* Amber for moderate probability */
 }
 
 .low-probability {
-    background-color: #F44336; /* Red for low probability */
+    border: 2px solid #F44336;
+    background-color: #ef665c; /* Red for low probability */
+}
+
+.form-check {
+    padding:10px; /* Adjust the padding as needed */
+}
+
+.border-pressed {
+    border: 2px solid #007BFF;
+    border-radius: 5px;   
+    background-color: #ddeeff;
+}
+
+.border-unpressed {
+    border: 1px solid #eae9e9;
+    border-radius: 5px;   
+    background-color: #ffffff;
 }

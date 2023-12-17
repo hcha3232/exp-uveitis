@@ -16,11 +16,13 @@ export class Question {
 
         this.options.forEach((option, index) => {
             htmlContent += `
-            <div class="form-check" style="margin-bottom: 10px;">
-                <input class="form-check-input border-primary" type="radio" name="flexRadioDefault" id="flexRadioDefault${index}" value="${option.label}">
-                <label class="form-check-label" for="flexRadioDefault${index}">
-                    ${option.label}
-                </label>
+            <div class="form-check border-unpressed" style="margin-bottom: 10px;">
+                <div class="form-block" style="padding-left: 10px;">
+                    <input class="form-check-input border-primary" type="radio" name="flexRadioDefault" id="flexRadioDefault${index}" value="${option.label}">
+                    <label class="form-check-label" for="flexRadioDefault${index}">
+                        ${option.label}
+                    </label>
+                </div>
             </div>`
         });
 
@@ -100,11 +102,14 @@ export class DecisionTree {
     nextQuestion(answer) {
         // Update this.currentQuestion
         let nextQuestionKey = this.currentQuestion.options.find(option => option.label === answer).nextQuestion;
-        this.currentQuestion = this.questions[nextQuestionKey];
 
-        if (!this.currentQuestion) {
+        if (!this.questions[nextQuestionKey]) {
             console.error(`Question not found for key: ${nextQuestionKey}`);
             return;
+            // Be careful that this could mess up the question history -> not going to fix  
+        }
+        else {
+            this.currentQuestion = this.questions[nextQuestionKey];
         }
 
         this.updatePhenotypes();
@@ -148,9 +153,25 @@ export class UIHandler {
     attachEventListener() {
         // Code to attach event listeners to the new HTML content
         // i.e. listening for a click on an option 
-        this.container.querySelectorAll('.form-check-input').forEach(input => {
-            input.addEventListener('click', (event) => {
-                this.tempSelectedOption = event.target.value;
+        this.container.querySelectorAll('.form-check').forEach(formCheck => {
+            formCheck.addEventListener('click', (event) => {
+                const input = formCheck.querySelector('.form-check-input');
+
+                // Trigger click event
+                if (input) {
+                    input.click();
+                }
+
+                this.container.querySelectorAll('.form-check').forEach(formCheck => {
+                    formCheck.classList.remove('border-pressed');
+                    formCheck.classList.add('border-unpressed');
+                });
+
+                // Add 'border-pressed' class to the selected element
+                formCheck.classList.remove('border-unpressed');
+                formCheck.classList.add('border-pressed');
+                
+                this.tempSelectedOption = input ? input.value : null;
             });
         });
 
@@ -206,7 +227,8 @@ export class UIHandler {
 
     createDiagnosisSection(container, title, phenotypes, probabilityLevel){
         if (phenotypes.length > 0) {
-            const sectionTitle = document.createElement('h3');
+            const sectionTitle = document.createElement('div');
+            sectionTitle.style = "font-size: 24px; color: black; font-weight: 500; margin-bottom: 10px;"
             sectionTitle.textContent = title;
             container.appendChild(sectionTitle);
 
@@ -225,7 +247,7 @@ export class UIHandler {
         item.className = `diagnosis-item ${probabilityLevel}`;
         item.innerHTML = `
             <button type="button" class="btn-full-width" data-bs-toggle="modal" data-bs-target="#${modalId}"
-            style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem; --bs-btn-font-size: .75rem; color: #EFEFEF; ">
+            style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem; --bs-btn-font-size: .75rem; color: #333333;">
                 <strong>+ ${phenotype.name}</strong>
             </button>
             <div class="modal" id="${modalId}" tabindex="-1">
