@@ -288,6 +288,115 @@ export const dummyQuestions = {
             "TINU Anterior uveitis" : "low",
         }
     ),
+    'heterochromia_mr_ul_ng': new Question(
+        "Question",
+        "Does the patient have heterochromia?",
+        [
+            { label: "Yes", nextQuestion: "fus_au_1_endotheliitis" },
+            { label: "No", nextQuestion: "iop_mr_ul_ng_no_het" },
+        ],
+        "",
+        {
+            "JIA Anterior uveitis" : "low",
+            "TINU Anterior uveitis" : "low",
+        }
+    ),
+    'iop_mr_ul_ng_no_het': new Question(
+        "Question",
+        "Does the patient have an elevated IOP with no prior steroid treatment nor iris atrophy / transillumination?",
+        [
+            { label: "Yes", nextQuestion: "viral_au_1_keratitis" },
+            { label: "No", nextQuestion: "ddx_hlab27" },
+        ],
+        "",
+        {
+            "FUS Anterior uveitis" : "low",
+            "JIA Anterior uveitis" : "low",
+            "TINU Anterior uveitis" : "low",
+        }
+    ),
+    'iop_c_ul_ng_cp_not_jia': new Question(
+        "Question",
+        "Does the patient have an elevated IOP with no prior steroid treatment nor iris atrophy / transillumination?",
+        [
+            { label: "Yes", nextQuestion: "viral_au_1_keratitis" },
+            { label: "No", nextQuestion: "ddx_hlab27" },
+        ],
+        "",
+        {
+            "FUS Anterior uveitis" : "low",
+            "JIA Anterior uveitis" : "low",
+            "TINU Anterior uveitis" : "low",
+        }
+    ),
+    'tinu_mr_bl_ng': new Question(
+        "Question",
+        "Does the patient have a history of recent acute renal dysfunction that presents systemic symptoms \
+        and lab findings consistent with abnormal urinalysis tests, reduced renal function, and/or elevated \
+        urinary β-2 microglobulin?\
+        <br><br>\
+        Systemic symptoms include anorexia, fever, weight loss, fatigue, and polyuria.",
+        [
+            { label: "Yes", nextQuestion: "ddx_tinu_mr_bl_ng" },
+            { label: "No", nextQuestion: "ddx_mr_bl_ng_not_tinu" },
+        ],
+        "",
+        {
+            "CMV Anterior uveitis" : "low",
+            "HSV Anterior uveitis" : "low",
+            "VZV Anterior uveitis" : "low",
+            "FUS Anterior uveitis" : "low",
+            "JIA Anterior uveitis" : "low",
+            "HLA-B27 Anterior uveitis" : "low",
+        }
+    ),
+    'heterochromia_c_ul_ng': new Question(
+        "Question",
+        "Does the patient have heterochromia?",
+        [
+            { label: "Yes", nextQuestion: "fus_au_1_endotheliitis" },
+            { label: "No", nextQuestion: "cp_c_ul_ng" },
+        ],
+        "",
+        {
+            "TINU Anterior uveitis" : "low"
+        }
+    ),
+    'cp_c_ul_ng': new Question(
+        "Question",
+        "Which clinical feature is most similar to the patient’s presentation?",
+        [
+            { label: "History of symptomatic attacks", nextQuestion: "iop_c_ul_ng_cp_not_jia" },
+            { label: "Age < 16 with insidious onset and mostly asymptomatic/minimally symptomatic history", nextQuestion: "ddx_jia_c_ul_ng" },
+        ],
+        "",
+        {
+
+            "FUS Anterior uveitis" : "low",
+            "TINU Anterior uveitis" : "low"
+        }
+    ),
+    'jia_or_tinu_c_bl_ng': new Question(
+        "Question",
+        "Which clinical feature is most similar to the patient’s presentation?",
+        [
+            { label: "Age < 16 with insidious onset and mostly asymptomatic/minimally \
+            symptomatic history", nextQuestion: "ddx_jia_c_bl_ng" },
+            { label: "Does the patient have a history of recent acute renal dysfunction that presents systemic symptoms \
+            and lab findings consistent with abnormal urinalysis tests, reduced renal function, and/or elevated \
+            urinary β-2 microglobulin?\
+            <br><br>\
+            Systemic symptoms include anorexia, fever, weight loss, fatigue, and polyuria.", nextQuestion: "ddx_tinu_c_bl_ng" },
+            { label: "None above", nextQuestion: "ddx_not_jia_nor_tinu_c_bl_ng" }
+        ],
+        "",
+        {
+
+            "FUS Anterior uveitis" : "low",
+            "TINU Anterior uveitis" : "low"
+        }
+    ),
+
     'q4': new Question(
         "<b>Question 4:</b> Finished",
         "Select the type of uveitis:",
