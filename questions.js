@@ -21,7 +21,7 @@ export const dummyQuestions = {
             { label: "Acute, recurrent", nextQuestion: "laterality_r" },
             { label: "Chronic", nextQuestion: "laterality_c" }
         ],
-        "",
+        "course",
         {
 
         }
@@ -266,10 +266,26 @@ export const dummyQuestions = {
             { label: "Sectoral iris atrophy in a patient > 60 years of age", nextQuestion: "ddx_vzv" },
             { label: "None above", nextQuestion: "ddx_viral_au_4_sa_none" }
         ],
-        "",
+        "image",
         {
             "HSV Anterior uveitis" : "high",
             "VZV Anterior uveitis" : "high"
+        }
+    ),
+    'fus_au_1_endotheliitis': new Question(
+        "Question",
+        "Does the patient have endotheliitis or nodular, coin-shaped endothelial lesion?",
+        [
+            { label: "Yes", nextQuestion: "ddx_cmv_fus_algorithm" },
+            { label: "No", nextQuestion: "ddx_fus" },
+        ],
+        "",
+        {
+            "HSV Anterior uveitis" : "low",
+            "VZV Anterior uveitis" : "low",
+            "JIA Anterior uveitis" : "low",
+            "HLA-B27 Anterior uveitis" : "low",
+            "TINU Anterior uveitis" : "low",
         }
     ),
     'q4': new Question(

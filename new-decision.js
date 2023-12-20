@@ -209,7 +209,7 @@ export class UIHandler {
         if (historyContainer) {
             let historyHtmlContent = '';
             this.decisionTree.questionHistory.forEach(item => {
-                historyHtmlContent += `<div>${item.storedQuestion.question}<br>&nbsp&nbsp<i>${item.storedSelectedAnswer}</i></div>`;
+                historyHtmlContent += `<div>${item.storedQuestion.question}<div><ul style="padding: 0 0 0 1rem; margin-bottom: 0.5rem"><i><b>${item.storedSelectedAnswer}</b></i></ul></div></div>`;
             });
             historyContainer.innerHTML = historyHtmlContent;
         }
