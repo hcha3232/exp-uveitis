@@ -391,9 +391,6 @@ export const dummyQuestions = {
         ],
         "",
         {
-
-            "FUS Anterior uveitis" : "low",
-            "TINU Anterior uveitis" : "low"
         }
     ),
 
