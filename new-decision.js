@@ -13,12 +13,13 @@ export class Question {
     render() {
         let htmlContent = `<div class="question-description">${this.description}</div>`
         htmlContent += `<div class="question-text">${this.question}</div>`
+        
 
         this.options.forEach((option, index) => {
             htmlContent += `
             <div class="form-check border-unpressed" style="margin-bottom: 10px;">
                 <div class="form-block" style="padding-left: 10px;">
-                    <input class="form-check-input border-primary" type="radio" name="flexRadioDefault" id="flexRadioDefault${index}" value="${option.label}">
+                    <input class="form-check-input border-secondary" type="radio" name="flexRadioDefault" id="flexRadioDefault${index}" value="${option.label}">
                     <label class="form-check-label" for="flexRadioDefault${index}">
                         ${option.label}
                     </label>
@@ -228,7 +229,7 @@ export class UIHandler {
     createDiagnosisSection(container, title, phenotypes, probabilityLevel){
         if (phenotypes.length > 0) {
             const sectionTitle = document.createElement('div');
-            sectionTitle.style = "font-size: 24px; color: black; font-weight: 500; margin-bottom: 10px;"
+            sectionTitle.style = "font-size: 20px; color: black; font-weight: 500; margin-bottom: 10px;"
             sectionTitle.textContent = title;
             container.appendChild(sectionTitle);
 

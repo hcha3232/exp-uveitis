@@ -69,9 +69,11 @@ body {
 }
 
 .question-text {
+    padding-bottom: 5px;
     margin-bottom: 10px;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 20px;
+    /*border-bottom:1px solid #eae9e9;*/
 }
 
 .question-description {
