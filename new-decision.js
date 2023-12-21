@@ -1,5 +1,66 @@
 import { Phenotype } from "./phenotype.js";
 
+export class Result {
+    constructor(result, content, manifestation, phenotypeImpact){
+        this.result = result;
+        this.content = content;
+        this.manifestation = manifestation;
+        this.phenotypeImpact = phenotypeImpact;
+    }
+
+    createButton(result) {
+        let btnContent = `<div>${result}</div>`
+        return btnContent;
+    }
+
+    render() {
+        let resultContent = `<div class="result-text">Final Diagnosis</div>`
+    
+        /*foreach item in result => create button  */
+
+        resultContent += `<div style="font-weight: bold;">Condition</div>`
+
+        this.result.forEach(element => {
+            resultContent += this.createButton(element);
+        });
+
+        resultContent += `<br>`
+        resultContent += `<div style="font-weight: bold;">Summary</div>`
+
+        this.content.forEach(element => {
+            resultContent += `<div>${element}</div>`
+            resultContent += `<br>`
+        });
+
+        resultContent += `<div style="font-weight: bold;">Look for</div>`
+
+        this.manifestation.forEach(element => {
+            resultContent += `<div>${element["name"]}</div>`
+            element["signs"].forEach(item => {
+                resultContent += `<div>${item}</div>`
+            })
+            resultContent += `<br>`
+        });
+
+        resultContent += `<div style="font-size: 0.75rem"><i>Read more about the disease by clicking the buttons in the differential diagnosis section below</i></div>`
+        resultContent += `<br>`
+
+        resultContent += `
+            <div class="back-next" style="margin-top: 20px;">
+                <button type='button' class='btn btn-outline-primary btn-back shadow-sm'>
+                    Back
+                </button>`;
+
+        const nextButtonText = 'Finish';
+        resultContent += `
+                <button type='button' class='btn btn-outline-primary btn-next shadow-sm'>${nextButtonText}</button>
+            </div>
+            <div id='message' style="color:red;"></div>`;
+
+        return resultContent;
+    }
+}
+
 export class Question {
     constructor(description, question, options, footer, phenotypeImpact){
         this.description = description;
@@ -103,34 +164,39 @@ export class DecisionTree {
     nextQuestion(answer) {
         // Update this.currentQuestion
         let nextQuestionKey = this.currentQuestion.options.find(option => option.label === answer).nextQuestion;
+        let nextNode = this.questions[nextQuestionKey];
 
-        if (!this.questions[nextQuestionKey]) {
+        if (!nextNode) {
             console.error(`Question not found for key: ${nextQuestionKey}`);
             return;
             // Be careful that this could mess up the question history -> not going to fix  
         }
-        else {
-            this.currentQuestion = this.questions[nextQuestionKey];
+
+        if (nextNode instanceof Result){
+            this.updatePhenotypes(nextNode.phenotypeImpact)
+            this.uiHandler.updateUI(nextNode.render());
         }
-
-        this.updatePhenotypes();
-
-        // <div container>.innerHTML = Current question's HTML
-        // + attach the event listener 
-        this.uiHandler.updateUI(this.currentQuestion.render());
+        else {
+            this.currentQuestion = nextNode;
+            this.updatePhenotypes(nextNode.phenotypeImpact);
+            // <div container>.innerHTML = Current question's HTML
+            // + attach the event listener 
+            this.uiHandler.updateUI(this.currentQuestion.render());
+        }
     }
 
-    updatePhenotypes() {
-        let impact = this.currentQuestion.phenotypeImpact;
-        if (impact) {
+    updatePhenotypes(phenotypeImpact) {
+        if (phenotypeImpact) {
             this.phenotypes = this.phenotypes.map(item => {
                 // Ensure item is a Phenotype instance
                 const phenotypeItem = new Phenotype(item.name, item.criteria, item.probability);
-                return impact[item.name] ? phenotypeItem.updateProbability(impact[item.name]) : phenotypeItem;
+                return phenotypeImpact[item.name] ? phenotypeItem.updateProbability(phenotypeImpact[item.name]) : phenotypeItem;
             });
         }
         console.log("Phenotypes in DecisionTree after update:", this.phenotypes);
     }
+
+
     
 }
 
@@ -278,6 +344,7 @@ export class UIHandler {
             low: this.decisionTree.phenotypes.filter(p => p.probability === "low")
         };
     }
+
 
 
 }

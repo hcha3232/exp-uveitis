@@ -16,8 +16,6 @@ export class Phenotype {
     updateProbability(newProbability) {
         return new Phenotype(this.name, this.criteria, newProbability)
     }
-
-
 }
 
 const hsvAU = new Phenotype("HSV Anterior uveitis", database['hsv']);

@@ -1,4 +1,4 @@
-import { Question } from "./new-decision.js";
+import { Question, Result } from "./new-decision.js";
 
 export const dummyQuestions = {
     'intro': new Question(
@@ -401,6 +401,23 @@ export const dummyQuestions = {
         "Acute uveitis is characterized by...",
         {
             "JIA Anterior uveitis" : "low"
+        }
+    ),
+    'ddx_hsv' : new Result(
+        ["Herpes simplex virus anterior uveitis","Varicella zoster virus anterior uveitis"], 
+        ["HSV is a...", "VZV is a ..."],
+        [
+            {
+                "name" : "hsv",
+                "signs" : ['dendritic keratitis','this1','this2']
+            },
+            {
+                "name" : "vzv",
+                "signs" : ['opthalmic zoster','this1','this2']
+            }
+        ],
+        {
+            "HSV Anterior uveitis" : "high"
         }
     )
 };
