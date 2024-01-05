@@ -18,21 +18,38 @@ export class Result {
     
         /*foreach item in result => create button  */
 
-        resultContent += `<div style="font-weight: bold;">Condition</div>`
+        resultContent += `
+        <div class="shadow-sm p-3 mb-3 bg-body rounded">
+            <div style="font-weight: bold;">Condition</div>`
 
         this.result.forEach(element => {
             resultContent += this.createButton(element);
         });
 
+        resultContent += `</div>`
+
         resultContent += `<br>`
-        resultContent += `<div style="font-weight: bold;">Summary</div>`
+
+        ////////////////////////////////////////////////////////////////////
+        
+        resultContent += `
+        <div class="shadow-sm p-3 mb-3 bg-body rounded">
+            <div style="font-weight: bold;">Summary</div>`
 
         this.content.forEach(element => {
             resultContent += `<div>${element}</div>`
             resultContent += `<br>`
         });
 
-        resultContent += `<div style="font-weight: bold;">Look for</div>`
+        resultContent += `</div>`
+
+        resultContent += `<br>`
+
+        /////////////////////////////////////////////////////////////////////
+
+        resultContent += `
+        <div class="shadow-sm p-3 mb-3 bg-body rounded">
+            <div style="font-weight: bold;">Look for</div>`
 
         this.manifestation.forEach(element => {
             resultContent += `<div>${element["name"]}</div>`
@@ -41,6 +58,12 @@ export class Result {
             })
             resultContent += `<br>`
         });
+
+        resultContent += `</div>`
+
+        resultContent += `<br>`
+
+        /////////////////////////////////////////////////////////////////////
 
         resultContent += `<div style="font-size: 0.75rem"><i>Read more about the disease by clicking the buttons in the differential diagnosis section below</i></div>`
         resultContent += `<br>`

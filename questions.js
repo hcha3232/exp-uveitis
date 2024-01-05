@@ -404,20 +404,202 @@ export const dummyQuestions = {
         }
     ),
     'ddx_hsv' : new Result(
-        ["Herpes simplex virus anterior uveitis","Varicella zoster virus anterior uveitis"], 
-        ["HSV is a...", "VZV is a ..."],
+        ["Herpes simplex virus anterior uveitis"], 
+        [`Herpes simplex virus (HSV) anterior uveitis is an infectious anterior uveitis 
+        presumed to be due to replicating virus in the eye, as shown by the detection of 
+        HSV viral DNA in the aqueous humor of eyes using polymerase chain reaction (PCR) 
+        analysis of aqueous humor obtained by paracentesis of the anterior chamber.`],
         [
             {
-                "name" : "hsv",
+                "name" : "HSV",
                 "signs" : ['dendritic keratitis','this1','this2']
-            },
-            {
-                "name" : "vzv",
-                "signs" : ['opthalmic zoster','this1','this2']
             }
         ],
         {
             "HSV Anterior uveitis" : "high"
         }
-    )
+    ),
+    'ddx_vzv' : new Result(
+        ["Varicella zoster virus anterior uveitis"], 
+        [`Varicella zoster virus (VZV) is a common herpes family DNA virus, causing varicella 
+        (“chicken pox”) in children, herpes zoster in adults, and, in immunocompromised adults, 
+        disseminated herpes zoster.`],
+        [
+            {
+                "name" : "VZV",
+                "signs" : ['Skin involvement','this1','this2']
+            }
+        ],
+        {
+            "VZV Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_cmv_viral' : new Result(
+        ["Cytomegalovirus anterior uveitis"], 
+        [`With the advent of clinically available polymerase chain reaction (PCR) methodology for 
+        detecting cytomegalovirus (CMV) DNA, it became evident that CMV could cause an anterior uveitis 
+        in immunocompetent individuals.`],
+        [
+            {
+                "name" : "CMV",
+                "signs" : ['this1','this2']
+            }
+        ],
+        {
+            "CMV Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_viral_au_3_cp_none' : new Result(
+        ["Undifferentiated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+           
+        }
+    ),
+    'ddx_viral_au_4_sa_none' : new Result(
+        ["Undifferentiated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+           
+        }
+    ),
+    'ddx_cmv_fus_algorithm' : new Result(
+        ["Cytomegaovirus anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+            "CMV Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_fus' : new Result(
+        ["Fuchs uveitis syndrome"], 
+        [``],
+        [
+        ],
+        {
+            "FUS Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_hlab27' : new Result(
+        ["HLA-B27/Spondyloarthritis-associated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+            "HLA-B27 Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_mr_bl_g' : new Result(
+        ["Undifferentiated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+           
+        }
+    ),
+    'ddx_tinu_mr_bl_ng' : new Result(
+        ["Tubulointerstitial nephritis with uveitis sydnrome"], 
+        [``],
+        [
+        ],
+        {
+            "TINU Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_mr_bl_ng_not_tinu' : new Result(
+        ["Undifferentiated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+           
+        }
+    ),
+    'ddx_r_alt_g' : new Result(
+        ["Undifferentiated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+           
+        }
+    ),
+    'ddx_hlab27_r_alt_ng' : new Result(
+        ["HLA-B27/Spondyloarthritis-associated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+            "HLA-B27 Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_jia_c_ul_ng' : new Result(
+        ["Juvenile idiopathic arthritis-associated chronic anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+            "JIA Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_c_alt_g' : new Result(
+        ["Undifferentiated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+           
+        }
+    ),
+    'ddx_hlab27_c_alt_ng' : new Result(
+        ["HLA-B27/Spondyloarthritis-associated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+            "HLA-B27 Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_c_bl_g' : new Result(
+        ["Undifferentiated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+           
+        }
+    ),
+    'ddx_jia_c_bl_ng' : new Result(
+        ["Juvenile idiopathic arthritis-associated chronic anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+            "JIA Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_tinu_c_bl_ng' : new Result(
+        ["Tubulointerstitial nephritis with uveitis sydnrome"], 
+        [``],
+        [
+        ],
+        {
+            "TINU Anterior uveitis" : "high"
+        }
+    ),
+    'ddx_not_tinu_nor_jia_c_bl_ng' : new Result(
+        ["Undifferentiated anterior uveitis"], 
+        [``],
+        [
+        ],
+        {
+           
+        }
+    ),
 };
