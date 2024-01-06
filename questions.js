@@ -555,7 +555,9 @@ export const dummyQuestions = {
         <br><br>
         It is commonly associated with other HLA-B27 related diseases. Therefore, there may be symptoms and signs of rheumatic disorders, such as ankylosing spondylitis and reactive arthritis. 
         <br><br>
-        *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.`],
+        *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.
+        <br><br>
+        <div><img src="./img/duet.png" class="img-fluid"></div>`],
         [
             {
                 "signs": ['Abrupt in onset',
@@ -671,7 +673,9 @@ export const dummyQuestions = {
         <br><br>
         It is commonly associated with other HLA-B27 related diseases. Therefore, there may be symptoms and signs of rheumatic disorders, such as ankylosing spondylitis and reactive arthritis. 
         <br><br>
-        *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.`],
+        *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.
+        <br><br>
+        <div><img src="./img/duet.png" class="img-fluid"></div>`],
         [
             {
                 "signs": ['Abrupt in onset',
@@ -748,7 +752,10 @@ export const dummyQuestions = {
         <br><br>
         It is commonly associated with other HLA-B27 related diseases. Therefore, there may be symptoms and signs of rheumatic disorders, such as ankylosing spondylitis and reactive arthritis. 
         <br><br>
-        *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.`],
+        *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.
+        <br><br>
+        <div><img src="./img/duet.png" class="img-fluid"></div>
+        `],
         [
             {
                 "signs": ['Abrupt in onset',
