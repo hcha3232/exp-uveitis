@@ -176,3 +176,27 @@ body {
     border-radius: 5px;   
     background-color: #ffffff;
 }
+
+
+
+.custom-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.custom-list li {
+    display: flex; /* This will enable flexbox */
+    align-items: start; /* This aligns the icon and text vertically */
+    margin-bottom: 5px; /* Space between list items */
+}
+
+.custom-list li i {
+    flex-shrink: 0; /* Prevents the icon from shrinking */
+    margin-right: 10px; /* Space between icon and text, increase if needed */
+    color: green; /* Icon color */
+}
+
+.custom-list li span {
+    flex-grow: 1; /* Allows the text to take up the remaining space */
+    word-break: break-word; /* Ensures long words wrap and don't overflow */
+}

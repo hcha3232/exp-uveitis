@@ -19,8 +19,8 @@ export class Result {
         /*foreach item in result => create button  */
 
         resultContent += `
-        <div class="shadow-sm p-3 mb-3 bg-body rounded">
-            <div style="font-weight: bold;">Condition</div>`
+        <div class="shadow-lg p-3 mb-3 bg-body rounded">
+            <div style="font-weight: bold; font-size: 20px">Condition</div>`
 
         this.result.forEach(element => {
             resultContent += this.createButton(element);
@@ -33,8 +33,8 @@ export class Result {
         ////////////////////////////////////////////////////////////////////
         
         resultContent += `
-        <div class="shadow-sm p-3 mb-3 bg-body rounded">
-            <div style="font-weight: bold;">Summary</div>`
+        <div class="shadow-lg p-3 mb-3 bg-body rounded" >
+            <div style="font-weight: bold; font-size: 20px">Summary</div>`
 
         this.content.forEach(element => {
             resultContent += `<div>${element}</div>`
@@ -48,15 +48,15 @@ export class Result {
         /////////////////////////////////////////////////////////////////////
 
         resultContent += `
-        <div class="shadow-sm p-3 mb-3 bg-body rounded">
-            <div style="font-weight: bold;">Look for</div>`
+        <div class="shadow-lg p-3 mb-3 bg-body rounded">
+            <div style="font-weight: bold; font-size: 20px">Look for</div>`
 
         this.manifestation.forEach(element => {
-            resultContent += `<div>${element["name"]}</div>`
+            resultContent += `<ul class="custom-list">`
             element["signs"].forEach(item => {
-                resultContent += `<div>${item}</div>`
+                resultContent += `<li><i class="bi bi-check"></i><span>${item}</span></li>`
             })
-            resultContent += `<br>`
+            resultContent += `</ul><br>`
         });
 
         resultContent += `</div>`

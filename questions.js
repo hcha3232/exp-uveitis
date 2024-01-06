@@ -405,14 +405,14 @@ export const dummyQuestions = {
     ),
     'ddx_hsv' : new Result(
         ["Herpes simplex virus anterior uveitis"], 
-        [`Herpes simplex virus (HSV) anterior uveitis is an infectious anterior uveitis 
-        presumed to be due to replicating virus in the eye, as shown by the detection of 
-        HSV viral DNA in the aqueous humor of eyes using polymerase chain reaction (PCR) 
-        analysis of aqueous humor obtained by paracentesis of the anterior chamber.`],
+        [`Herpes simplex, along with varicella-zoster, comprise almost 10% of non-idiopathic anterior uveitis. 
+        <br><br>
+        Classically unilateral, herpetic anterior uveitis is mainly hypertensive, with mild anterior chamber cellular reaction and display medium to large size keratic precipitate. 
+        <br><br>
+        *Without dermal and corneal involvement, VZV anterior uveitis is clinically similar to HSV anterior uveitis and only PCR can confirm the identity on the involved virus.`],
         [
             {
-                "name" : "HSV",
-                "signs" : ['dendritic keratitis','this1','this2']
+                "signs" : ['Unilateral eye involvement','Increased IOP','Granulomatous keratic precipitate','Dendritic, disciform, or stromal keratitis (typically, dendrites with well-developed terminal bulbs and fluorescein staining at the base of the ulcer)','Posterior synechiae','Sectoral iris atrophy']
             }
         ],
         {
@@ -421,13 +421,24 @@ export const dummyQuestions = {
     ),
     'ddx_vzv' : new Result(
         ["Varicella zoster virus anterior uveitis"], 
-        [`Varicella zoster virus (VZV) is a common herpes family DNA virus, causing varicella 
-        (“chicken pox”) in children, herpes zoster in adults, and, in immunocompromised adults, 
-        disseminated herpes zoster.`],
+        [`Varicella Zoster Virus reactivation may involve the anterior segment of the eye in the context of herpes zoster ophthalmicus.
+        <br><br>
+        Classically, unilateral anterior granulomatous uveitis could develop mostly after the typical zosteriform rash, even though isolated intraocular involvement is possible. 
+        <br><br>
+        *Without dermal and corneal involvement, VZV anterior uveitis is clinically similar to HSV anterior uveitis and only PCR can confirm the identity on the involved virus.`],
         [
             {
-                "name" : "VZV",
-                "signs" : ['Skin involvement','this1','this2']
+                "signs" : ['Unilateral eye involvement', 
+
+                    'Herpes zoster ophthalmicus skin lesions', 
+                    
+                    'Increased IOP',
+                    
+                    'Granulomatous keratic precipitate',
+                    
+                    'Dendritic keratitis (typically, pseudo-dendrites with almost no terminal bulbs and fluorescein pooling at the borders)',
+                    
+                    'Sectoral iris atrophy']
             }
         ],
         {
@@ -436,13 +447,16 @@ export const dummyQuestions = {
     ),
     'ddx_cmv_viral' : new Result(
         ["Cytomegalovirus anterior uveitis"], 
-        [`With the advent of clinically available polymerase chain reaction (PCR) methodology for 
-        detecting cytomegalovirus (CMV) DNA, it became evident that CMV could cause an anterior uveitis 
-        in immunocompetent individuals.`],
+        [`CMV-associated anterior uveitis is found in the immunocompetent host, apparently often leading to signs considered typical of the Posner-Schlossman syndrome. 
+        <br><br>
+        *CMV anterior uveitis requires a positive PCR on aqueous specimen to confirm the infection. `],
         [
             {
-                "name" : "CMV",
-                "signs" : ['this1','this2']
+                "signs" : ['Posner-Schlossman syndrome - Recurrent episodes of mild anterior chamber inflammation associated with a disproportionate rise in IOP',
+
+                'Diffuse corneal epithelial oedema',
+                
+                'Nodular, coin-shaped endothelial lesions']
             }
         ],
         {
@@ -451,26 +465,57 @@ export const dummyQuestions = {
     ),
     'ddx_viral_au_3_cp_none' : new Result(
         ["Undifferentiated anterior uveitis"], 
-        [``],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
+            {
+                "signs" : ['Course',
+
+                'Laterality',
+                
+                'Anatomic class']
+            }
         ],
         {
-           
+            "Undifferentiated Anterior uveitis" : "high"
         }
     ),
     'ddx_viral_au_4_sa_none' : new Result(
         ["Undifferentiated anterior uveitis"], 
-        [``],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
+            {
+                "signs" : ['Course',
+
+                'Laterality',
+                
+                'Anatomic class']
+            }
         ],
         {
-           
+            "Undifferentiated Anterior uveitis" : "high"
         }
     ),
     'ddx_cmv_fus_algorithm' : new Result(
         ["Cytomegaovirus anterior uveitis"], 
-        [``],
+        [`CMV-associated anterior uveitis is found in the immunocompetent host, apparently often leading to signs considered typical of the Posner-Schlossman syndrome. 
+        <br><br>
+        *CMV anterior uveitis requires a positive PCR on aqueous specimen to confirm the infection. `],
         [
+            {
+                "signs" : ['Posner-Schlossman syndrome - Recurrent episodes of mild anterior chamber inflammation associated with a disproportionate rise in IOP',
+
+                'Diffuse corneal epithelial oedema',
+                
+                'Nodular, coin-shaped endothelial lesions']
+            }
         ],
         {
             "CMV Anterior uveitis" : "high"
@@ -478,8 +523,27 @@ export const dummyQuestions = {
     ),
     'ddx_fus' : new Result(
         ["Fuchs uveitis syndrome"], 
-        [``],
+        [`Fuchs uveitis syndrome is an eye-limited anterior uveitis. The diagnosis is based on typical clinical findings shown below. `],
         [
+            {
+                "signs" : ['Unilateral eye involvement',
+
+                    'Mild anterior chamber inflammation',
+                    
+                    'Insidious onset with chronic course',
+                    
+                    'Younger patients',
+                    
+                    'stellate keratic preciptates',
+                    
+                    'Heterochromia',
+                    
+                    'Absence of posterior synechiae',
+                    
+                    'Diffuse anterior stromal iris atrophy',
+                    
+                    'Development of complications like cataract and glaucoma']
+            }
         ],
         {
             "FUS Anterior uveitis" : "high"
@@ -487,8 +551,21 @@ export const dummyQuestions = {
     ),
     'ddx_hlab27' : new Result(
         ["HLA-B27/Spondyloarthritis-associated anterior uveitis"], 
-        [``],
+        [`Spondyloarthritis/HLA-B27-associated Anterior Uveitis is the commonest type of acute anterior uveitis seen in clinical practice. Depending on the population studied, up to 50% or more of patients presenting with episodes of acute anterior uveitis may carry the HLA-B27 gene. 
+        <br><br>
+        It is commonly associated with other HLA-B27 related diseases. Therefore, there may be symptoms and signs of rheumatic disorders, such as ankylosing spondylitis and reactive arthritis. 
+        <br><br>
+        *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.`],
         [
+            {
+                "signs": ['Abrupt in onset',
+
+                    'Unilateral eye involvement',
+                    
+                    'Alternate one eye from another',
+                    
+                    'Diagnosed rheumatic disorders (Ankylosing spondylitis, Reactive arthritis, Psoriatic arthritis, Enteropathic arthropathy)']
+            }
         ],
         {
             "HLA-B27 Anterior uveitis" : "high"
@@ -496,17 +573,53 @@ export const dummyQuestions = {
     ),
     'ddx_mr_bl_g' : new Result(
         ["Undifferentiated anterior uveitis"], 
-        [``],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
+            {
+                "signs" : ['Course',
+
+                'Laterality',
+                
+                'Anatomic class']
+            }
         ],
         {
-           
+            "Undifferentiated Anterior uveitis" : "high"
         }
     ),
     'ddx_tinu_mr_bl_ng' : new Result(
         ["Tubulointerstitial nephritis with uveitis sydnrome"], 
-        [``],
+        [`Tubulointerstitial Nephritis with Uveitis Syndrome consists of uveitis and acute interstitial nephritis. 
+        <br><br>
+        They may occur at different times, so careful history is obtained and other systemic inflammatory or infectious diseases are ruled out. `],
         [
+            {
+                "signs" : ['Bilateral eye involvement', 
+
+                    'Sudden onset',
+                    
+                    `Recent acute renal dysfunction:<br>
+                    - Abnormal urinalysis test<br>
+                    - Elevated urinary β-2 microglobulin`,
+                    
+                    `Systemic symptoms:<br>
+                    
+                    - Anorexia <br>
+                    
+                    - Fever <br>
+                    
+                    - Weightloss <br> 
+                    
+                    - Fatigue <br>
+                    
+                    - Polyuria <br>`,
+                    
+                    `“Spillover” vitritis`]
+            }
         ],
         {
             "TINU Anterior uveitis" : "high"
@@ -514,26 +627,61 @@ export const dummyQuestions = {
     ),
     'ddx_mr_bl_ng_not_tinu' : new Result(
         ["Undifferentiated anterior uveitis"], 
-        [``],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
+            {
+                "signs" : ['Course',
+
+                'Laterality',
+                
+                'Anatomic class']
+            }
         ],
         {
-           
+            "Undifferentiated Anterior uveitis" : "high"
         }
     ),
     'ddx_r_alt_g' : new Result(
         ["Undifferentiated anterior uveitis"], 
-        [``],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
+            {
+                "signs" : ['Course',
+
+                'Laterality',
+                
+                'Anatomic class']
+            }
         ],
         {
-           
+            "Undifferentiated Anterior uveitis" : "high"
         }
     ),
     'ddx_hlab27_r_alt_ng' : new Result(
         ["HLA-B27/Spondyloarthritis-associated anterior uveitis"], 
-        [``],
+        [`Spondyloarthritis/HLA-B27-associated Anterior Uveitis is the commonest type of acute anterior uveitis seen in clinical practice. Depending on the population studied, up to 50% or more of patients presenting with episodes of acute anterior uveitis may carry the HLA-B27 gene. 
+        <br><br>
+        It is commonly associated with other HLA-B27 related diseases. Therefore, there may be symptoms and signs of rheumatic disorders, such as ankylosing spondylitis and reactive arthritis. 
+        <br><br>
+        *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.`],
         [
+            {
+                "signs": ['Abrupt in onset',
+
+                    'Unilateral eye involvement',
+                    
+                    'Alternate one eye from another',
+                    
+                    'Diagnosed rheumatic disorders (Ankylosing spondylitis, Reactive arthritis, Psoriatic arthritis, Enteropathic arthropathy)']
+            }
         ],
         {
             "HLA-B27 Anterior uveitis" : "high"
@@ -541,8 +689,34 @@ export const dummyQuestions = {
     ),
     'ddx_jia_c_ul_ng' : new Result(
         ["Juvenile idiopathic arthritis-associated chronic anterior uveitis"], 
-        [``],
+        [`Juvenile Idiopathic Arthritis-associated Chronic Anterior Uveitis is the most common cause of uveitis in children, accounting for up to 47% of all types of uveitis seen in children. 
+        <br><br>
+        Risk factors include:
+        <ul class="custom-list">
+        <li><i class="bi bi-check"></i><span>Oligo-arthritis</span></li>
+        <li><i class="bi bi-check"></i><span>Female</span></li>
+        <li><i class="bi bi-check"></i><span>ANA positivity</span></li>
+        <li><i class="bi bi-check"></i><span>Onset of arthritis before 4 years old</span></li>
+        <li><i class="bi bi-check"></i><span>Presence of HLA-DRB1 or HLADRB1*</span></li>
+        <li><i class="bi bi-check"></i><span>Rheumatoid factor negative test</span></li>`],
         [
+            {
+                "signs" : [
+                    'Children',
+
+                    'Diagnosed arthritis in young age',
+
+                    'Insidious onset with chronic course',
+
+                    'Non-granulomatous, with fine- to medium-sized keratic precipitates',
+
+                    'Mostly asymptomatic',
+
+                    'Posterior synechiae',
+
+                    'Complications such as cataract, glaucoma, and band keratopathy',
+                ]
+            }
         ],
         {
             "JIA Anterior uveitis" : "high"
@@ -550,35 +724,95 @@ export const dummyQuestions = {
     ),
     'ddx_c_alt_g' : new Result(
         ["Undifferentiated anterior uveitis"], 
-        [``],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
+            {
+                "signs" : ['Course',
+
+                'Laterality',
+                
+                'Anatomic class']
+            }
         ],
         {
-           
+            "Undifferentiated Anterior uveitis" : "high"
         }
     ),
     'ddx_hlab27_c_alt_ng' : new Result(
         ["HLA-B27/Spondyloarthritis-associated anterior uveitis"], 
-        [``],
+        [`Spondyloarthritis/HLA-B27-associated Anterior Uveitis is the commonest type of acute anterior uveitis seen in clinical practice. Depending on the population studied, up to 50% or more of patients presenting with episodes of acute anterior uveitis may carry the HLA-B27 gene. 
+        <br><br>
+        It is commonly associated with other HLA-B27 related diseases. Therefore, there may be symptoms and signs of rheumatic disorders, such as ankylosing spondylitis and reactive arthritis. 
+        <br><br>
+        *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.`],
         [
+            {
+                "signs": ['Abrupt in onset',
+
+                    'Unilateral eye involvement',
+                    
+                    'Alternate one eye from another',
+                    
+                    'Diagnosed rheumatic disorders (Ankylosing spondylitis, Reactive arthritis, Psoriatic arthritis, Enteropathic arthropathy)']
+            }
         ],
         {
             "HLA-B27 Anterior uveitis" : "high"
         }
     ),
     'ddx_c_bl_g' : new Result(
-        ["Undifferentiated anterior uveitis"], 
-        [``],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
+            {
+                "signs" : ['Course',
+
+                'Laterality',
+                
+                'Anatomic class']
+            }
         ],
         {
-           
+            "Undifferentiated Anterior uveitis" : "high"
         }
     ),
     'ddx_jia_c_bl_ng' : new Result(
         ["Juvenile idiopathic arthritis-associated chronic anterior uveitis"], 
-        [``],
+        [`Juvenile Idiopathic Arthritis-associated Chronic Anterior Uveitis is the most common cause of uveitis in children, accounting for up to 47% of all types of uveitis seen in children. 
+        <br><br>
+        Risk factors include:
+        <ul class="custom-list">
+        <li><i class="bi bi-check"></i><span>Oligo-arthritis</span></li>
+        <li><i class="bi bi-check"></i><span>Female</span></li>
+        <li><i class="bi bi-check"></i><span>ANA positivity</span></li>
+        <li><i class="bi bi-check"></i><span>Onset of arthritis before 4 years old</span></li>
+        <li><i class="bi bi-check"></i><span>Presence of HLA-DRB1 or HLADRB1*</span></li>
+        <li><i class="bi bi-check"></i><span>Rheumatoid factor negative test</span></li>`],
         [
+            {
+                "signs" : [
+                    'Children',
+
+                    'Diagnosed arthritis in young age',
+
+                    'Insidious onset with chronic course',
+
+                    'Non-granulomatous, with fine- to medium-sized keratic precipitates',
+
+                    'Mostly asymptomatic',
+
+                    'Posterior synechiae',
+
+                    'Complications such as cataract, glaucoma, and band keratopathy',
+                ]
+            }
         ],
         {
             "JIA Anterior uveitis" : "high"
@@ -586,8 +820,33 @@ export const dummyQuestions = {
     ),
     'ddx_tinu_c_bl_ng' : new Result(
         ["Tubulointerstitial nephritis with uveitis sydnrome"], 
-        [``],
+        [`Tubulointerstitial Nephritis with Uveitis Syndrome consists of uveitis and acute interstitial nephritis. 
+        <br><br>
+        They may occur at different times, so careful history is obtained and other systemic inflammatory or infectious diseases are ruled out. `],
         [
+            {
+                "signs" : ['Bilateral eye involvement', 
+
+                    'Sudden onset',
+                    
+                    `Recent acute renal dysfunction:<br>
+                    - Abnormal urinalysis test<br>
+                    - Elevated urinary β-2 microglobulin`,
+                    
+                    `Systemic symptoms:<br>
+                    
+                    - Anorexia <br>
+                    
+                    - Fever <br>
+                    
+                    - Weightloss <br> 
+                    
+                    - Fatigue <br>
+                    
+                    - Polyuria <br>`,
+                    
+                    `“Spillover” vitritis`]
+            }
         ],
         {
             "TINU Anterior uveitis" : "high"
@@ -595,11 +854,22 @@ export const dummyQuestions = {
     ),
     'ddx_not_tinu_nor_jia_c_bl_ng' : new Result(
         ["Undifferentiated anterior uveitis"], 
-        [``],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
+            {
+                "signs" : ['Course',
+
+                'Laterality',
+                
+                'Anatomic class']
+            }
         ],
         {
-           
+            "Undifferentiated Anterior uveitis" : "high"
         }
     ),
 };
