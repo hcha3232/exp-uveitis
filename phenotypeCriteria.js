@@ -1,4 +1,4 @@
-const diseases = {
+const audiseases = {
     cmv : {
         realName: 'Cytomegalovirus Anterior Uveitis',
         satisfy: 'rule #1 and #2',
@@ -176,26 +176,77 @@ const diseases = {
     }
 }
 
+const iudiseases = {
+    pp : {
+        realName: 'Pars Planitis',
+        satisfy: '#1 and #2',
+        rules: [
+            {
+                title: 'Evidence of intermediate uveitis',
+                list: ['Vitreous cells AND/OR vitreous haze','If anterior chamber cells are present, anterior chamber inflammation severity less than vitreous severity','No evidence of retinitis or choroiditis','No retinal vascular occlusion in posterior pole & mid-periphery']
+            },
+            {
+                title: 'Evidence of pars planitis',
+                list: ['Vitreous snowballs OR','Pars plana snowbanks']
+            }
+        ],
+        excop: ['Multiple sclerosis, defined by the McDonald criteria','Positive serology for syphilis using a treponemal test','Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)','Positive serology for Lyme disease, either IgG or IgM (e.g. positive ELISA AND Western blot with requisite number of bands for assay used)'],
+        citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for pars planitis.  Am J Ophthalmol 2021;228;268-74.'
+    },
+    npp : {
+        realName: 'Intermediate Uveitis, Non-Pars Planitis Type',
+        satisfy: '#1 and #2',
+        rules: [
+            {
+                title: 'Evidence of intermediate uveitis',
+                list: ['Vitreous cells AND/OR vitreous haze','If anterior chamber cells are present, anterior chamber inflammation severity less than vitreous severity','No evidence of retinitis',]
+            },
+            {
+                title: 'No evidence of pars planitis',
+                list: ['Vitreous snowballs NOR','Pars plana snowbanks']
+            }
+        ],
+        excop: ['Multiple sclerosis, defined by the McDonald criteria','Positive serology for syphilis using a treponemal test','Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)','Positive serology for Lyme disease, either IgG or IgM (e.g. positive ELISA AND Western blot with requisite number of bands for assay used)','Evidence of intraocular lymphoma on diagnostic vitrectomy'],
+        citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for intermediate uveitis, non-pars planitis type.  Am J Ophthalmol 2021;228;152-64.'
+    },
+    ms : {
+        realName: 'Multiple Sclerosis-associated Intermediate Uveitis',
+        satisfy: '#1 and #2',
+        rules: [
+            {
+                title: 'Evidence of intermediate uveitis',
+                list: ['Vitreous cells AND/OR vitreous haze','If anterior chamber cells are present, anterior chamber inflammation severity less than vitreous severity','No evidence of retinitis or choroiditis']
+            },
+            {
+                title: 'Evidence of multiple sclerosis using the Revised  McDonald  Diagnostic Criteria',
+                list: []
+            }
+        ],
+        excop: ['Positive serology for syphilis using a treponemal test','Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)','Positive serology for Lyme disease, either IgG or IgM (e.g. positive ELISA AND Western blot with requisite number of bands for assay used)'],
+        citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for multiple sclerosis-associated intermediate uveitis.  Am J Ophthalmol 2021;228:72-9.'
+    }
+}
+
 export const database = {
-    cmv : classification(diseases.cmv),   
-    hsv : classification(diseases.hsv),
-    vzv : classification(diseases.vzv),
-    fus : classification(diseases.fus),
-    jia : classification(diseases.jia) +
+    cmv : classification(audiseases.cmv),   
+    hsv : classification(audiseases.hsv),
+    vzv : classification(audiseases.vzv),
+    fus : classification(audiseases.fus),
+    jia : classification(audiseases.jia) +
     `
     <img src="/img/SUN-JIA-Category.png" class="img-fluid container-gap"></img>
     `,
-    hlab27 : classification(diseases.hlab27) + 
+    hlab27 : classification(audiseases.hlab27) + 
     `
         <img src="/img/SUN-ASAS.png" class="img-fluid container-gap"></img>
         <img src="/img/SUN-ASAS2.png" class="img-fluid container-gap"></img>
     `,
-    tinu : classification(diseases.tinu),
-    sarcoidosis : classification(diseases.sarcoidosis),
+    tinu : classification(audiseases.tinu),
+    sarcoidosis : classification(audiseases.sarcoidosis),
     tb : `
         <img src="/img/SUN-TB.png" class="img-fluid container-gap"></img>
     `,
-    syphilis : classification(diseases.syphilis)
+    syphilis : classification(audiseases.syphilis)
     +
     `
     <img src="/img/SUN-SYPHILIS-SCREENING.png" class="img-fluid container-gap"></img>
@@ -211,8 +262,15 @@ export const database = {
     `,
     course : `
     <img src="/img/SUN-COURSE.png" class="img-fluid container-gap"></img>
-    `
+    `,
+
+    ///// Intermediate ////
+    pp : classification(iudiseases.pp),   
+    npp : classification(iudiseases.npp),
+    ms : classification(iudiseases.ms)
 }
+
+
 
 
 
