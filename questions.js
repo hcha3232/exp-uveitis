@@ -905,18 +905,17 @@ export const dummyQuestionsIU = {
     ),
     'snow_yes': new Question(
         "Question",
-        "Screening question",
+        "Systemic associations",
         [
-            { label: "<b>Multiple sclerosis</b><br>Patient has experienced neurological symptoms like weakness, numbness or tingling in any part of the body, and reported excessive fatigue.", nextQuestion: "snow_yes" },
-            { label: "<b>Sarcoidosis</b><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches. ", nextQuestion: "snow_yes" },
-            { label: "<b>Lyme disease</b><br>Patient has reported recent travel to a Lyme-endemic region, outdoor activities in wooded areas, or exposure to large animals, with the presence of a characteristic pink or red erythema migrans rash.", nextQuestion: "snow_yes" },
-            { label: "<b>Syphilis</b><br>Patient has reported multiple sexual partners in the past 6 months, engaged in unprotected intercourse, or participated in transactional sex.", nextQuestion: "snow_yes" },
-            { label: "<b>Tuberculosis</b><br>Patient has reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently. ", nextQuestion: "snow_yes" },
+            { label: "<b>Multiple sclerosis</b><br>Patient has experienced neurological symptoms like weakness, numbness or tingling in any part of the body, and reported excessive fatigue.", nextQuestion: "ddx_ms" },
+            { label: "<b>Sarcoidosis</b><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches. ", nextQuestion: "ddx_sarcoidosis" },
+            { label: "<b>Lyme disease</b><br>Patient has reported recent travel to a Lyme-endemic region, outdoor activities in wooded areas, or exposure to large animals, with the presence of a characteristic pink or red erythema migrans rash.", nextQuestion: "ddx_lyme" },
+            { label: "<b>Syphilis</b><br>Patient has reported multiple sexual partners in the past 6 months, engaged in unprotected intercourse, or participated in transactional sex.", nextQuestion: "ddx_syphilis" },
             { label: `<b>Intraocular lymphoma</b><br>Patient is above the age of 50 presenting with uveitis for the first time. Patient has reported neurological symptoms such as balance issues, cognitive impairment, palsies, seizures, and dizziness.  
             <br><br>
             Patches or subretinal tumour infiltration is observed. 
-            `, nextQuestion: "snow_yes"},
-            { label: "<b>None above</b>", nextQuestion: "snow_yes" }
+            `, nextQuestion: "ddx_piol"},
+            { label: "<b>None above</b>", nextQuestion: "ddx_pp" }
         ],
         "",
         {
@@ -925,22 +924,174 @@ export const dummyQuestionsIU = {
     ),
     'snow_no': new Question(
         "Question",
-        "Screening question",
+        "Systemic associations",
         [
-            { label: "<b>Multiple sclerosis</b><br>Patient has experienced neurological symptoms like weakness, numbness or tingling in any part of the body, and reported excessive fatigue.", nextQuestion: "snow_yes" },
-            { label: "<b>Sarcoidosis</b><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches. ", nextQuestion: "snow_yes" },
-            { label: "<b>Lyme disease</b><br>Patient has reported recent travel to a Lyme-endemic region, outdoor activities in wooded areas, or exposure to large animals, with the presence of a characteristic pink or red erythema migrans rash.", nextQuestion: "snow_yes" },
-            { label: "<b>Syphilis</b><br>Patient has reported multiple sexual partners in the past 6 months, engaged in unprotected intercourse, or participated in transactional sex.", nextQuestion: "snow_yes" },
-            { label: "<b>Tuberculosis</b><br>Patient has reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently. ", nextQuestion: "snow_yes" },
+            { label: "<b>Multiple sclerosis</b><br>Patient has experienced neurological symptoms like weakness, numbness or tingling in any part of the body, and reported excessive fatigue.", nextQuestion: "ddx_ms" },
+            { label: "<b>Sarcoidosis</b><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches. ", nextQuestion: "ddx_sarcoidosis" },
+            { label: "<b>Lyme disease</b><br>Patient has reported recent travel to a Lyme-endemic region, outdoor activities in wooded areas, or exposure to large animals, with the presence of a characteristic pink or red erythema migrans rash.", nextQuestion: "ddx_lyme" },
+            { label: "<b>Syphilis</b><br>Patient has reported multiple sexual partners in the past 6 months, engaged in unprotected intercourse, or participated in transactional sex.", nextQuestion: "ddx_syphilis" },
             { label: `<b>Intraocular lymphoma</b><br>Patient is above the age of 50 presenting with uveitis for the first time. Patient has reported neurological symptoms such as balance issues, cognitive impairment, palsies, seizures, and dizziness.  
             <br><br>
             Patches or subretinal tumour infiltration is observed. 
-            `, nextQuestion: "snow_yes"},
-            { label: "<b>None above</b>", nextQuestion: "snow_yes" }
+            `, nextQuestion: "ddx_piol"},
+            { label: "<b>None above</b>", nextQuestion: "ddx_npp" }
         ],
         "",
         {
             "PP Intermediate uveitis" : "low"
         }
     ),
+
+    'ddx_ms' : new Result(
+        ["Multiple Sclerosis-associated Intermediate Uveitis"],
+        [`Uveitis in patients with multiple sclerosis is generally bilateral and most often manifests as intermediate uveitis. 
+        <br><br>
+        Uveitis can precede the onset of neurological symptoms by many years. In patients with intermediate uveitis, the diagnosis of multiple sclerosis should be periodically reconsidered, and an appropriate consult with a neurologist is advisable.`],
+        [
+            {
+                "signs" : ['Snowball / snowbank',
+
+                'Retinal vasculitis (often periphlebitis)', 
+                
+                'Venous sclerosis', 
+                
+                'Diagnosed multiple sclerosis or signs of multiple sclerosis']
+            }
+        ],
+        {
+            "MS Intermediate uveitis" : "high"
+        }
+    ),
+    'ddx_sarcoidosis' : new Result(
+        ["Sarcoidosis-associated Intermediate Uveitis"],
+        [`Uveitis is seen in a significant number of patients with sarcoidosis. 
+        <br><br>
+        Snowball are typical features of sarcoidosis. The vitreous opacities are mostly situated in the inferior vitreous. Retinal perivasculitis is frequently found in sarcoidosis. In many cases, perivasculitis is seen as segmental sheathing, and the vascular changes are often located at the equatorial or peripheral retina.`],
+        [
+            {
+                "signs" : [`<i>Signs often associated with intermediate uveitis</i>`,
+
+                    'Snowball / snowbank',
+                    
+                    'Vitreous opacities',
+                    
+                    'Retinal perivasculitis', 
+                    
+                    'Diagnosed sarcoidosis or signs of sarcoidosis']
+            }
+        ],
+        {
+            "Sarcoid Intermediate uveitis" : "high"
+        }
+    ),
+    'ddx_syphilis' : new Result(
+        ["Syphilitic Intermediate Uveitis"],
+        [`Syphilitic uveitis most often presents in the secondary stage. It causes a wide variety of ocular inflammatory conditions. 
+        <br><br>
+        It may lead to intermediate uveitis especially if mild inflammation of the anterior segment is associated with a more pronounced vitreous reaction. 
+        <br><br>
+        *Because of the wide variety of syphilitic ocular manifestations and the fact that this disease may mimic other etiologic entities, routine use of serologic tests for syphilis in adult patients with intraocular inflammation of unknown origin is mandatory, unless the diagnosis is quite obvious or a well-known systemic disease is present andcan explain the ocular inflammation.`],
+        [
+            {
+                "signs" : [`<i>Signs often associated with intermediate uveitis</i>`,
+
+                'Retinal vasculitis',
+
+                'Cystoid macular edema',
+                
+                'Hot disk', 
+                
+                'Absence of a frank pars plana exudate',
+                
+                'Diagnosed syphilis or signs of syphilis infection']
+            }
+        ],
+        {
+            "Syphilis Intermediate uveitis" : "high"
+        }
+    ),
+    'ddx_lyme' : new Result(
+        ["Lyme disease Intermediate Uveitis"],
+        [`Intermediate uveitis is one of the more common ophthalmologic manifestations of Lyme disease. 
+        <br><br>
+        Testing patients with intermediate uveitis for Lyme disease is appropriate only from Lyme-endemic regions (or in Lyme disease-exposed individuals). 
+        <br><br>
+        The presence of a positive Lyme serology (with appropriate confirmatory testing) excludes the diagnosis of pars planitis.`],
+        [
+            {
+                "signs" : [`Tick exposure in a Lyme-endemic region`,
+
+                `Erythema migrans`,
+                
+                `Vitreous exudation`,
+                
+                `“Spillover” anterior chamber inflammation`]
+            }
+        ],
+        {
+            "Lyme Intermediate uveitis" : "high"
+        }
+    ),
+    'ddx_piol' : new Result(
+        ["Primary Intraocular Lymphoma"],
+        [`Primary intraocular lymphoma (PIOL) is mainly a diffuse large B-cell tumor belonging to non-Hodgkin 's tumors. 
+        <br><br>
+        Clinically, PIOL often emulates ocular inflammatory process and resembles uveitis; thus, it is the most common <b>masquerade syndrome</b>
+        <br><br>
+        Presence of vitreous cells is a prominent feature.`],
+        [
+            {
+                "signs" : [`Vitreous cells`,
+
+                `Snow balls / snow banks`,
+                
+                `Subretinal infiltrates (uni- or multifocal with different sizes, cream or yellow colored)`,
+                
+                `Vascular sheathing`, 
+                
+                `Retinal artery occlusion`,
+                
+                `Diagnosed PIOL / CNS lymphoma or any signs of PIOL / CNS lymphoma`]
+            }
+        ],
+        {
+            "PIOL Intermediate uveitis" : "high"
+        }
+    ),
+    'ddx_pp' : new Result(
+        ["Pars Planitis"],
+        [`Pars planitis represents a subset of intermediate uveitis characterized by fibroinflammatory material overlying the pars plana and peripheral retina (“snowbanks”).
+        <br><br>
+        The uveitis should be unassociated with a systemic disease and it should be distinguished from intermediate uveitis, non- pars planitis type.
+        <br><br>
+        The SUN working group recognized that pars planitis may have peripheral retinal vascular sheathing and non-perfusion (more easily seen on wide-field fluorescein angiography) but should not have posterior pole or mid-peripheral occlusive retinal vasculitis.`],
+        [
+            {
+                "signs" : [`Snow ball / snow bank`,
+
+                `Absence of systemic associations`, 
+                
+                `Peripheral retinal vascular sheathing`]
+            }
+        ],
+        {
+            "PP Intermediate uveitis" : "high"
+        }
+    ),
+    'ddx_npp' : new Result(
+        ["Intermediate Uveitis, Non-Pars Planitis Type"],
+        [`Intermediate uveitis, non-pars planitis type is a uveitis disorder occurring as an intermediate uveitis without snowbanks or snowballs. It could also be considered an “undifferentiated intermediate uveitis.”
+        <br><br>
+        It is to some extent a diagnosis of exclusion. It must have the features of an intermediate uveitis, but not be pars planitis, multiple sclerosis–associated intermediate uveitis, sarcoidosis, syphilis, or Lyme disease.`],
+        [
+            {
+                "signs" : [`Absence of snow ball / snowbank`,
+
+                `Absence of systemic associations`]
+            }
+        ],
+        {
+            "NPP Intermediate uveitis" : "high"
+        }
+    )
 }

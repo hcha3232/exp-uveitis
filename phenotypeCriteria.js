@@ -139,7 +139,7 @@ const audiseases = {
         excop : ['Enthesitis-related arthritis','Positive serology for syphilis using a treponemal test','Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)'],
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for tubulointerstitial nephritis with uveitis syndrome.  Am J Ophthalmol 2021;228:255-61.'
     },
-    sarcoidosis : {
+    sarcoidosisAU : {
         satisfy: '#1 and #2',
         rules: [
             {
@@ -154,7 +154,7 @@ const audiseases = {
         excop : ['Positive serology for syphilis using a treponemal test','Evidence of infection with Mycobacterium tuberculosis'],
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for sarcoidosis-associated uveitis.  Am J Ophthalmol 2021;228:220-30.'
     },
-    syphilis : {
+    syphilisAU : {
         satisfy: '#1 and #2',
         rules: [
             {
@@ -224,6 +224,41 @@ const iudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)','Positive serology for Lyme disease, either IgG or IgM (e.g. positive ELISA AND Western blot with requisite number of bands for assay used)'],
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for multiple sclerosis-associated intermediate uveitis.  Am J Ophthalmol 2021;228:72-9.'
+    },
+    sarcoidosisIU : {
+        satisfy: '#1 and #2',
+        rules: [
+            {
+                title: 'Compatible uveitic picture, either',
+                list: ['Anterior uveitis OR','<b>Intermediate or anterior/intermediate uveitis</b> OR','Posterior uveitis with either choroiditis (paucifocal choroidal nodule(s) or multifocal choroiditis) OR','Panuveitis with choroiditis or retinal vascular sheathing or retinal vascular occlusion']
+            },
+            {
+                title: `Evidence of sarcoidosis, either`,
+                list: ['Tissue biopsy demonstrating non-caseating granulomata OR','Bilateral hilar adenopathy on chest imaging']
+            }
+        ],
+        excop : ['Positive serology for syphilis using a treponemal test','Evidence of infection with Mycobacterium tuberculosis'],
+        citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for sarcoidosis-associated uveitis.  Am J Ophthalmol 2021;228:220-30.'
+    },
+    syphilisIU : {
+        satisfy: '#1 and #2',
+        rules: [
+            {
+                title: 'Uveitis with a compatible uveitic presentation, including',
+                list: ['Anterior uveitis OR','<b>Intermediate uveitis or anterior/intermediate uveitis</b> OR',`Posterior or panuveitis with one of the following presentations <ol type="i" style="font-weight:400;">
+                <li>Placoid inflammation of the retinal pigment epithelium or</li>
+                <li>Multifocal inflammation of the retina/retinal pigment epithelium or</li>
+                <li>Necrotizing retinitis or</li>
+                <li>Retinal vasculitis</li>
+            </ol>`]
+            },
+            {
+                title: `Evidence of infection with Treponema pallidum, either`,
+                list: ['Positive treponemal test and non-treponemal test OR','Positive treponemal test with two different treponemal tests']
+            }
+        ],
+        excop : ['History of adequate treatment for syphilitic uveitis'],
+        citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for syphilitic uveitis.  Am J Ophthalmol 2021;228;182-91.'
     }
 }
 
@@ -242,11 +277,11 @@ export const database = {
         <img src="/img/SUN-ASAS2.png" class="img-fluid container-gap"></img>
     `,
     tinu : classification(audiseases.tinu),
-    sarcoidosis : classification(audiseases.sarcoidosis),
+    sarcoidosisAU : classification(audiseases.sarcoidosisAU),
     tb : `
         <img src="/img/SUN-TB.png" class="img-fluid container-gap"></img>
     `,
-    syphilis : classification(audiseases.syphilis)
+    syphilisAU : classification(audiseases.syphilisAU)
     +
     `
     <img src="/img/SUN-SYPHILIS-SCREENING.png" class="img-fluid container-gap"></img>
@@ -267,7 +302,18 @@ export const database = {
     ///// Intermediate ////
     pp : classification(iudiseases.pp),   
     npp : classification(iudiseases.npp),
-    ms : classification(iudiseases.ms)
+    ms : classification(iudiseases.ms),
+    sarcoidosisIU : classification(iudiseases.sarcoidosisIU),
+    syphilisIU : classification(iudiseases.syphilisIU),
+    piolIU: `
+    <div class="alert alert-primary" role="alert">
+    If patient is above the age of 50 presenting with uveitis for the first time, masquerade syndrome from PIOL should be suspected. Look for
+    neurological signs such as balance issues, cognitive impairment, palsies, seizures, and dizziness. Patches or subretinal tumour infiltration could be observed.
+    </div>`,
+    lymeIU: `
+    <div class="alert alert-primary" role="alert">
+    Lyme disease is suspected if patient has reported recent travel to a Lyme-endemic region, outdoor activities in wooded areas, or exposure to large animals, with the presence of a characteristic pink or red erythema migrans rash.
+    </div>`
 }
 
 
