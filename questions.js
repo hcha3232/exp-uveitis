@@ -877,3 +877,70 @@ export const dummyQuestions = {
         }
     ),
 };
+
+export const dummyQuestionsIU = {
+    'intro': new Question(
+        "<b>Warning!</b><br>The use of Uveitis Tree does NOT replace clinical judgement. By selecting YES I confirm that I am using Uveitis Tree with this understanding.",
+        "Do you want to start?",
+        [
+            { label: "Yes", nextQuestion: "snow" },
+            { label: "No", nextQuestion: "intro" }
+        ],
+        "",
+        {
+
+        }
+    ),
+    'snow': new Question(
+        "Question",
+        "Does the patient have snowballs or snowbanks?",
+        [
+            { label: "Yes", nextQuestion: "snow_yes" },
+            { label: "No", nextQuestion: "snow_no" }
+        ],
+        "",
+        {
+
+        }
+    ),
+    'snow_yes': new Question(
+        "Question",
+        "Screening question",
+        [
+            { label: "<b>Multiple sclerosis</b><br>Patient has experienced neurological symptoms like weakness, numbness or tingling in any part of the body, and reported excessive fatigue.", nextQuestion: "snow_yes" },
+            { label: "<b>Sarcoidosis</b><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches. ", nextQuestion: "snow_yes" },
+            { label: "<b>Lyme disease</b><br>Patient has reported recent travel to a Lyme-endemic region, outdoor activities in wooded areas, or exposure to large animals, with the presence of a characteristic pink or red erythema migrans rash.", nextQuestion: "snow_yes" },
+            { label: "<b>Syphilis</b><br>Patient has reported multiple sexual partners in the past 6 months, engaged in unprotected intercourse, or participated in transactional sex.", nextQuestion: "snow_yes" },
+            { label: "<b>Tuberculosis</b><br>Patient has reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently. ", nextQuestion: "snow_yes" },
+            { label: `<b>Intraocular lymphoma</b><br>Patient is above the age of 50 presenting with uveitis for the first time. Patient has reported neurological symptoms such as balance issues, cognitive impairment, palsies, seizures, and dizziness.  
+            <br><br>
+            Patches or subretinal tumour infiltration is observed. 
+            `, nextQuestion: "snow_yes"},
+            { label: "<b>None above</b>", nextQuestion: "snow_yes" }
+        ],
+        "",
+        {
+            "NPP Intermediate uveitis" : "low"
+        }
+    ),
+    'snow_no': new Question(
+        "Question",
+        "Screening question",
+        [
+            { label: "<b>Multiple sclerosis</b><br>Patient has experienced neurological symptoms like weakness, numbness or tingling in any part of the body, and reported excessive fatigue.", nextQuestion: "snow_yes" },
+            { label: "<b>Sarcoidosis</b><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches. ", nextQuestion: "snow_yes" },
+            { label: "<b>Lyme disease</b><br>Patient has reported recent travel to a Lyme-endemic region, outdoor activities in wooded areas, or exposure to large animals, with the presence of a characteristic pink or red erythema migrans rash.", nextQuestion: "snow_yes" },
+            { label: "<b>Syphilis</b><br>Patient has reported multiple sexual partners in the past 6 months, engaged in unprotected intercourse, or participated in transactional sex.", nextQuestion: "snow_yes" },
+            { label: "<b>Tuberculosis</b><br>Patient has reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently. ", nextQuestion: "snow_yes" },
+            { label: `<b>Intraocular lymphoma</b><br>Patient is above the age of 50 presenting with uveitis for the first time. Patient has reported neurological symptoms such as balance issues, cognitive impairment, palsies, seizures, and dizziness.  
+            <br><br>
+            Patches or subretinal tumour infiltration is observed. 
+            `, nextQuestion: "snow_yes"},
+            { label: "<b>None above</b>", nextQuestion: "snow_yes" }
+        ],
+        "",
+        {
+            "PP Intermediate uveitis" : "low"
+        }
+    ),
+}

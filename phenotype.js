@@ -31,6 +31,8 @@ const undiffAU = new Phenotype("Undifferentiated Anterior uveitis", database['ua
 
 export const auPhenotypes = [hsvAU, vzvAU, cmvAU, fusAU, jiaAU,hlab27AU, tinuAU,sarcAU, syphAU,undiffAU]
 
+const ppIU = new Phenotype("PP Intermediate uveitis", 'pp');
+const nppIU = new Phenotype("NPP Intermediate uveitis", 'npp');
 
-
+export const iuPhenotypes = [ppIU, nppIU]
 
