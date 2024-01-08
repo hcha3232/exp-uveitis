@@ -2,7 +2,9 @@ import { Question, Result } from "./new-decision.js";
 
 export const dummyQuestions = {
     'intro': new Question(
-        "Warning!<br>The use of Uveitis Tree does NOT replace clinical judgement. By selecting YES I confirm that I am using Uveitis Tree with this understanding.",
+        `<div class="alert alert-warning" role="alert">
+        <b>Warning!</b><br>The use of Uveitis Tree does NOT replace clinical judgement. By selecting YES I confirm that I am using Uveitis Tree with this understanding.
+    </div>`,
         "Do you want to start?",
         [
             { label: "Yes", nextQuestion: "course_type" },
@@ -880,7 +882,9 @@ export const dummyQuestions = {
 
 export const dummyQuestionsIU = {
     'intro': new Question(
-        "<b>Warning!</b><br>The use of Uveitis Tree does NOT replace clinical judgement. By selecting YES I confirm that I am using Uveitis Tree with this understanding.",
+        `<div class="alert alert-warning" role="alert">
+        <b>Warning!</b><br>The use of Uveitis Tree does NOT replace clinical judgement. By selecting YES I confirm that I am using Uveitis Tree with this understanding.
+    </div>`,
         "Do you want to start?",
         [
             { label: "Yes", nextQuestion: "snow" },
@@ -1094,4 +1098,174 @@ export const dummyQuestionsIU = {
             "NPP Intermediate uveitis" : "high"
         }
     )
+}
+
+export const dummyQuestionsPU = {
+    'intro': new Question(
+        `<div class="alert alert-warning" role="alert">
+            <b>Warning!</b><br>The use of Uveitis Tree does NOT replace clinical judgement. By selecting YES I confirm that I am using Uveitis Tree with this understanding.
+        </div>`,
+        "Do you want to start?",
+        [
+            { label: "Yes", nextQuestion: "uveitis_type" },
+            { label: "No", nextQuestion: "intro" }
+        ],
+        "",
+        {
+
+        }
+    ),
+    'uveitis_type': new Question(
+        "Question",
+        `Identify the primary inflammation type for uveitis`,
+        [
+            { label: "Retinitis", nextQuestion: "retinitis" },
+            { label: "Retinal vasculitis", nextQuestion: "rvasculitis" },
+            { label: "Chorioretinitis", nextQuestion: "choroiditis-1" },
+            { label: "Panuveitis", nextQuestion: "panuveitis" },
+        ],
+        "",
+        {
+
+        }
+    ),
+    'retinitis': new Question(
+        "Question",
+        "Identify the most similar clinical picture",
+        [
+            { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','Other features include',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "retinitis" },
+            { label: `${other_feature_render('Necrotizing retinitis with indistinct borders due to numerous small (<50µm) satellite) in a systemic or  ocular immune-compromised patient','Other features include',['Absent to mild vitritis','Wedge-shaped area of retinitis','Hemorrhagic appearance','Granular appearance'])}`, nextQuestion: "retinitis" },
+            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "retinitis" },
+            { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "retinitis" },
+            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+        ],
+        "",
+        {
+
+        }
+    ),
+    'rvasculitis': new Question(
+        "Question",
+        "Identify the most similar clinical picture",
+        [
+            { label: `Vision threatening retinitis`, nextQuestion: "retinitis" },
+            { label: `Occlusive retinal vasculitis AND <br><br> Patient has reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently.`, nextQuestion: "retinitis" },
+            { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "retinitis" },
+            { label: `Retinal vasculitis (mostly phlebitis) AND <br><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches.`, nextQuestion: "retinitis" },
+            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+        ],
+        "",
+        {
+
+        }
+    ),
+    'choroiditis-1': new Question(
+        "Question",
+        "Is the lesion pauci-focal or multi-focal?",
+        [
+            { label: `Pauci-focal`, nextQuestion: "choroiditis-pauci" },
+            { label: `Multi-focal`, nextQuestion: "choroiditis-multi" },
+        ],
+        "",
+        {
+
+        }
+    ),
+    'choroiditis-pauci': new Question(
+        "Question",
+        "Identify the most similar clinical picture",
+        [
+            { label: `${imaging_render('','Morphology [clickable]',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging [clickable]',['<b>FA</b><br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','<b>FAF</b><br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-TB-SC" },
+            { label: `${imaging_render('','Morphology [clickable]',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging [clickable]',['<b>FA</b><br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*<i>During acute phase of the disease</i>'])}`, nextQuestion: "choroiditis-pauci" },
+            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+        ],
+        "",
+        {
+
+        }
+    ),
+    'choroiditis-multi': new Question(
+        "Question",
+        "Is the lesion pauci-focal or multi-focal?",
+        [
+            { label: `${imaging_render('','Morphology [clickable]',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging [clickable]',['<b>FA</b><br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','<b>FAF</b><br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-TB-SC" },
+            { label: `${imaging_render('','Morphology [clickable]',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging [clickable]',['<b>FA</b><br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*<i>During acute phase of the disease</i>'])}`, nextQuestion: "choroiditis-pauci" },
+            { label: `${imaging_render('Unilateral eye involvement<br><br>','Morphology [clickable]',['Gray-white spots with foveal granularity'])} ${imaging_render('','Imaging [clickable]',['<b>FA</b><br>“Wreath-like” hyper-fluorescent lesions','<b>OCT</b><br>Hyper-reflective lesions extending from the retinal pigment epithelium, into and/or through the ellipsoid zone into the outer nuclear layer of the retina'])}`, nextQuestion: "choroiditis-pauci" },
+            { label: `${imaging_render('Bilateral eye involvement with mid-periphery or peripheral involvement<br><br>','Morphology [clickable]',['Oval or round lesions with predominant lesion size > 250 µm',`“Punched-out atrophic” scars or active lesions`])}`, nextQuestion: "check-TB-MFCPU" },
+            { label: `${imaging_render('No anterior and vitreous inflammation and typically concentrated in posterior pole<br><br>','Morphology [clickable]',['Punctate lesion appearance with predominant lesion size < 250 µm (typically < 125 µm)',`Yellow-white or cream-coloured`])}`, nextQuestion: "choroiditis-pauci" },
+            
+            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+        ],
+        "",
+        {
+
+        }
+    ),
+    'check-TB-SC': new Question(
+        "Question",
+        "Has patient reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently?",
+        [
+            { label: `Yes`, nextQuestion: "ddx_TB" },
+            { label: `No`, nextQuestion: "ddx_SC" }
+        ],
+        "",
+        {
+
+        }
+    ),
+    'check-TB-MFCPU': new Question(
+        "Question",
+        "Has patient reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently?",
+        [
+            { label: `Yes`, nextQuestion: "ddx_TB" },
+            { label: `No`, nextQuestion: "ddx_MFCPU" }
+        ],
+        "",
+        {
+
+        }
+    ),
+    'panuveitis': new Question(
+        "Question",
+        "Identify the most similar clinical picture",
+        [
+            { label: `History of unilateral ocular trauma or surgery`, nextQuestion: "choroiditis-pauci" },
+            { label: `${imaging_render('',`Evidence of Harada's disease`,['Exudative retinal detachment','<b>FA</b> - Multiple-loculated appearance','<b>OCT</b> - Septae'])} ${imaging_render('','Neurologic symptoms or signs',['Headache','Tinnitus','Dysacusis','Meningism','CSF pleocytosis'])}`, nextQuestion: "choroiditis-pauci" },
+            { label: `${imaging_render('','History of early stage VKH disease',['Sunset glow fundus'])} ${imaging_render('','Cutaneous findings',['Vitiligo','Poliosis','Alopecia'])}`, nextQuestion: "choroiditis-pauci" },
+            { label: `Occlusive retinal vasculitis / solitary choroidal nodule AND <br><br> Patient has reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently.`, nextQuestion: "retinitis" },
+            { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "retinitis" },
+            { label: `Retinal vasculitis (mostly phlebitis) AND <br><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches.`, nextQuestion: "retinitis" },
+            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+        ],
+        "",
+        {
+
+        }
+    )
+}
+
+function other_feature_render(text1, text2, textList){
+    let text = '';
+    text += text1 + '<br><br>';
+    text += `<b>${text2}</b>`
+    text += `<ul class='custom-list'>`
+    textList.forEach(item => {
+        text += `<li><i class='bi bi-check'></i><span>${item}</span></li>`
+    })
+    text += `</ul>`
+    console.log(text)
+    return text;
+}
+
+function imaging_render(text1, text2, textList){
+    let text = '';
+    text += text1;
+    text += `<b>${text2}</b>`
+    text += `<ul class='custom-list'>`
+    textList.forEach(item => {
+        text += `<li><i class='bi bi-check'></i><span>${item}</span></li>`
+    })
+    text += `</ul>`
+    console.log(text)
+    return text;
 }

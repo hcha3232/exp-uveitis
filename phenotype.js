@@ -41,3 +41,5 @@ const piolIU = new Phenotype("Lyme Intermediate uveitis", database['lymeIU']);
 
 export const iuPhenotypes = [ppIU, nppIU, msIU, sarcIU, syphIU, lymeIU, piolIU]
 
+export const puPhenotypes = []
+
