@@ -170,7 +170,7 @@ export class DecisionTree {
     }
 
     goNext() { // Move to the next question based on the stored answer
-        if(this.selectedAnswer) {
+        if(this.selectedAnswer && this.selectedAnswer != "Exit") {
             this.questionHistory.push({
                 storedQuestion: this.currentQuestion, 
                 storedSelectedAnswer: this.selectedAnswer,
@@ -178,7 +178,11 @@ export class DecisionTree {
             });
             this.nextQuestion(this.selectedAnswer);
             this.selectedAnswer = null;
-        } else {
+        } 
+        else if (this.selectedAnswer && this.selectedAnswer === "Exit") {
+            window.location.href = '/';
+        }
+        else {
             // If not selected, show a message 
             this.uiHandler.showMessage("please select an option");
         }
@@ -188,6 +192,7 @@ export class DecisionTree {
     nextQuestion(answer) {
         // Update this.currentQuestion
         let nextQuestionKey = this.currentQuestion.options.find(option => option.label === answer).nextQuestion;
+
         let nextNode = this.questions[nextQuestionKey];
 
         if (!nextNode) {

@@ -8,7 +8,7 @@ export const dummyQuestions = {
         "Do you want to start?",
         [
             { label: "Yes", nextQuestion: "course_type" },
-            { label: "No", nextQuestion: "intro" }
+            { label: "Exit", nextQuestion: "not_agreed" }
         ],
         "",
         {
@@ -888,7 +888,7 @@ export const dummyQuestionsIU = {
         "Do you want to start?",
         [
             { label: "Yes", nextQuestion: "snow" },
-            { label: "No", nextQuestion: "intro" }
+            { label: "Exit", nextQuestion: "intro" }
         ],
         "",
         {
@@ -1108,7 +1108,7 @@ export const dummyQuestionsPU = {
         "Do you want to start?",
         [
             { label: "Yes", nextQuestion: "uveitis_type" },
-            { label: "No", nextQuestion: "intro" }
+            { label: "Exit", nextQuestion: "intro" }
         ],
         "",
         {
