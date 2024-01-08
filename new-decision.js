@@ -19,7 +19,7 @@ export class Result {
         /*foreach item in result => create button  */
 
         resultContent += `
-        <div class="shadow-lg p-3 mb-3 bg-body rounded">
+        <div class="border-unpressed p-3 mb-3 rounded">
             <div style="font-weight: bold; font-size: 20px">Condition</div>`
 
         this.result.forEach(element => {
@@ -33,7 +33,7 @@ export class Result {
         ////////////////////////////////////////////////////////////////////
         
         resultContent += `
-        <div class="shadow-lg p-3 mb-3 bg-body rounded" >
+        <div class="border-unpressed p-3 mb-3 rounded" >
             <div style="font-weight: bold; font-size: 20px">Summary</div>`
 
         this.content.forEach(element => {
@@ -48,7 +48,7 @@ export class Result {
         /////////////////////////////////////////////////////////////////////
 
         resultContent += `
-        <div class="shadow-lg p-3 mb-3 bg-body rounded">
+        <div class="border-unpressed p-3 mb-3 rounded">
             <div style="font-weight: bold; font-size: 20px">Look for</div>`
 
         this.manifestation.forEach(element => {
@@ -101,7 +101,7 @@ export class Question {
 
         this.options.forEach((option, index) => {
             htmlContent += `
-            <div class="form-check border-unpressed  shadow" style="margin-bottom: 10px;">
+            <div class="form-check border-unpressed" style="margin-bottom: 10px;">
                 <div class="form-block" style="padding-left: 10px;">
                     <input class="form-check-input border-secondary" type="radio" name="flexRadioDefault" id="flexRadioDefault${index}" value="${option.label}">
                     <label class="form-check-label" for="flexRadioDefault${index}">
@@ -270,6 +270,11 @@ export class UIHandler {
         const backButton = this.container.querySelector('.btn-back');
         backButton.addEventListener('click', () => {
             this.decisionTree.goBack();
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'  // This makes the scroll smooth
+            });
         })
 
         // Add event listener for 'Next' button, if it exists
@@ -280,8 +285,14 @@ export class UIHandler {
                 this.decisionTree.selectAnswer(this.tempSelectedOption);
                 this.decisionTree.goNext();
                 this.tempSelectedOption = null;
-            } else {
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'  // This makes the scroll smooth
+                });
+            } else {// finished case
                 console.log("Finished")
+                window.location.href = '/';
             }
         })
     }
@@ -319,7 +330,11 @@ export class UIHandler {
     createDiagnosisSection(container, title, phenotypes, probabilityLevel){
         if (phenotypes.length > 0) {
             const sectionTitle = document.createElement('div');
-            sectionTitle.style = "font-size: 20px; color: black; font-weight: 500; margin-bottom: 10px;"
+            let borderColor = 'white';
+            if(title === "High Probability"){borderColor = '#4CAF50';}
+            else if(title === "Moderate Probability"){borderColor = '#FFC107';}
+            else {borderColor = '#ef665c';}
+            sectionTitle.style = `font-size: 20px; color: black; font-weight: 500; margin-bottom: 10px; border-left: 10px solid ${borderColor}; padding-left: 16px`
             sectionTitle.textContent = title;
             container.appendChild(sectionTitle);
 
@@ -335,7 +350,7 @@ export class UIHandler {
         const modalId = `modal-${phenotype.name.replace(/\s+/g, '-')}-${index}`;
     
         const item = document.createElement('div');
-        item.className = `diagnosis-item ${probabilityLevel}`;
+        item.className = `diagnosis-item border-unpressed`;
         item.innerHTML = `
             <button type="button" class="btn-full-width" data-bs-toggle="modal" data-bs-target="#${modalId}"
             style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem; --bs-btn-font-size: .75rem; color: #333333;">
