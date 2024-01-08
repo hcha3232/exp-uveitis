@@ -334,7 +334,7 @@ export class UIHandler {
             if(title === "High Probability"){borderColor = '#4CAF50';}
             else if(title === "Moderate Probability"){borderColor = '#FFC107';}
             else {borderColor = '#ef665c';}
-            sectionTitle.style = `font-size: 20px; color: black; font-weight: 500; margin-bottom: 10px; border-left: 10px solid ${borderColor}; padding-left: 16px`
+            sectionTitle.style = `font-size: 20px; color: black; font-weight: 500; margin-bottom: 10px; margin-top: 10px; border-left: 10px solid ${borderColor}; padding-left: 16px`
             sectionTitle.textContent = title;
             container.appendChild(sectionTitle);
 
@@ -354,7 +354,7 @@ export class UIHandler {
         item.innerHTML = `
             <button type="button" class="btn-full-width" data-bs-toggle="modal" data-bs-target="#${modalId}"
             style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem; --bs-btn-font-size: .75rem; color: #333333;">
-                <strong>+ ${phenotype.name}</strong>
+                <span><strong>+</strong> ${phenotype.name}</span>
             </button>
             <div class="modal" id="${modalId}" tabindex="-1">
                 <div class="modal-dialog modal-lg modal-dialog-scrollable">

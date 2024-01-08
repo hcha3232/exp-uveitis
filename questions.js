@@ -2,7 +2,7 @@ import { Question, Result } from "./new-decision.js";
 
 export const dummyQuestions = {
     'intro': new Question(
-        "<b>Warning!</b><br>The use of Uveitis Tree does NOT replace clinical judgement. By selecting YES I confirm that I am using Uveitis Tree with this understanding.",
+        "Warning!<br>The use of Uveitis Tree does NOT replace clinical judgement. By selecting YES I confirm that I am using Uveitis Tree with this understanding.",
         "Do you want to start?",
         [
             { label: "Yes", nextQuestion: "course_type" },
@@ -905,7 +905,7 @@ export const dummyQuestionsIU = {
     ),
     'snow_yes': new Question(
         "Question",
-        "Systemic associations",
+        "Screening systemic associations for intermedaite uveitis",
         [
             { label: "<b>Multiple sclerosis</b><br>Patient has experienced neurological symptoms like weakness, numbness or tingling in any part of the body, and reported excessive fatigue.", nextQuestion: "ddx_ms" },
             { label: "<b>Sarcoidosis</b><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches. ", nextQuestion: "ddx_sarcoidosis" },
@@ -915,7 +915,7 @@ export const dummyQuestionsIU = {
             <br><br>
             Patches or subretinal tumour infiltration is observed. 
             `, nextQuestion: "ddx_piol"},
-            { label: "<b>None above</b>", nextQuestion: "ddx_pp" }
+            { label: "None above", nextQuestion: "ddx_pp" }
         ],
         "",
         {
@@ -924,7 +924,7 @@ export const dummyQuestionsIU = {
     ),
     'snow_no': new Question(
         "Question",
-        "Systemic associations",
+        "Screening systemic associations for intermedaite uveitis",
         [
             { label: "<b>Multiple sclerosis</b><br>Patient has experienced neurological symptoms like weakness, numbness or tingling in any part of the body, and reported excessive fatigue.", nextQuestion: "ddx_ms" },
             { label: "<b>Sarcoidosis</b><br>Patient has reported shortness of breath or cough, observed skin lumps, and experienced joint aches. ", nextQuestion: "ddx_sarcoidosis" },
@@ -934,7 +934,7 @@ export const dummyQuestionsIU = {
             <br><br>
             Patches or subretinal tumour infiltration is observed. 
             `, nextQuestion: "ddx_piol"},
-            { label: "<b>None above</b>", nextQuestion: "ddx_npp" }
+            { label: "None above", nextQuestion: "ddx_npp" }
         ],
         "",
         {
