@@ -62,6 +62,10 @@ body {
     -webkit-touch-callout: none;
 }
 
+.container {
+    margin: 0 auto;
+}
+
 @media all and (display-mode: standalone) {
     .install-btn{
         visibility: hidden;

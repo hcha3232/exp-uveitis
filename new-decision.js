@@ -65,7 +65,7 @@ export class Result {
 
         /////////////////////////////////////////////////////////////////////
 
-        resultContent += `<div style="font-size: 0.75rem"><i>Read more about the disease by clicking the buttons in the differential diagnosis section below</i></div>`
+        resultContent += `<div style="font-size: 0.75rem"><i>Read more by clicking on the differential diagnoses below</i></div>`
         resultContent += `<br>`
 
         resultContent += `

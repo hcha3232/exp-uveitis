@@ -41,5 +41,22 @@ const piolIU = new Phenotype("Lyme Intermediate uveitis", database['lymeIU']);
 
 export const iuPhenotypes = [ppIU, nppIU, msIU, sarcIU, syphIU, lymeIU, piolIU]
 
-export const puPhenotypes = []
+const arnPU = new Phenotype("ARN Posterior uveitis", '');
+const cmvPU = new Phenotype("CMV Posterior uveitis", '');
+const toxoPU = new Phenotype("Toxoplasmosis Posterior uveitis", '');
+const behcetPU = new Phenotype("Behcet's Panuveitis", '');
+const tbPU = new Phenotype("TB Posterior uveitis", '');
+const sarcPU = new Phenotype("Sarcoidosis Posterior uveitis", '');
+const syphPU = new Phenotype("Syphilis Posterior uveitis", '');
+const apmppePU = new Phenotype("APMPPE Posterior uveitis", '');
+const bscrPU = new Phenotype("BSCR Posterior uveitis", '');
+const mewdsPU = new Phenotype("MEWDS Posterior uveitis", '');
+const mfcpuPU = new Phenotype("MFCPU Posterior uveitis", '');
+const picPU = new Phenotype("PIC Posterior uveitis", '');
+const scPU = new Phenotype("SC Posterior uveitis", '');
+const soPU = new Phenotype("SO Panuveitis", '');
+const evkhPU = new Phenotype("VKH-early Panuveitis", '');
+const lvkhPU = new Phenotype("VKH-late Panuveitis", '');
+
+export const puPhenotypes = [arnPU,cmvPU,toxoPU,behcetPU,tbPU,sarcPU,syphPU,apmppePU,bscrPU,mewdsPU,mfcpuPU,picPU,scPU,soPU,evkhPU,lvkhPU]
 
