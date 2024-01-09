@@ -23,7 +23,8 @@ export const dummyQuestions = {
             { label: "Acute, recurrent", nextQuestion: "laterality_r" },
             { label: "Chronic", nextQuestion: "laterality_c" }
         ],
-        "course",
+        `
+          `,
         {
 
         }
