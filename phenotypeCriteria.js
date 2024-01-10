@@ -262,6 +262,7 @@ const iudiseases = {
     }
 }
 
+
 export const database = {
     cmv : classification(audiseases.cmv),   
     hsv : classification(audiseases.hsv),
