@@ -16,15 +16,14 @@ export const dummyQuestions = {
         }
     ),
     'course_type': new Question(
-        "Question",
-        "What is the course of the uveitis?",
+        `Question`,
+        `What is the course of the uveitis?`,
         [
             { label: "Acute, monophasic", nextQuestion: "laterality_m" },
             { label: "Acute, recurrent", nextQuestion: "laterality_r" },
             { label: "Chronic", nextQuestion: "laterality_c" }
         ],
-        `
-          `,
+        "",
         {
 
         }

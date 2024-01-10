@@ -218,7 +218,7 @@ export class DecisionTree {
         if (phenotypeImpact) {
             this.phenotypes = this.phenotypes.map(item => {
                 // Ensure item is a Phenotype instance
-                const phenotypeItem = new Phenotype(item.name, item.criteria, item.probability);
+                const phenotypeItem = new Phenotype(item.fullName, item.name, item.criteria, item.probability);
                 return phenotypeImpact[item.name] ? phenotypeItem.updateProbability(phenotypeImpact[item.name]) : phenotypeItem;
             });
         }
@@ -327,12 +327,12 @@ export class UIHandler {
         const sortedPhenotypes = this.sortPhenotypes();
         console.log("Sorted Phenotypes after update:", sortedPhenotypes);
         // Create and append sections for each probability category
-        this.createDiagnosisSection(differentialContainer, 'High Probability', sortedPhenotypes.high,'high-probability');
-        this.createDiagnosisSection(differentialContainer, 'Moderate Probability', sortedPhenotypes.moderate,'moderate-probability');
-        this.createDiagnosisSection(differentialContainer, 'Low Probability', sortedPhenotypes.low,'low-probability');
+        this.createDiagnosisSection(differentialContainer, 'High Probability', sortedPhenotypes.high);
+        this.createDiagnosisSection(differentialContainer, 'Moderate Probability', sortedPhenotypes.moderate);
+        this.createDiagnosisSection(differentialContainer, 'Low Probability', sortedPhenotypes.low);
     }
 
-    createDiagnosisSection(container, title, phenotypes, probabilityLevel){
+    createDiagnosisSection(container, title, phenotypes){
         if (phenotypes.length > 0) {
             const sectionTitle = document.createElement('div');
             let borderColor = 'white';
@@ -344,15 +344,16 @@ export class UIHandler {
             container.appendChild(sectionTitle);
 
             phenotypes.forEach((phenotype, index) => {
-                const modalItem = this.createModalItem(phenotype, index, probabilityLevel);
+                const modalItem = this.createModalItem(phenotype, index);
                 container.appendChild(modalItem);
             });
         }
     }
 
-    createModalItem(phenotype, index, probabilityLevel) {
+    createModalItem(phenotype, index) {
         // Create a unique ID for the modal
         const modalId = `modal-${phenotype.name.replace(/\s+/g, '-')}-${index}`;
+        console.log(modalId)
     
         const item = document.createElement('div');
         item.className = `diagnosis-item border-unpressed`;

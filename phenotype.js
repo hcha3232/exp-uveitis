@@ -8,27 +8,29 @@ const Probability =  {
 
 export class Phenotype {
     constructor(fullName, name, criteria, probability = Probability.MODERATE){
-        this.name = name;
         this.fullName = fullName;
+        this.name = name;
         this.probability = probability;
         this.criteria = criteria;
     }
 
     updateProbability(newProbability) {
-        return new Phenotype(this.name, this.criteria, newProbability)
+        return new Phenotype(this.fullName, this.name, this.criteria, newProbability)
     }
 }
 
-const hsvAU = new Phenotype(`Herpes Simplex Anterior Uveitis`,"HSV Anterior uveitis", database['hsv']);
-const vzvAU = new Phenotype(`Varicella Zoster Virus Anterior Uveitis`,"VZV Anterior uveitis", database['vzv']);
-const cmvAU = new Phenotype(`Cytomegalovirus Anterior Uveitis`,"CMV Anterior uveitis", database['cmv']);
-const fusAU = new Phenotype(`Fuchs Uveitis Syndrome`,"FUS Anterior uveitis", database['fus']);
-const jiaAU = new Phenotype(`Juvenile Idiopathic Arthritis-associated Chronic Anterior Uveitis`,"JIA Anterior uveitis", database['jia']);
-const hlab27AU = new Phenotype(`Spondyloarthritis/HLA-B27-associated Anterior Uveitis`,"HLA-B27 Anterior uveitis", database['hlab27']);
-const tinuAU = new Phenotype(`Tubulointerstitial Nephritis with Uveitis Syndrome`,"TINU Anterior uveitis", database['tinu']);
-const sarcAU = new Phenotype(`Sarcoidosis-associated Anterior Uveitis`,"Sarcoid Anterior uveitis", database['sarcoidosisAU']);
-const syphAU = new Phenotype(`Syphilitic Anterior Uveitis`,"Syphilis Anterior uveitis", database['syphilisAU']);
-const undiffAU = new Phenotype(`Undifferentiated Anterior uveitis`,"Undifferentiated Anterior uveitis", database['uau']);
+
+
+const hsvAU = new Phenotype(`Herpes Simplex Anterior Uveitis`,`HSV Anterior uveitis`, database['hsv']);
+const vzvAU = new Phenotype(`Varicella Zoster Virus Anterior Uveitis`,`VZV Anterior uveitis`, database['vzv']);
+const cmvAU = new Phenotype(`Cytomegalovirus Anterior Uveitis`,`CMV Anterior uveitis`, database['cmv']);
+const fusAU = new Phenotype(`Fuchs Uveitis Syndrome`,`FUS Anterior uveitis`, database['fus']);
+const jiaAU = new Phenotype(`Juvenile Idiopathic Arthritis-associated Chronic Anterior Uveitis`,`JIA Anterior uveitis`, database['jia']);
+const hlab27AU = new Phenotype(`Spondyloarthritis/HLA-B27-associated Anterior Uveitis`,`HLA-B27 Anterior uveitis`, database['hlab27']);
+const tinuAU = new Phenotype(`Tubulointerstitial Nephritis with Uveitis Syndrome`,`TINU Anterior uveitis`, database['tinu']);
+const sarcAU = new Phenotype(`Sarcoidosis-associated Anterior Uveitis`,`Sarcoid Anterior uveitis`, database['sarcoidosisAU']);
+const syphAU = new Phenotype(`Syphilitic Anterior Uveitis`,`Syphilis Anterior uveitis`, database['syphilisAU']);
+const undiffAU = new Phenotype(`Undifferentiated Anterior uveitis`,`Undifferentiated Anterior uveitis`, database['uau']);
 
 export const auPhenotypes = [hsvAU, vzvAU, cmvAU, fusAU, jiaAU,hlab27AU, tinuAU,sarcAU, syphAU,undiffAU]
 
