@@ -17,7 +17,7 @@ export const dummyQuestions = {
     ),
     'course_type': new Question(
         `Question`,
-        `What is the course of the uveitis?`,
+        `Describe the course of the uveitis.`,
         [
             { label: "Acute, monophasic", nextQuestion: "laterality_m" },
             { label: "Acute, recurrent", nextQuestion: "laterality_r" },
@@ -79,7 +79,7 @@ export const dummyQuestions = {
     ),
     'kp_m_ul': new Question(
         "Question",
-        "What type of keratic precipitates is seen in the uveitis?",
+        "What type of keratic precipitates are seen in the uveitis?",
         [
             { label: "Granulomatous", nextQuestion: "viral_au_1_keratitis" },
             { label: "Stellate", nextQuestion: "fus_au_1_endotheliitis" },
@@ -95,7 +95,7 @@ export const dummyQuestions = {
     ),
     'kp_r_ul': new Question(
         "Question",
-        "What type of keratic precipitates is seen in the uveitis?",
+        "What type of keratic precipitates are seen in the uveitis?",
         [
             { label: "Granulomatous", nextQuestion: "viral_au_1_keratitis" },
             { label: "Stellate", nextQuestion: "fus_au_1_endotheliitis" },
@@ -111,7 +111,7 @@ export const dummyQuestions = {
     ),
     'kp_m_bl': new Question(
         "Question",
-        "What type of keratic precipitates is seen in the uveitis?",
+        "What type of keratic precipitates are seen in the uveitis?",
         [
             { label: "Granulomatous", nextQuestion: "ddx_mr_bl_g" },
             { label: "Non-granulomatous", nextQuestion: "tinu_mr_bl_ng" },
@@ -130,7 +130,7 @@ export const dummyQuestions = {
     ),
     'kp_r_bl': new Question(
         "Question",
-        "What type of keratic precipitates is seen in the uveitis?",
+        "What type of keratic precipitates are seen in the uveitis?",
         [
             { label: "Granulomatous", nextQuestion: "ddx_mr_bl_g" },
             { label: "Non-granulomatous", nextQuestion: "tinu_mr_bl_ng" },
@@ -149,7 +149,7 @@ export const dummyQuestions = {
     ),
     'kp_r_alt': new Question(
         "Question",
-        "What type of keratic precipitates is seen in the uveitis?",
+        "What type of keratic precipitates are seen in the uveitis?",
         [
             { label: "Granulomatous", nextQuestion: "ddx_r_alt_g" },
             { label: "Non-granulomatous", nextQuestion: "ddx_hlab27_r_alt_ng" },
@@ -168,7 +168,7 @@ export const dummyQuestions = {
     ),
     'kp_c_ul': new Question(
         "Question",
-        "What type of keratic precipitates is seen in the uveitis?",
+        "What type of keratic precipitates are seen in the uveitis?",
         [
             { label: "Granulomatous", nextQuestion: "viral_au_1_keratitis" },
             { label: "Stellate", nextQuestion: "fus_au_1_endotheliitis" },
@@ -183,7 +183,7 @@ export const dummyQuestions = {
     ),
     'kp_c_bl': new Question(
         "Question",
-        "What type of keratic precipitates is seen in the uveitis?",
+        "What type of keratic precipitates are seen in the uveitis?",
         [
             { label: "Granulomatous", nextQuestion: "ddx_c_bl_g" },
             { label: "Non-granulomatous", nextQuestion: "jia_or_tinu_c_bl_ng" },
@@ -201,7 +201,7 @@ export const dummyQuestions = {
     ),
     'kp_c_hx_alt': new Question(
         "Question",
-        "What type of keratic precipitates is seen in the uveitis?",
+        "What type of keratic precipitates are seen in the uveitis?",
         [
             { label: "Granulomatous", nextQuestion: "ddx_c_alt_g" },
             { label: "Non-granulomatous", nextQuestion: "ddx_hlab27_c_alt_ng" },
@@ -220,7 +220,7 @@ export const dummyQuestions = {
     ),
     'viral_au_1_keratitis': new Question(
         "Question",
-        "Does the patient have dendritic keratitis?",
+        "Is dendritic keratitis present?",
         [
             { label: "Yes", nextQuestion: "ddx_hsv" },
             { label: "No", nextQuestion: "viral_au_2_zoster" },
@@ -235,7 +235,7 @@ export const dummyQuestions = {
     ),
     'viral_au_2_zoster': new Question(
         "Question",
-        "Does the patient have concurrent or recent dermatomal Herpes Zoster?",
+        "Is there a history of concurrent or recent dermatomal Herpes Zoster?",
         [
             { label: "Yes", nextQuestion: "ddx_vzv" },
             { label: "No", nextQuestion: "viral_au_3_clinical_picture" },
@@ -247,7 +247,7 @@ export const dummyQuestions = {
     ),
     'viral_au_3_clinical_picture': new Question(
         "Question",
-        "Which clinical feature is most similar to the patient’s presentation?",
+        "Which clinical feature aligns with the patient's presentation?",
         [
             { label: "Granulomatous cluster of small and medium-sized KPs in Arlt’s triangle \
              [with or without corneal scars]", nextQuestion: "viral_au_4_sa" },
@@ -262,7 +262,7 @@ export const dummyQuestions = {
     ),
     'viral_au_4_sa': new Question(
         "Question",
-        "Which clinical feature is most similar to the patient’s presentation?",
+        "Which clinical feature aligns with the patient's presentation?",
         [
             { label: "Sectoral iris atrophy in a patient < 50 years of age", nextQuestion: "ddx_hsv" },
             { label: "Sectoral iris atrophy in a patient > 60 years of age", nextQuestion: "ddx_vzv" },
@@ -276,7 +276,7 @@ export const dummyQuestions = {
     ),
     'fus_au_1_endotheliitis': new Question(
         "Question",
-        "Does the patient have endotheliitis or nodular, coin-shaped endothelial lesion?",
+        "Is there evidence of endotheliitis or nodular, coin-shaped endothelial lesions?",
         [
             { label: "Yes", nextQuestion: "ddx_cmv_fus_algorithm" },
             { label: "No", nextQuestion: "ddx_fus" },
@@ -292,7 +292,7 @@ export const dummyQuestions = {
     ),
     'heterochromia_mr_ul_ng': new Question(
         "Question",
-        "Does the patient have heterochromia?",
+        "Are there signs of heterochromia?",
         [
             { label: "Yes", nextQuestion: "fus_au_1_endotheliitis" },
             { label: "No", nextQuestion: "iop_mr_ul_ng_no_het" },
@@ -305,7 +305,7 @@ export const dummyQuestions = {
     ),
     'iop_mr_ul_ng_no_het': new Question(
         "Question",
-        "Does the patient have an elevated IOP with no prior steroid treatment nor iris atrophy / transillumination?",
+        "Is there elevated Intraocular Pressure without prior steroid treatment and without iris atrophy/transillumination?",
         [
             { label: "Yes", nextQuestion: "viral_au_1_keratitis" },
             { label: "No", nextQuestion: "ddx_hlab27" },
@@ -319,7 +319,7 @@ export const dummyQuestions = {
     ),
     'iop_c_ul_ng_cp_not_jia': new Question(
         "Question",
-        "Does the patient have an elevated IOP with no prior steroid treatment nor iris atrophy / transillumination?",
+        "Is there elevated Intraocular Pressure without prior steroid treatment and without iris atrophy/transillumination?",
         [
             { label: "Yes", nextQuestion: "viral_au_1_keratitis" },
             { label: "No", nextQuestion: "ddx_hlab27" },
@@ -333,11 +333,9 @@ export const dummyQuestions = {
     ),
     'tinu_mr_bl_ng': new Question(
         "Question",
-        "Does the patient have a history of recent acute renal dysfunction that presents systemic symptoms \
-        and lab findings consistent with abnormal urinalysis tests, reduced renal function, and/or elevated \
-        urinary β-2 microglobulin?\
-        <br><br>\
-        Systemic symptoms include anorexia, fever, weight loss, fatigue, and polyuria.",
+        `Is there a history of acute renal dysfunction with corresponding symptoms and lab findings?
+        ${imaging_render('<br><br>','Renal findings',['abnormal urinalysis tests','reduced renal function','elevated \
+        urinary β-2 microglobulin'])} ${imaging_render('','Systemic findings',['anorexia', 'fever', 'weight loss', 'fatigue','polyuria'])}`,
         [
             { label: "Yes", nextQuestion: "ddx_tinu_mr_bl_ng" },
             { label: "No", nextQuestion: "ddx_mr_bl_ng_not_tinu" },
@@ -354,7 +352,7 @@ export const dummyQuestions = {
     ),
     'heterochromia_c_ul_ng': new Question(
         "Question",
-        "Does the patient have heterochromia?",
+        "Are there signs of heterochromia?",
         [
             { label: "Yes", nextQuestion: "fus_au_1_endotheliitis" },
             { label: "No", nextQuestion: "cp_c_ul_ng" },
@@ -366,7 +364,7 @@ export const dummyQuestions = {
     ),
     'cp_c_ul_ng': new Question(
         "Question",
-        "Which clinical feature is most similar to the patient’s presentation?",
+        "Which clinical feature aligns with the patient's presentation?",
         [
             { label: "History of symptomatic attacks", nextQuestion: "iop_c_ul_ng_cp_not_jia" },
             { label: "Age < 16 with insidious onset and mostly asymptomatic/minimally symptomatic history", nextQuestion: "ddx_jia_c_ul_ng" },
@@ -380,7 +378,7 @@ export const dummyQuestions = {
     ),
     'jia_or_tinu_c_bl_ng': new Question(
         "Question",
-        "Which clinical feature is most similar to the patient’s presentation?",
+        "Which clinical feature aligns with the patient's presentation?",
         [
             { label: "Age < 16 with insidious onset and mostly asymptomatic/minimally \
             symptomatic history", nextQuestion: "ddx_jia_c_bl_ng" },
@@ -909,7 +907,7 @@ export const dummyQuestionsIU = {
     ),
     'snow': new Question(
         "Question",
-        "Does the patient have snowballs or snowbanks?",
+        "Are snowballs or snowbanks present?",
         [
             { label: "Yes", nextQuestion: "ddx_pp" },
             { label: "No", nextQuestion: "ddx_npp" }
@@ -921,7 +919,7 @@ export const dummyQuestionsIU = {
     ),
     'screening': new Question(
         "Question",
-        "Which one correlates best with the clinical picture?",
+        "Which systemic symptoms aligns with the patient's presentation?",
         [
             { label: `${imaging_render('Neurological symptoms','',['Limb weakness','Numbness','Tingling','Excessive fatigue'])}`, nextQuestion: "ddx_ms" },
             { label: `${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoidosis" },
@@ -938,7 +936,7 @@ export const dummyQuestionsIU = {
     ),
     'snow-2': new Question(
         "Question",
-        "Does the patient have snowballs or snowbanks?",
+        "Are snowballs or snowbanks present?",
         [
             { label: "Yes", nextQuestion: "ddx_pp" },
             { label: "No", nextQuestion: "ddx_npp" }
@@ -1122,7 +1120,7 @@ export const dummyQuestionsPU = {
     ),
     'uveitis_type': new Question(
         "Question",
-        `Identify the primary inflammation type for uveitis.`,
+        `Identify the primary type of inflammation in the uveitis.`,
         [
             { label: "Retinitis", nextQuestion: "retinitis" },
             { label: "Retinal vasculitis", nextQuestion: "rvasculitis" },
@@ -1136,13 +1134,13 @@ export const dummyQuestionsPU = {
     ),
     'retinitis': new Question(
         "Question",
-        "Which one correlates best with the clinical picture?",
+        "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','Other features include',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "retinitis" },
-            { label: `${other_feature_render('Necrotizing retinitis with indistinct borders due to numerous small (<50µm) satellite) in a systemic or  ocular immune-compromised patient','Other features include',['Absent to mild vitritis','Wedge-shaped area of retinitis','Hemorrhagic appearance','Granular appearance'])}`, nextQuestion: "retinitis" },
-            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "retinitis" },
-            { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "retinitis" },
-            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+            { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','Other features include',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "ddx_arn" },
+            { label: `${other_feature_render('Necrotizing retinitis with indistinct borders due to numerous small (<50µm) satellite) in a systemic or  ocular immune-compromised patient','Other features include',['Absent to mild vitritis','Wedge-shaped area of retinitis','Hemorrhagic appearance of retinitis','Granular appearance of retinitis'])}`, nextQuestion: "ddx_cmv_retinitis" },
+            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
+            { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_retinitis" },
+            { label: `None above`, nextQuestion: "ddx_un_retinitis" }
         ],
         "",
         {
@@ -1151,13 +1149,13 @@ export const dummyQuestionsPU = {
     ),
     'rvasculitis': new Question(
         "Question",
-        "Which one correlates best with the clinical picture?",
+        "Which clinical feature aligns with the patient's presentation?",
         [
             { label: `Vision threatening retinitis`, nextQuestion: "retinitis" },
-            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "retinitis" },
-            { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "retinitis" },
-            { label: `Retinal vasculitis WITH <br><br>${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "retinitis" },
-            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_rvasculitis" },
+            { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_rvasculitis" },
+            { label: `Retinal vasculitis WITH <br><br>${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_rvasculitis" },
+            { label: `None above`, nextQuestion: "ddx_un_rvasculitis" }
         ],
         "",
         {
@@ -1178,11 +1176,11 @@ export const dummyQuestionsPU = {
     ),
     'choroiditis-pauci': new Question(
         "Question",
-        "Which one correlates best with the clinical picture?",
+        "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA<br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF<br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-TB-SC" },
-            { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA<br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "choroiditis-pauci" },
-            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+            { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA<br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF<br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
+            { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA<br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
+            { label: `None above`, nextQuestion: "ddx_un_choroiditis" }
         ],
         "",
         {
@@ -1191,39 +1189,40 @@ export const dummyQuestionsPU = {
     ),
     'choroiditis-multi': new Question(
         "Question",
-        "Which one correlates best with the clinical picture?",
+        "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA<br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF<br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-TB-SC" },
-            { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA<br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "choroiditis-pauci" },
-            { label: `${imaging_render('History and Examination','',['Unilateral eye involvement'])} ${imaging_render('','Morphology',['Gray-white spots with foveal granularity'])}, ${imaging_render('','Imaging',['FA<br>“Wreath-like” hyper-fluorescent lesions','OCT<br>Hyper-reflective lesions extending from the retinal pigment epithelium, into and/or through the ellipsoid zone into the outer nuclear layer of the retina'])}`, nextQuestion: "choroiditis-pauci" },
-            { label: `${imaging_render('History and Examination','',['Bilateral eye involvement','Mid-periphery or peripheral involvement'])} ${imaging_render('','Morphology',['Oval or round lesions with predominant lesion size > 250 µm',`“Punched-out atrophic” scars or active lesions`])}`, nextQuestion: "check-TB-MFCPU" },
-            { label: `${imaging_render('History and Examination','',['No anterior and vitreous inflammation','Concentrated in posterior pole'])} ${imaging_render('','Morphology',['Punctate lesion appearance with predominant lesion size < 250 µm (typically < 125 µm)',`Yellow-white or cream-coloured`])}`, nextQuestion: "choroiditis-pauci" },
+            { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA<br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF<br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
+            { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA<br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
+            { label: `${imaging_render('History and Examination','',['Unilateral eye involvement'])} ${imaging_render('','Morphology',['Gray-white spots with foveal granularity'])}, ${imaging_render('','Imaging',['FA<br>“Wreath-like” hyper-fluorescent lesions','OCT<br>Hyper-reflective lesions extending from the retinal pigment epithelium, into and/or through the ellipsoid zone into the outer nuclear layer of the retina'])}`, nextQuestion: "ddx_mewds" },
+            { label: `${imaging_render('History and Examination','',['Bilateral eye involvement','Mid-periphery or peripheral involvement'])} ${imaging_render('','Morphology',['Oval or round lesions with predominant lesion size > 250 µm',`“Punched-out atrophic” scars or active lesions`])}`, nextQuestion: "check-tb-mfcpu" },
+            { label: `${imaging_render('History and Examination','',['No anterior and vitreous inflammation','Concentrated in posterior pole'])} ${imaging_render('','Morphology',['Punctate lesion appearance with predominant lesion size < 250 µm (typically < 125 µm)',`Yellow-white or cream-coloured`])}`, nextQuestion: "ddx_pic" },
+            { label: `${imaging_render('History and Examination','',['Bilateral eye involvement','Absent to mild anterior chamber inflammation','Absent to moderate vitritis'])} ${imaging_render('','Morphology',['Cream-colored or yellow-orange',`Oval or round choroidal lesions (“birdshot spots”)`])}`, nextQuestion: "ddx_bscr" },
             
-            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+            { label: `None above`, nextQuestion: "ddx_un_choroiditis" }
         ],
         "",
         {
 
         }
     ),
-    'check-TB-SC': new Question(
+    'check-tb-sc': new Question(
         "Question",
-        "Has patient reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently?",
+        "Has the patient reported exposure to individuals diagnosed with tuberculosis (TB) or traveled to a TB-endemic region recently?",
         [
-            { label: `Yes`, nextQuestion: "ddx_TB" },
-            { label: `No`, nextQuestion: "ddx_SC" }
+            { label: `Yes`, nextQuestion: "ddx_tb_sc" },
+            { label: `No`, nextQuestion: "ddx_sc" }
         ],
         "",
         {
 
         }
     ),
-    'check-TB-MFCPU': new Question(
+    'check-tb-mfcpu': new Question(
         "Question",
-        "Has patient reported exposure to individuals diagnosed with TB or travelled to a TB-endemic region recently?",
+        "Has the patient reported exposure to individuals diagnosed with tuberculosis (TB) or traveled to a TB-endemic region recently?",
         [
-            { label: `Yes`, nextQuestion: "ddx_TB" },
-            { label: `No`, nextQuestion: "ddx_MFCPU" }
+            { label: `Yes`, nextQuestion: "ddx_tb_mfcpu" },
+            { label: `No`, nextQuestion: "ddx_mfcpu" }
         ],
         "",
         {
@@ -1232,9 +1231,9 @@ export const dummyQuestionsPU = {
     ),
     'panuveitis-1': new Question(
         "Question",
-        "Does the patient have a history of unilateral ocular trauma or surgery?",
+        "Does the patient have bilateral panuveitis with a history of unilateral ocular trauma or surgery?",
         [
-            { label: 'Yes', nextQuestion: 'panuveitis-1'},
+            { label: 'Yes (and not infectious endophthalmitis)', nextQuestion: 'ddx_so'},
             { label: 'No', nextQuestion: 'panuveitis-2'}
         ],
         "",
@@ -1245,18 +1244,360 @@ export const dummyQuestionsPU = {
 
     'panuveitis-2': new Question(
         "Question",
-        "Identify the most similar clinical picture",
+        "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${imaging_render('',`Evidence of Harada's disease`,['Exudative retinal detachment','FA - Multiple-loculated appearance','OCT - Septae'])} ${imaging_render('','Neurologic symptoms',['Headache','Tinnitus','Dysacusis','Meningism','CSF pleocytosis'])}`, nextQuestion: "choroiditis-pauci" },
-            { label: `${imaging_render('','History of early stage VKH disease',['Sunset glow fundus'])} ${imaging_render('','Cutaneous findings',['Vitiligo','Poliosis','Alopecia'])}`, nextQuestion: "choroiditis-pauci" },
-            { label: `Retinal vasculitis or choroidal nodule(s)`, nextQuestion: 'rvasculitis'},
-            { label: `None above`, nextQuestion: "choroiditis-pauci" }
+            { label: `${imaging_render('',`Evidence of Harada's disease`,['Exudative retinal detachment','FA - Multiple-loculated appearance','OCT - Septae'])} ${imaging_render('','Neurologic symptoms',['Headache','Tinnitus','Dysacusis','Meningism','CSF pleocytosis'])}`, nextQuestion: "ddx_vkh_early" },
+            { label: `${imaging_render('','History of early stage VKH disease',['Sunset glow fundus'])} ${imaging_render('','Cutaneous findings',['Vitiligo','Poliosis','Alopecia'])}`, nextQuestion: "ddx_vkh_late" },
+            { label: `Retinal vasculitis or choroidal nodule(s)`, nextQuestion: 'panuveitis-3'},
+            { label: `None above`, nextQuestion: "ddx_un_panuveitis" }
         ],
         "",
         {
 
         }
-    )
+    ),
+
+    'panuveitis-3': new Question(
+        "Question",
+        "Which clinical feature aligns with the patient's presentation?",
+        [
+            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_panuveitis" },
+            { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_panuveitis" },
+            { label: `Retinal vasculitis WITH <br><br>${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_panuveitis" },
+            { label: `None above`, nextQuestion: "ddx_un_panuveitis" }
+        ],
+        "",
+        {
+
+        }
+    ),
+
+
+
+
+
+
+
+    'ddx_arn' : new Result(
+        ["Acute Retinal Necrosis"],
+        [`Acute Retinal Necrosis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+    'ddx_cmv_retinitis' : new Result(
+        ["Cytomegalovirus Retinitis"],
+        [`Cytomegalovirus Retinitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),'ddx_toxo' : new Result(
+        ["Toxoplasmic Retinitis"],
+        [`Toxoplasmic Retinitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+    'ddx_behcet_retinitis' : new Result(
+        ["Behçet Disease Uveitis"],
+        [`Behçet Disease Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+    'ddx_behcet_panuveitis' : new Result(
+        ["Behçet Disease Uveitis"],
+        [`Behçet Disease Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+    'ddx_behcet_rvasculitis' : new Result(
+        ["Behçet Disease Uveitis"],
+        [`Behçet Disease Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_un_retinitis' : new Result(
+        ["Undifferentiated Posterior Uveitis (Retinitis)"],
+        [`Undifferentiated Posterior Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_tb_rvasculitis' : new Result(
+        ["Tubercular Uveitis"],
+        [`Tubercular Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+    'ddx_tb_panuveitis' : new Result(
+        ["Tubercular Uveitis"],
+        [`Tubercular Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_sarcoid_rvasculitis' : new Result(
+        ["Sarcoid Uveitis"],
+        [`Sarcoid Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+    'ddx_sarcoid_panuveitis' : new Result(
+        ["Sarcoid Uveitis"],
+        [`Sarcoid Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_un_rvasculitis' : new Result(
+        ["Undifferentiated Posterior Uveitis (Retinal vasculitis)"],
+        [`Undifferentiated Posterior Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_apmppe' : new Result(
+        ["Acute Posterior Multifocal Placoid Pigment Epitheliopathy"],
+        [`Acute Posterior Multifocal Placoid Pigment Epitheliopathy is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_sc' : new Result(
+        ["Serpiginous Choroiditis"],
+        [`Serpiginous Choroiditis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_mewds' : new Result(
+        ["Multiple Evanescent White Dot Syndrome"],
+        [`Multiple Evanescent White Dot Syndrome is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_bscr' : new Result(
+        ["Birdshot Chorioretinitis"],
+        [`Birdshot Chorioretinitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_mfcpu' : new Result(
+        ["Multifocal Choroiditis with Panuveitis"],
+        [`Multifocal Choroiditis with Panuveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_pic' : new Result(
+        ["Punctate Inner Choroiditis"],
+        [`Punctate Inner Choroiditis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_tb_mfcpu' : new Result(
+        ["Tubercular Uveitis"],
+        [`Tubercular Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_tb_sc' : new Result(
+        ["Tubercular Uveitis"],
+        [`Tubercular Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_un_choroiditis' : new Result(
+        ["Undifferentiated Posterior Uveitis (Choroiditis)"],
+        [`Undifferentiated Posterior Uveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_so' : new Result(
+        ["Sympathetic Ophthalmia"],
+        [`Sympathetic Ophthalmia is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_vkh_early' : new Result(
+        ["Early-Stage Vogt-Koyanagi-Harada Disease"],
+        [`Early-Stage Vogt-Koyanagi-Harada Disease is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_vkh_late' : new Result(
+        ["Late-Stage Vogt-Koyanagi-Harada Disease"],
+        [`Late-Stage Vogt-Koyanagi-Harada Disease is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+
+    'ddx_un_panuveitis' : new Result(
+        ["Undifferentiated Panuveitis"],
+        [`Undifferentiated Panuveitis is ...`],
+        [
+            {
+                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+            }
+        ],
+        {
+            
+        }
+    ),
+    
+
+
+    
 }
 
 function other_feature_render(text1, text2, textList){
