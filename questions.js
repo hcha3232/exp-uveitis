@@ -1126,6 +1126,7 @@ export const dummyQuestionsPU = {
             { label: "Retinal vasculitis", nextQuestion: "rvasculitis" },
             { label: "Chorioretinitis", nextQuestion: "choroiditis-1" },
             { label: "Panuveitis", nextQuestion: "panuveitis-1" },
+            { label: "Rapidly vision deteriorating posterior or panuveitis", nextQuestion: "rapid-1"}
         ],
         "",
         {
@@ -1144,7 +1145,17 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-
+            "Tubercular uveitis" : "low",
+            "Sarcoid uveitis" : "low",
+            "APMPPE" : "low",
+            "BSCR" : "low",
+            "MEWDS" : "low",
+            "MFCPU" : "low",
+            "PIC" : "low",
+            "SC" : "low",
+            "SO" : "low",
+            "VKH-early" : "low",
+            "VKH-late" : "low",
         }
     ),
     'rvasculitis': new Question(
@@ -1158,8 +1169,16 @@ export const dummyQuestionsPU = {
             { label: `None above`, nextQuestion: "ddx_un_rvasculitis" }
         ],
         "",
-        {
-
+        {   
+            "APMPPE" : "low",
+            "BSCR" : "low",
+            "MEWDS" : "low",
+            "MFCPU" : "low",
+            "PIC" : "low",
+            "SC" : "low",
+            "SO" : "low",
+            "VKH-early" : "low",
+            "VKH-late" : "low",
         }
     ),
     'choroiditis-1': new Question(
@@ -1171,7 +1190,13 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-
+            "ARN" : "low",
+            "CMV retinitis" : "low",
+            "Toxoplasmic retinitis" : "low",
+            "Behcet Disease uveitis" : "low",
+            "SO" : "low",
+            "VKH-early" : "low",
+            "VKH-late" : "low",
         }
     ),
     'choroiditis-pauci': new Question(
@@ -1184,7 +1209,10 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-
+            "BSCR" : "low",
+            "MEWDS" : "low",
+            "MFCPU" : "low",
+            "PIC" : "low",
         }
     ),
     'choroiditis-multi': new Question(
@@ -1214,7 +1242,8 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-
+            "SC" : "high",
+            "Tubercular uveitis" : "high"
         }
     ),
     'check-tb-mfcpu': new Question(
@@ -1226,19 +1255,25 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-
+            "MFCPU" : "high",
+            "Tubercular uveitis" : "high"
         }
     ),
     'panuveitis-1': new Question(
         "Question",
         "Does the patient have bilateral panuveitis with a history of unilateral ocular trauma or surgery?",
         [
-            { label: 'Yes (and not infectious endophthalmitis)', nextQuestion: 'ddx_so'},
+            { label: 'Yes (and not endophthalmitis)', nextQuestion: 'ddx_so'},
             { label: 'No', nextQuestion: 'panuveitis-2'}
         ],
         "",
         {
-
+            "APMPPE" : "low",
+            "BSCR" : "low",
+            "MEWDS" : "low",
+            "MFCPU" : "low",
+            "PIC" : "low",
+            "SC" : "low",
         }
     ),
 
@@ -1253,7 +1288,7 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-
+            "SO" : "low"
         }
     ),
 
@@ -1268,7 +1303,7 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-
+            
         }
     ),
 
@@ -1280,10 +1315,18 @@ export const dummyQuestionsPU = {
 
     'ddx_arn' : new Result(
         ["Acute Retinal Necrosis"],
-        [`Acute Retinal Necrosis is ...`],
+        [`Acute retinal necrosis (ARN) is the most frequent and serious manifestation of HSV-1, HSV-2, and VZV in the posterior segment of the eye.
+        <br><br>
+        As ARN is a potentially blinding necrotizing retinitis, it represents a medical emergency and should be treated immediately, preferably in an inpatient setting without waiting for confirmatory ancillary tests.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Necrotizing retinitis involving the peripheral retina`, 
+
+                `Circumferential or confluent retinitis`,
+                
+                `Retinal vascular sheathing and/or occlusion`,
+                
+                `More than minimal vitritis`]
             }
         ],
         {
@@ -1292,10 +1335,23 @@ export const dummyQuestionsPU = {
     ),
     'ddx_cmv_retinitis' : new Result(
         ["Cytomegalovirus Retinitis"],
-        [`Cytomegalovirus Retinitis is ...`],
+        [`CMV retinitis occurs in late stages of AIDS and typically is associated with a CD4+ T-cell count of less than 50 cells/μL. 
+        <br><br>
+        It is the most common
+        ocular complication of AIDS, but patient may also have CMV retinitis without AIDS, usually from iatrogenic immunosuppression. `],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Necrotizing retinitis with indistinct borders due to numerous small ( < 50 μm) satellites`,
+
+                `Immune compromise (Systemic or ocular)`,
+                
+                `Wedge-shaped area of retinitis`,
+                
+                `Hemorrhagic appearance of the retinitis`,
+                
+                `Granular appearance of the retinitis`,
+                
+                `Absent to mild vitritis`]
             }
         ],
         {
@@ -1303,10 +1359,20 @@ export const dummyQuestionsPU = {
         }
     ),'ddx_toxo' : new Result(
         ["Toxoplasmic Retinitis"],
-        [`Toxoplasmic Retinitis is ...`],
+        [`Toxoplasmosis is an infection caused by T. gondii , an obligate intracellular protozoan and is the leading cause of posterior infectious uveitis worldwide.
+        <br><br>
+        Ocular disease may occur soon after primary infection or later due to reactivation of intraretinal T. gondii cysts.
+        <br><br>
+        Diagnosis of toxoplasmic uveitis is based on clinical presentation of a focus of retinitis adjacent to a chorioretinal scar`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Focal or paucifocal necrotizing retinitis`,
+
+                `Hyperpigmented and/or atrophic chorioretinal scar (“toxoplasmic scar”)`,
+                
+                `Round or oval retinitis lesions`,
+                
+                `Recurrent acute (episodic) course`]
             }
         ],
         {
@@ -1315,10 +1381,22 @@ export const dummyQuestionsPU = {
     ),
     'ddx_behcet_retinitis' : new Result(
         ["Behçet Disease Uveitis"],
-        [`Behçet Disease Uveitis is ...`],
+        [`The primary manifestation of Behchet disease (BD) may start unilateral most often as an anterior uveitis, but later on, bilateral posterior uveitis occurs in most of the cases, and more than half of the patients develop panuveitis with a chronic relapsing course.
+        <br><br>
+        BD patients lose their visual function due to repeated ocular inflammatory attacks leading to occlusive vasculopathy of vessels in the retina and the optic nerve.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Vasculitis`,
+
+                `Branch retinal vein occlusion`,
+                
+                `Recurrent Oral or genital ulcers`,
+                
+                `Skin rashes, pustules, lumps or bumps`,
+                
+                `"Shifting hypopyon" for Anterior uveitis caused by Behcet disease`,
+                
+                `Demographics (historical Silk Road area from East Asia to the Mediterranean region)`]
             }
         ],
         {
@@ -1327,10 +1405,22 @@ export const dummyQuestionsPU = {
     ),
     'ddx_behcet_panuveitis' : new Result(
         ["Behçet Disease Uveitis"],
-        [`Behçet Disease Uveitis is ...`],
+        [`The primary manifestation of Behchet disease (BD) may start unilateral most often as an anterior uveitis, but later on, bilateral posterior uveitis occurs in most of the cases, and more than half of the patients develop panuveitis with a chronic relapsing course.
+        <br><br>
+        BD patients lose their visual function due to repeated ocular inflammatory attacks leading to occlusive vasculopathy of vessels in the retina and the optic nerve.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Vasculitis`,
+
+                `Branch retinal vein occlusion`,
+                
+                `Recurrent Oral or genital ulcers`,
+                
+                `Skin rashes, pustules, lumps or bumps`,
+                
+                `"Shifting hypopyon" for Anterior uveitis caused by Behcet disease`,
+                
+                `Demographics (historical Silk Road area from East Asia to the Mediterranean region)`]
             }
         ],
         {
@@ -1339,10 +1429,22 @@ export const dummyQuestionsPU = {
     ),
     'ddx_behcet_rvasculitis' : new Result(
         ["Behçet Disease Uveitis"],
-        [`Behçet Disease Uveitis is ...`],
+        [`The primary manifestation of Behchet disease (BD) may start unilateral most often as an anterior uveitis, but later on, bilateral posterior uveitis occurs in most of the cases, and more than half of the patients develop panuveitis with a chronic relapsing course.
+        <br><br>
+        BD patients lose their visual function due to repeated ocular inflammatory attacks leading to occlusive vasculopathy of vessels in the retina and the optic nerve.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Vasculitis`,
+
+                `Branch retinal vein occlusion`,
+                
+                `Recurrent Oral or genital ulcers`,
+                
+                `Skin rashes, pustules, lumps or bumps`,
+                
+                `"Shifting hypopyon" for Anterior uveitis caused by Behcet disease`,
+                
+                `Demographics (historical Silk Road area from East Asia to the Mediterranean region)`]
             }
         ],
         {
@@ -1352,10 +1454,14 @@ export const dummyQuestionsPU = {
 
     'ddx_un_retinitis' : new Result(
         ["Undifferentiated Posterior Uveitis (Retinitis)"],
-        [`Undifferentiated Posterior Uveitis is ...`],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : ['Course', 'Laterality', 'Anatomic class']
             }
         ],
         {
@@ -1415,10 +1521,14 @@ export const dummyQuestionsPU = {
 
     'ddx_un_rvasculitis' : new Result(
         ["Undifferentiated Posterior Uveitis (Retinal vasculitis)"],
-        [`Undifferentiated Posterior Uveitis is ...`],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : ['Course', 'Laterality', 'Anatomic class']
             }
         ],
         {
@@ -1428,10 +1538,19 @@ export const dummyQuestionsPU = {
 
     'ddx_apmppe' : new Result(
         ["Acute Posterior Multifocal Placoid Pigment Epitheliopathy"],
-        [`Acute Posterior Multifocal Placoid Pigment Epitheliopathy is ...`],
+        [`Acute Posterior Multifocal Placoid Pigment Epitheliopathy belongs to the group of primary inflammatory choriocapillaropathies formerly classified as a white
+        dot syndrome.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Serous exudative retinal detachments in severe cases`,
+
+                `Hyperacute`,
+                
+                `Usually bilateral`,
+                
+                `Predominantly occurs in young individuals during 20 – 40s`,
+                
+                `Check SUN morphology and imaging criteria`]
             }
         ],
         {
@@ -1441,10 +1560,14 @@ export const dummyQuestionsPU = {
 
     'ddx_sc' : new Result(
         ["Serpiginous Choroiditis"],
-        [`Serpiginous Choroiditis is ...`],
+        [`Serpiginous choroiditis is a bilateral, asymmetric choroiditis that usually extends from the juxtapapillary choroid and often shows progression and multiple recurrences over the course of many years or decades.
+        <br><br>
+        Choroidal neovascularization and subretinal fibrosis are two main long-term complications.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Bilateral, asymmetric choroiditis`,
+
+                `Check SUN morphology and imaging criteria`]
             }
         ],
         {
@@ -1467,10 +1590,16 @@ export const dummyQuestionsPU = {
 
     'ddx_bscr' : new Result(
         ["Birdshot Chorioretinitis"],
-        [`Birdshot Chorioretinitis is ...`],
+        [`Birdshot Chorioretinitis should be considered for middle-aged patients presenting with symptoms of visual field loss, floaters, nyctalopia, or changes in color vision, who have no significant anterior segment involvement, but show vitritis and signs of retinal vasculitis, even in the absence of the characteristic choroidal lesions, especially when HLA-A29 is positive`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Bilateral, chronic`,
+                
+                `Retinal vasculitis`,
+                
+                `Minimal to no anterior inflammation`,
+            
+                `Check SUN morphology and imaging criteria`]
             }
         ],
         {
@@ -1483,7 +1612,11 @@ export const dummyQuestionsPU = {
         [`Multifocal Choroiditis with Panuveitis is ...`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Chronic, recurrent`,
+
+                `Usually bilateral`,
+                
+                `Check SUN morphology and imaging criteria`]
             }
         ],
         {
@@ -1496,7 +1629,13 @@ export const dummyQuestionsPU = {
         [`Punctate Inner Choroiditis is ...`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Typically unilateral`,
+
+                    `Complications: CNV, Subretinal fibrosis`,
+                    
+                    `Absence of anterior or vitreous inflammation`,
+                    
+                    `Check SUN morphology and imaging criteria`]
             }
         ],
         {
@@ -1532,10 +1671,14 @@ export const dummyQuestionsPU = {
 
     'ddx_un_choroiditis' : new Result(
         ["Undifferentiated Posterior Uveitis (Choroiditis)"],
-        [`Undifferentiated Posterior Uveitis is ...`],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : ['Course', 'Laterality', 'Anatomic class']
             }
         ],
         {
@@ -1545,10 +1688,22 @@ export const dummyQuestionsPU = {
 
     'ddx_so' : new Result(
         ["Sympathetic Ophthalmia"],
-        [`Sympathetic Ophthalmia is ...`],
+        [`Sympathetic ophthalmia is a rare, bilateral, diffuse granulomatous uveitis that occurs following penetrating trauma or ocular surgery involving one eye.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Posterior findings:`,
+
+                `Optic disk swelling`,
+                
+                `Generalised retinal oedema`,
+                
+                `Diffuse choroidal thickening`,
+                
+                `Dalen-Fuchs nodules in the midperiphery of the retina`,
+                
+                `Multiple choroidal granulomas`,
+                
+                `Exudative retinal detachment`]
             }
         ],
         {
@@ -1558,10 +1713,18 @@ export const dummyQuestionsPU = {
 
     'ddx_vkh_early' : new Result(
         ["Early-Stage Vogt-Koyanagi-Harada Disease"],
-        [`Early-Stage Vogt-Koyanagi-Harada Disease is ...`],
+        [`Vogt-Koyanagi-Harada disease (VKH) is a multisystem inflammatory autoimmune disease affecting the eyes, meninges, ears, and skin.
+        <br><br>
+        VKH-associated uveitis is typically a bilateral, diffuse granulomatous uveitis.
+        <br><br>
+        There are early and late forms of VKH.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Bilateral, diffuse granulomatous uveitis`,
+                
+                `Vitiligo`,
+                
+                `Poliosis`]
             }
         ],
         {
@@ -1571,10 +1734,18 @@ export const dummyQuestionsPU = {
 
     'ddx_vkh_late' : new Result(
         ["Late-Stage Vogt-Koyanagi-Harada Disease"],
-        [`Late-Stage Vogt-Koyanagi-Harada Disease is ...`],
+        [`Vogt-Koyanagi-Harada disease (VKH) is a multisystem inflammatory autoimmune disease affecting the eyes, meninges, ears, and skin.
+        <br><br>
+        VKH-associated uveitis is typically a bilateral, diffuse granulomatous uveitis.
+        <br><br>
+        There are early and late forms of VKH.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Bilateral, diffuse granulomatous uveitis`,
+                
+                `Vitiligo`,
+                
+                `Poliosis`]
             }
         ],
         {
@@ -1584,10 +1755,14 @@ export const dummyQuestionsPU = {
 
     'ddx_un_panuveitis' : new Result(
         ["Undifferentiated Panuveitis"],
-        [`Undifferentiated Panuveitis is ...`],
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : ['Course', 'Laterality', 'Anatomic class']
             }
         ],
         {
