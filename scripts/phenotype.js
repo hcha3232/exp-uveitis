@@ -58,8 +58,9 @@ const mfcpuPU = new Phenotype(`Multifocal Choroiditis with Panuveitis`,"MFCPU", 
 const picPU = new Phenotype(`Punctate Inner Choroiditis`,"PIC", '');
 const scPU = new Phenotype(`Serpiginous Choroiditis`,"SC", '');
 const soPU = new Phenotype(`Sympathetic Ophthalmia`,"SO", '');
-const evkhPU = new Phenotype(`Early Vogt-Koyanagi-Harada Disease`,"VKH-early", '');
-const lvkhPU = new Phenotype(`Late Vogt-Koyanagi-Harada Disease`,"VKH-late", '');
+const vkhPU = new Phenotype(`Vogt-Koyanagi-Harada Disease`,"VKH", '');
+const endPU = new Phenotype(`Endophthalmitis`,"Endophthalmitis", '');
+const drugPU = new Phenotype(`Drug-induced Panuveitis`,"Drug-induced", '');
 
-export const puPhenotypes = [arnPU,cmvPU,toxoPU,behcetPU,tbPU,sarcPU,syphPU,apmppePU,bscrPU,mewdsPU,mfcpuPU,picPU,scPU,soPU,evkhPU,lvkhPU]
+export const puPhenotypes = [arnPU,cmvPU,toxoPU,behcetPU,tbPU,sarcPU,syphPU,apmppePU,bscrPU,mewdsPU,mfcpuPU,picPU,scPU,soPU,vkhPU,endPU,drugPU]
 

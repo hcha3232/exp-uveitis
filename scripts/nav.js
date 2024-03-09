@@ -71,7 +71,7 @@ navFooter.innerHTML = `
    
 
     <div class="nav-icon">
-    <a class="nav-link" href="/classification.html">
+    <a class="nav-link" href="/html/classification.html">
       <div id='class-icon' style="display:flex; flex-direction: column; align-items: center; color: '#cfcdca';"><i style="font-size: 1.5rem;" class="bi bi-card-list"></i><span style="font-size:0.9rem;">Criteria</span></div>
     </a>
     </div>
