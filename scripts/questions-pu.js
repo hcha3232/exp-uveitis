@@ -98,6 +98,7 @@ export const dummyQuestionsPU = {
         [
             { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA<br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF<br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
             { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA<br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
+            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_posterior" },
             { label: `None above`, nextQuestion: "ddx_un_choroiditis" }
         ],
         "",
@@ -117,13 +118,23 @@ export const dummyQuestionsPU = {
             { label: `${imaging_render('History and Examination','',['Unilateral eye involvement'])} ${imaging_render('','Morphology',['Gray-white spots with foveal granularity'])}, ${imaging_render('','Imaging',['FA<br>“Wreath-like” hyper-fluorescent lesions','OCT<br>Hyper-reflective lesions extending from the retinal pigment epithelium, into and/or through the ellipsoid zone into the outer nuclear layer of the retina'])}`, nextQuestion: "ddx_mewds" },
             { label: `${imaging_render('History and Examination','',['Bilateral eye involvement','Mid-periphery or peripheral involvement'])} ${imaging_render('','Morphology',['Oval or round lesions with predominant lesion size > 250 µm',`“Punched-out atrophic” scars or active lesions`])}`, nextQuestion: "check-tb-mfcpu" },
             { label: `${imaging_render('History and Examination','',['No anterior and vitreous inflammation','Concentrated in posterior pole'])} ${imaging_render('','Morphology',['Punctate lesion appearance with predominant lesion size < 250 µm (typically < 125 µm)',`Yellow-white or cream-coloured`])}`, nextQuestion: "ddx_pic" },
-            { label: `${imaging_render('History and Examination','',['Bilateral eye involvement','Absent to mild anterior chamber inflammation','Absent to moderate vitritis'])} ${imaging_render('','Morphology',['Cream-colored or yellow-orange',`Oval or round choroidal lesions (“birdshot spots”)`])}`, nextQuestion: "ddx_bscr" },
-            
-            { label: `None above`, nextQuestion: "ddx_un_choroiditis" }
+            { label: `${imaging_render('History and Examination','',['Bilateral eye involvement','Absent to mild anterior chamber inflammation','Absent to moderate vitritis'])} ${imaging_render('','Morphology',['Cream-colored or yellow-orange',`Oval or round choroidal lesions (“birdshot spots”)`])}`, nextQuestion: "ddx_bscr" },       
+            { label: `None above`, nextQuestion: "check_post_sarcoidosis" }
         ],
         "",
         {
 
+        }
+    ),
+    'check_post_sarcoidosis': new Question(
+        "Question",
+        "Has the patient reported respiratory symptoms like shortness of breath/cough and skin lumps or joint aches?",
+        [
+            { label: `Yes`, nextQuestion: "ddx_sarcoid_panuveitis" },
+            { label: `No`, nextQuestion: "ddx_un_choroiditis" }
+        ],
+        "",
+        {
         }
     ),
     'check-tb-sc': new Question(
@@ -242,8 +253,8 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: 'History of ocular surgery, intravitreali injections, or trauma', nextQuestion: 'ddx_Nendophthalmitis'},
-            { label: 'History of IV drug abuse, dental surgery, or bacteria/fungalaemia', nextQuestion: 'ddx_Xendophthalmitis'},
+            { label: 'History of ocular surgery, intravitreal injections, or trauma', nextQuestion: 'ddx_Xendophthalmitis'},
+            { label: 'History of IV drug abuse, dental surgery, or bacteria/fungalaemia', nextQuestion: 'ddx_Nendophthalmitis'},
             { label: `None above`, nextQuestion: "ddx_un_panuveitis"}
         ],
         "",
@@ -277,7 +288,7 @@ export const dummyQuestionsPU = {
             { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','Other features include',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "ddx_arn" },
             { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
             { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_panuveitis" },
-            { label: `Progressive vitritis and hypopyon WITH <br><br>${imaging_render('History','',['Ocular surgery, intravitreali injections, trauma, IV drug abuse, dental surgery, or sepsis'])}`, nextQuestion: 'ddx_Nendophthalmitis'},
+            { label: `Progressive vitritis and hypopyon WITH <br><br>${imaging_render('History','',['Ocular surgery, intravitreali injections, trauma, IV drug abuse, dental surgery, or sepsis'])}`, nextQuestion: 'rapid_endophthalmitis'},
             { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_panuveitis"},
             { label: `High-risk sexual behaviour`, nextQuestion: "ddx_syphilis"},
             { label: `None above`, nextQuestion: "ddx_un_panuveitis"}
@@ -295,6 +306,19 @@ export const dummyQuestionsPU = {
             "VKH" : "low",
             "Sarcoid uveitis" : "low",
             "Drug-induced" : "low"
+        }
+    ),
+
+    'rapid_endophthalmitis': new Question(
+        "Question",
+        "Which clinical feature aligns with the patient's presentation?",
+        [
+            { label: 'History of ocular surgery, intravitreal injections, or trauma', nextQuestion: 'ddx_Xendophthalmitis'},
+            { label: 'History of IV drug abuse, dental surgery, or bacteria/fungalaemia', nextQuestion: 'ddx_Nendophthalmitis'},
+        ],
+        "",
+        {
+            "Endophthalmitis" : "high"
         }
     ),
 
@@ -466,10 +490,36 @@ export const dummyQuestionsPU = {
 
     'ddx_tb_rvasculitis' : new Result(
         ["Tubercular Uveitis"],
-        [`Tubercular Uveitis is ...`],
+        [`Intraocular TB manifests in multiple presentation from anterior, intermediate, posterior and panuveitis. 
+        <br><br>
+        For posterior uveitis, choroidal tubercles are the most characteristic lesions of intraocular TB. However, there are serpiginous-like TB and multiple choroiditis-like TB as well. 
+        <br><br>
+        Sometimes, occlusive retinal vasculitis can be the only sign of ocular involvement.
+        <br><br>
+        Ethnicity and travel history are important.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`anterior uveitis with iris nodules`, `serpiginous-like tubercular choroiditis`, `choroidal nodule (i.e. tuberculoma)`,
+            `in individuals with active systemic tuberculosis, multifocal choroiditis`,'occlusive retinal vasculitis']
+            }
+        ],
+        {
+            
+        }
+    ),
+    'ddx_tb_posterior' : new Result(
+        ["Tubercular Uveitis"],
+        [`Intraocular TB manifests in multiple presentation from anterior, intermediate, posterior and panuveitis. 
+        <br><br>
+        For posterior uveitis, choroidal tubercles are the most characteristic lesions of intraocular TB. However, there are serpiginous-like TB and multiple choroiditis-like TB as well. 
+        <br><br>
+        Sometimes, occlusive retinal vasculitis can be the only sign of ocular involvement.
+        <br><br>
+        Ethnicity and travel history are important.`],
+        [
+            {
+                "signs" : [`anterior uveitis with iris nodules`, `serpiginous-like tubercular choroiditis`, `choroidal nodule (i.e. tuberculoma)`,
+            `in individuals with active systemic tuberculosis, multifocal choroiditis`,'occlusive retinal vasculitis']
             }
         ],
         {
@@ -478,10 +528,17 @@ export const dummyQuestionsPU = {
     ),
     'ddx_tb_panuveitis' : new Result(
         ["Tubercular Uveitis"],
-        [`Tubercular Uveitis is ...`],
+        [`Intraocular TB manifests in multiple presentation from anterior, intermediate, posterior and panuveitis. 
+        <br><br>
+        For posterior uveitis, choroidal tubercles are the most characteristic lesions of intraocular TB. However, there are serpiginous-like TB and multiple choroiditis-like TB as well. 
+        <br><br>
+        Sometimes, occlusive retinal vasculitis can be the only sign of ocular involvement.
+        <br><br>
+        Ethnicity and travel history are important.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`anterior uveitis with iris nodules`, `serpiginous-like tubercular choroiditis`, `choroidal nodule (i.e. tuberculoma)`,
+            `in individuals with active systemic tuberculosis, multifocal choroiditis`,'occlusive retinal vasculitis']
             }
         ],
         {
@@ -491,10 +548,21 @@ export const dummyQuestionsPU = {
 
     'ddx_sarcoid_rvasculitis' : new Result(
         ["Sarcoid Uveitis"],
-        [`Sarcoid Uveitis is ...`],
+        [`Uveitis is seen in a significant number of patients with sarcoidosis. 
+        <br><br>
+        For posterior uveitis, Yellow-gray nodular lesions may appear in the choroid or outer retina. Multiple active or atrophic chorioretinal peripheral lesions are seen. Patchy retinal phlebitis may be found, associated with candle wax dripping. 
+        <br><br>
+        Anterior involvement indicates panuveitis.
+        `],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Yellow-gray nodular lesions`,
+
+                `Multiple active or atrophic chorioretinal lesions`,
+                
+                `Patchy retinal phlebitis`, 
+                
+                `Complications: retinal haemorrhage occluded from phlebitis`]
             }
         ],
         {
@@ -503,14 +571,25 @@ export const dummyQuestionsPU = {
     ),
     'ddx_sarcoid_panuveitis' : new Result(
         ["Sarcoid Uveitis"],
-        [`Sarcoid Uveitis is ...`],
+        [`Uveitis is seen in a significant number of patients with sarcoidosis. 
+        <br><br>
+        For posterior uveitis, Yellow-gray nodular lesions may appear in the choroid or outer retina. Multiple active or atrophic chorioretinal peripheral lesions are seen. Patchy retinal phlebitis may be found, associated with candle wax dripping. 
+        <br><br>
+        Anterior involvement indicates panuveitis.
+        `],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Yellow-gray nodular lesions`,
+
+                `Multiple active or atrophic chorioretinal lesions`,
+                
+                `Patchy retinal phlebitis`, 
+                
+                `Complications: retinal haemorrhage occluded from phlebitis`]
             }
         ],
         {
-            
+            "Sarcoid uveitis" : "high"
         }
     ),
 
@@ -572,10 +651,12 @@ export const dummyQuestionsPU = {
 
     'ddx_mewds' : new Result(
         ["Multiple Evanescent White Dot Syndrome"],
-        [`Multiple Evanescent White Dot Syndrome is ...`],
+        [`Multiple evanescent white dot syndrome (MEWDS) results from primary inflammatory involvement of the choriocapillaris causing nonperfusion.
+        <br><br>
+        Viral flu-like syndromes may precede MEWDS in up to 50 % of patients. it is usually unilateral and shows unique episodes.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`Preceding viral syndrome`, `Unilateral involvement`, `Check SUN morphology and imaging criteria`]
             }
         ],
         {
@@ -604,7 +685,9 @@ export const dummyQuestionsPU = {
 
     'ddx_mfcpu' : new Result(
         ["Multifocal Choroiditis with Panuveitis"],
-        [`Multifocal Choroiditis with Panuveitis is ...`],
+        [`Multifocal choroiditis and panuveitis is an uncommon, chronic, recurrent disease. It affects more frequently myopic females in the third or fourth decades of life. 
+        <br><br>
+        Multifocal choroidal lesions are typical and usually bilateral, but may be asymmetric.`],
         [
             {
                 "signs" : [`Chronic, recurrent`,
@@ -621,7 +704,7 @@ export const dummyQuestionsPU = {
 
     'ddx_pic' : new Result(
         ["Punctate Inner Choroiditis"],
-        [`Punctate Inner Choroiditis is ...`],
+        [`Punctate inner choroiditis is a rare, idiopathic, inflammatory disease confined to the inner choroid and retinal pigment epithelium that occurs in otherwise healthy, predominantly young adult myopic women.`],
         [
             {
                 "signs" : [`Typically unilateral`,
@@ -640,10 +723,17 @@ export const dummyQuestionsPU = {
 
     'ddx_tb_mfcpu' : new Result(
         ["Tubercular Uveitis"],
-        [`Tubercular Uveitis is ...`],
+        [`Intraocular TB manifests in multiple presentation from anterior, intermediate, posterior and panuveitis. 
+        <br><br>
+        For posterior uveitis, choroidal tubercles are the most characteristic lesions of intraocular TB. However, there are serpiginous-like TB and multiple choroiditis-like TB as well. 
+        <br><br>
+        Sometimes, occlusive retinal vasculitis can be the only sign of ocular involvement.
+        <br><br>
+        Ethnicity and travel history are important.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`anterior uveitis with iris nodules`, `serpiginous-like tubercular choroiditis`, `choroidal nodule (i.e. tuberculoma)`,
+            `in individuals with active systemic tuberculosis, multifocal choroiditis`,'occlusive retinal vasculitis']
             }
         ],
         {
@@ -653,10 +743,17 @@ export const dummyQuestionsPU = {
 
     'ddx_tb_sc' : new Result(
         ["Tubercular Uveitis"],
-        [`Tubercular Uveitis is ...`],
+        [`Intraocular TB manifests in multiple presentation from anterior, intermediate, posterior and panuveitis. 
+        <br><br>
+        For posterior uveitis, choroidal tubercles are the most characteristic lesions of intraocular TB. However, there are serpiginous-like TB and multiple choroiditis-like TB as well. 
+        <br><br>
+        Sometimes, occlusive retinal vasculitis can be the only sign of ocular involvement.
+        <br><br>
+        Ethnicity and travel history are important.`],
         [
             {
-                "signs" : [`sign 1`, `sign 2`, `sign 3`]
+                "signs" : [`anterior uveitis with iris nodules`, `serpiginous-like tubercular choroiditis`, `choroidal nodule (i.e. tuberculoma)`,
+            `in individuals with active systemic tuberculosis, multifocal choroiditis`,'occlusive retinal vasculitis']
             }
         ],
         {
@@ -767,14 +864,45 @@ export const dummyQuestionsPU = {
 
     'ddx_drug_induced' : new Result(
         ["Drug Induced Uveitis"],
-        [``],
+        [`Drug-induced uveitis is considered when a patient without a previous history of intraocular inflammation develops uveitis after being exposed to a certain agent. 
+        , and the inflamamation improves after the drug is discontinued. The introduction of many new drugs into clinical practice has been accompanied by an increasing number of reports of drug-induced uveitis. `],
         [
             {
-                "signs" : ['Course', 'Laterality', 'Anatomic class']
+                "signs" : [`<b>Rifabutin</b>: conjunctival injection, keratic precipitates, anterior chamber cell/flare with or without hypopyon, vitreous cell, perivascular retinal infiltrates <br>`,
+                `<b>Bisphosphonates</b>: conjunctivitis, scleritis, iritis - anterior chamber reaction with cell/flare <br>`,
+                `<b>Moxifloxacin</b>: acute bilateral iris depigmentation and anterior uveitis <br>`,
+                `<b>Checkpoint inhibitor</b>: anterior uveitis, VKH-like uveitis (nivolumab), Behcet like syndrome (pembrolizumab) <br>`,
+                `<b>Brimonidine</b>: KP, posterior synechiae, iris nodules, anterior chamber cell/flare <br>`,
+                `<b>Prostaglandin analogues</b>: mild anterior chamber reaction, CME <br>`]
             }
         ],
         {
             "Drug-induced" : "high"
+        }
+    ),
+    'ddx_Nendophthalmitis' : new Result(
+        ["Endogenous endophthalmitis"],
+        [`Endogenous endophthalmitis is a blood-borne metastatic infection from the primary inoculation site secondary to bacterial or a fungal pathology. 
+        The microorganism primarily spreads through the posterior segment vessels`],
+        [
+            {
+                "signs" : ['reduced visual acuity', 'conjunctival injection', 'corneal edema','hypopyon','anterior chamber cells','significant vitritis','chorioretinal infiltrates']
+            }
+        ],
+        {
+            "Endophthalmitis" : "high"
+        }
+    ),
+    'ddx_Xendophthalmitis' : new Result(
+        ["Exogenous Endophthalmitis"],
+        [`Exogenous endophthalmitis is the most common type of endophthalmitis. It occurs when bacteria or fungi gets inside the eye from surgery, an injection into the eyeball or an eye trauma`],
+        [
+            {
+                "signs" : ['reduced visual acuity', 'conjunctival injection', 'corneal edema','hypopyon','anterior chamber cells','significant vitritis','chorioretinal infiltrates']
+            }
+        ],
+        {
+            "Endophthalmitis" : "high"
         }
     )
     
