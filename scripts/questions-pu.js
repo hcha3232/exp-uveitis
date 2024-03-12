@@ -58,7 +58,6 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `Additional prominent retinitis`, nextQuestion: "retinitis" },
             { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_rvasculitis" },
             { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_rvasculitis" },
             { label: `Retinal vasculitis WITH <br><br>${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_rvasculitis" },
@@ -278,7 +277,7 @@ export const dummyQuestionsPU = {
             { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','Other features include',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "ddx_arn" },
             { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
             { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_panuveitis" },
-            { label: 'History of ocular surgery, intravitreali injections, trauma, IV drug abuse, dental surgery, or sepsis', nextQuestion: 'ddx_Nendophthalmitis'},
+            { label: `Progressive vitritis and hypopyon WITH <br><br>${imaging_render('History','',['Ocular surgery, intravitreali injections, trauma, IV drug abuse, dental surgery, or sepsis'])}`, nextQuestion: 'ddx_Nendophthalmitis'},
             { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_panuveitis"},
             { label: `High-risk sexual behaviour`, nextQuestion: "ddx_syphilis"},
             { label: `None above`, nextQuestion: "ddx_un_panuveitis"}

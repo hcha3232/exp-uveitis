@@ -44,23 +44,23 @@ const lymeIU = new Phenotype(`Lyme Disease Intermediate Uveitis`,"Lyme Intermedi
 
 export const iuPhenotypes = [ppIU, nppIU, msIU, sarcIU, syphIU, lymeIU, piolIU]
 
-const arnPU = new Phenotype(`Acute Retinal Necrosis`,"ARN", '');
-const cmvPU = new Phenotype(`Cytomegalovirus Retinitis`,"CMV retinitis", '');
-const toxoPU = new Phenotype(`Toxoplasmic Retinitis`,"Toxoplasmic retinitis", '');
-const behcetPU = new Phenotype(`Behçet Disease Uveitis`,"Behcet Disease uveitis", '');
-const tbPU = new Phenotype(`Tubercular Uveitis`,"Tubercular uveitis", '');
-const sarcPU = new Phenotype(`Sarcoid Uveitis`,"Sarcoid uveitis", '');
-const syphPU = new Phenotype(`Syphilitic Uveitis`,"Syphilitic uveitis", '');
-const apmppePU = new Phenotype(`Acute Posterior Multifocal Placoid Pigment Epitheliopathy`,"APMPPE", '');
-const bscrPU = new Phenotype(`Birdshot Chorioretinitis`,"BSCR", '');
-const mewdsPU = new Phenotype(`Multiple Evanescent White Dot Syndrome`,"MEWDS", '');
-const mfcpuPU = new Phenotype(`Multifocal Choroiditis with Panuveitis`,"MFCPU", '');
-const picPU = new Phenotype(`Punctate Inner Choroiditis`,"PIC", '');
-const scPU = new Phenotype(`Serpiginous Choroiditis`,"SC", '');
-const soPU = new Phenotype(`Sympathetic Ophthalmia`,"SO", '');
-const vkhPU = new Phenotype(`Vogt-Koyanagi-Harada Disease`,"VKH", '');
-const endPU = new Phenotype(`Endophthalmitis`,"Endophthalmitis", '');
-const drugPU = new Phenotype(`Drug-induced Panuveitis`,"Drug-induced", '');
+const arnPU = new Phenotype(`Acute Retinal Necrosis`,"ARN", database['arn']);
+const cmvPU = new Phenotype(`Cytomegalovirus Retinitis`,"CMV retinitis", database['cmvRet']);
+const toxoPU = new Phenotype(`Toxoplasmic Retinitis`,"Toxoplasmic retinitis", database['toxo']);
+const behcetPU = new Phenotype(`Behçet Disease Uveitis`,"Behcet Disease uveitis", database['behcet']);
+const tbPU = new Phenotype(`Tubercular Uveitis`,"Tubercular uveitis", database['tbPU']);
+const sarcPU = new Phenotype(`Sarcoid Uveitis`,"Sarcoid uveitis", database['sarcoidosisPU']);
+const syphPU = new Phenotype(`Syphilitic Uveitis`,"Syphilitic uveitis", database['syphilisPU']);
+const apmppePU = new Phenotype(`Acute Posterior Multifocal Placoid Pigment Epitheliopathy`,"APMPPE", database['apmppe']);
+const bscrPU = new Phenotype(`Birdshot Chorioretinitis`,"BSCR", database['bscr']);
+const mewdsPU = new Phenotype(`Multiple Evanescent White Dot Syndrome`,"MEWDS", database['mewds']);
+const mfcpuPU = new Phenotype(`Multifocal Choroiditis with Panuveitis`,"MFCPU", database['mfcpu']);
+const picPU = new Phenotype(`Punctate Inner Choroiditis`,"PIC", database['pic']);
+const scPU = new Phenotype(`Serpiginous Choroiditis`,"SC", database['sc']);
+const soPU = new Phenotype(`Sympathetic Ophthalmia`,"SO", database['so']);
+const vkhPU = new Phenotype(`Vogt-Koyanagi-Harada Disease (Early and Late)`,"VKH", database['vkh']);
+const endPU = new Phenotype(`Endophthalmitis`,"Endophthalmitis", database['endophthalmitis']);
+const drugPU = new Phenotype(`Drug-induced Uveitis`,"Drug-induced", database['drug_induced']);
 
 export const puPhenotypes = [arnPU,cmvPU,toxoPU,behcetPU,tbPU,sarcPU,syphPU,apmppePU,bscrPU,mewdsPU,mfcpuPU,picPU,scPU,soPU,vkhPU,endPU,drugPU]
 

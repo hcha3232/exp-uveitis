@@ -1,14 +1,16 @@
 import { auPhenotypes } from "./phenotype.js"
 import { iuPhenotypes } from "./phenotype.js"
+import { puPhenotypes } from "./phenotype.js";
 
 let phenotype = auPhenotypes;
 let uveitis = ''
 
 let x = ``
 
-for(let k=0; k< 2; k++){
+for(let k=0; k< 3; k++){
   if(k==0){phenotype = auPhenotypes; uveitis = 'Anterior Uveitis' }
   else if(k==1){phenotype = iuPhenotypes; uveitis = 'Intermediate Uveitis'}
+  else if(k==2){phenotype = puPhenotypes; uveitis = 'Posterior and Panuveitis'}
 
   x += `<div class="accordion" id="accordionExample-${k}">`
   x += `
@@ -40,5 +42,7 @@ function accor_item(dis,k){
       </div>
   </div>
     `
+
+  
     return accorDiv;
 }
