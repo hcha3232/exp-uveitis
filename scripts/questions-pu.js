@@ -349,7 +349,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "ARN" : "high"
         }
     ),
     'ddx_cmv_retinitis' : new Result(
@@ -374,7 +374,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "CMV retinitis" : "high"
         }
     ),'ddx_toxo' : new Result(
         ["Toxoplasmic Retinitis"],
@@ -395,7 +395,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Toxoplasmic retinitis" : "high"
         }
     ),
     'ddx_behcet_retinitis' : new Result(
@@ -419,7 +419,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Behcet Disease uveitis" : "high"
         }
     ),
     'ddx_behcet_panuveitis' : new Result(
@@ -443,7 +443,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Behcet Disease uveitis" : "high"
         }
     ),
     'ddx_behcet_rvasculitis' : new Result(
@@ -467,7 +467,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Behcet Disease uveitis" : "high"
         }
     ),
 
@@ -484,7 +484,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Undifferentiated Posterior/Panuveitis" : "high"
         }
     ),
 
@@ -504,7 +504,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Tubercular Uveitis" : "high"
         }
     ),
     'ddx_tb_posterior' : new Result(
@@ -523,7 +523,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Tubercular Uveitis" : "high"
         }
     ),
     'ddx_tb_panuveitis' : new Result(
@@ -542,7 +542,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Tubercular Uveitis" : "high"
         }
     ),
 
@@ -566,7 +566,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Sarcoid uveitis" : "high"
         }
     ),
     'ddx_sarcoid_panuveitis' : new Result(
@@ -606,7 +606,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Undifferentiated Posterior/Panuveitis" : "high"
         }
     ),
 
@@ -628,7 +628,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "APMPPE" : "high"
         }
     ),
 
@@ -645,7 +645,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Serpiginous Choroiditis" : "high"
         }
     ),
 
@@ -660,7 +660,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "MEWDS" : "high"
         }
     ),
 
@@ -679,7 +679,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "BSCR" : "high"
         }
     ),
 
@@ -698,7 +698,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "MFCPU" : "high"
         }
     ),
 
@@ -717,7 +717,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "PIC" : "high"
         }
     ),
 
@@ -737,7 +737,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Tubercular Uveitis" : "high"
         }
     ),
 
@@ -757,7 +757,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Tubercular Uveitis" : "high"
         }
     ),
 
@@ -774,7 +774,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Undifferentiated Posterior/Panuveitis" : "high"
         }
     ),
 
@@ -799,7 +799,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Sympathetic Ophthalmia" : "high"
         }
     ),
 
@@ -820,7 +820,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "VKH" : "high"
         }
     ),
 
@@ -841,7 +841,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "VKH" : "high"
         }
     ),
 
@@ -858,7 +858,7 @@ export const dummyQuestionsPU = {
             }
         ],
         {
-            
+            "Undifferentiated Posterior/Panuveitis" : "high"
         }
     ),
 

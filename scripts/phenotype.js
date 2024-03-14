@@ -61,6 +61,7 @@ const soPU = new Phenotype(`Sympathetic Ophthalmia`,"Sympathetic Ophthalmia", da
 const vkhPU = new Phenotype(`Vogt-Koyanagi-Harada Disease (Early and Late)`,"VKH", database['vkh']);
 const endPU = new Phenotype(`Endophthalmitis`,"Endophthalmitis", database['endophthalmitis']);
 const drugPU = new Phenotype(`Drug-induced Uveitis`,"Drug-induced", database['drug_induced']);
+const undiffPU = new Phenotype('Undifferentiated Posterior/Panuveitis','Undifferentiated Posterior/Panuveitis',database['unpu'])
 
-export const puPhenotypes = [arnPU,cmvPU,toxoPU,behcetPU,tbPU,sarcPU,syphPU,apmppePU,bscrPU,mewdsPU,mfcpuPU,picPU,scPU,soPU,vkhPU,endPU,drugPU]
+export const puPhenotypes = [arnPU,cmvPU,toxoPU,behcetPU,tbPU,sarcPU,syphPU,apmppePU,bscrPU,mewdsPU,mfcpuPU,picPU,scPU,soPU,vkhPU,endPU,drugPU,undiffPU]
 

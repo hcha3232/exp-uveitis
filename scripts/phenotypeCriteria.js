@@ -662,6 +662,11 @@ export const database = {
     syphilisPU: classification(pudiseases.syphilisPU),
     toxo: classification(pudiseases.toxo),
     tbPU: classification(pudiseases.tbPU),
+    unpu : `
+    <div class="alert alert-primary" role="alert">
+    Undifferentiated uveitis accounts for 50% of cases among uveitis patients.
+    </div>
+    `,
     endophthalmitis : `
     <div class="alert alert-primary" role="alert">
     Endophthalmitis is a purulent inflammation of the intraocular fluids (vitreous and aqueous) usually due to infection. 
