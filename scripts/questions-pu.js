@@ -562,7 +562,7 @@ export const dummyQuestionsPU = {
                 
                 `Patchy retinal phlebitis`, 
                 
-                `Complications: retinal haemorrhage occluded from phlebitis`]
+                `Complications: retinal haemorrhage from veins from phlebitis`]
             }
         ],
         {
@@ -585,7 +585,7 @@ export const dummyQuestionsPU = {
                 
                 `Patchy retinal phlebitis`, 
                 
-                `Complications: retinal haemorrhage occluded from phlebitis`]
+                `Complications: retinal haemorrhage from veins occluded from phlebitis`]
             }
         ],
         {

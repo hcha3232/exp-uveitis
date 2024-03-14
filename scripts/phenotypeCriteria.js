@@ -278,7 +278,7 @@ const pudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue \
             biopsy demonstrating non-caseating granulomata)'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for acute posterior multifocal placoid pigment epitheliopathy. Am J Ophthalmol 2021;228:174-81.'
     },
     bscr : {
         satisfy: '[#1 and #2 and #3] or #4',
@@ -303,7 +303,7 @@ const pudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue \
             biopsy demonstrating non-caseating granulomata)','Evidence of intraocular lymphoma on diagnostic vitrectomy or tissue biopsy'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for birdshot retinochoroiditis. Am J Ophthalmol 2021;228:65-71. '
     },
     mewds : {
         satisfy: '#1 and #2 and #3',
@@ -324,7 +324,7 @@ const pudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue \
             biopsy demonstrating non-caseating granulomata)','Bilateral simultaneous disease onset'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for multiple evanescent white dot syndrome. Am J Ophthalmol 2021;228:192-204.'
     },
     mfcpu : {
         satisfy: '#1 and #2 and #3',
@@ -344,7 +344,7 @@ const pudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue \
             biopsy demonstrating non-caseating granulomata)','Evidence of infection with Mycobacterium tuberculosis'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for multifocal choroiditis with panuveitis. Am J Ophthalmol 2021;228:152-8.'
     },
     pic : {
         satisfy: '#1 and #2 and #3',
@@ -364,7 +364,7 @@ const pudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue \
             biopsy demonstrating non-caseating granulomata)'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for punctate inner choroiditis. Am J Ophthalmol 2021;228:275-80.'
     },
     sc : {
         satisfy: '#1 and #2 and #3',
@@ -384,7 +384,7 @@ const pudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue \
             biopsy demonstrating non-caseating granulomata)','Evidence of infection with Mycobacterium tuberculosis'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for serpiginous choroiditis. Am J Ophthalmol 2021;228:126-33. '
     },
     behcet : {
         satisfy: '#1 and #2',
@@ -400,7 +400,7 @@ const pudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue \
             biopsy demonstrating non-caseating granulomata)'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for Behçet disease uveitis. Am J Ophthalmol 2021;228;80-8.'
     },
     so : {
         realName: 'Sympathetic Ophthalmia',
@@ -422,7 +422,7 @@ const pudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue \
             biopsy demonstrating non-caseating granulomata)'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for sympathetic ophthalmia. Am J Ophthalmol 2021;228;212-9.'
     },
     evkh : {
         satisfy: '#1 or #2 and #3',
@@ -462,7 +462,7 @@ const pudiseases = {
         ],
         excop: ['Positive serology for syphilis using a treponemal test','Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue \
             biopsy demonstrating non-caseating granulomata)'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for Vogt-Koyanagi-Harada disease. Am J Ophthalmol 2021;228;205-11.'
     },
     arn : {
         satisfy: '#1 and #2 or #3',
@@ -484,7 +484,7 @@ const pudiseases = {
             there is immune compromise, morphologic evidence for >1 infection, the characteristic \
             clinical picture of acute retinal necrosis, and the intraocular fluid specimen has a positive \
             PCR for either HSV or VZV)'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for acute retinal necrosis syndrome. Am J Ophthalmol 2021;228:237-44.'
     },
     cmvRet : {
         satisfy: '#1 and #2 and either #3 or #4',
@@ -510,8 +510,7 @@ const pudiseases = {
         Toxoplasma gondii (unless there is immune compromise, morphologic evidence for >1 \
         infection, the characteristic picture of cytomegalovirus retinitis, and the intraocular fluid \
         specimen also has a positive PCR for cytomegalovirus)'],
-        citation: ''
-    },
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for cytomegalovirus retinitis. Am J Ophthalmol 2021;228;245-54.'},
     sarcoidosisPU : {
         satisfy: '#1 and #2',
         rules: [
@@ -570,7 +569,7 @@ const pudiseases = {
         cytomegalovirus (unless there is immune compromise, morphologic evidence for >1 \
         infection, the characteristic picture of toxoplasmic retinitis, and the intraocular fluid \
         specimen also has a positive PCR for T. gondii)'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for toxoplasmic retinitis. Am J Ophthalmol 2021;228:134-41.'
     },
     tbPU : {
         satisfy: '#1 and #2',
@@ -590,7 +589,7 @@ const pudiseases = {
         'Uveitic syndrome compatible with either sarcoidosis-associated uveitis or tubercular \
         uveitis and bilateral hilar adenopathy on chest imaging without histological or \
         microbiologic confirmation of the diagnosis of infection with M. tuberculosis §'],
-        citation: ''
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for tubercular uveitis. Am J Ophthalmol 2021;228:142-51.'
     },
 }
 
@@ -683,7 +682,11 @@ Types of Endophthalmitis</div>
 * After Intravitreal Injections <br>
 * Corneal ulcer <br><br>
 <b>Endogenous</b> <br>
-* Bacterial or fungal endogenous chorioretinitis +/- vitritis <br>
+* Bacterial or fungal endogenous chorioretinitis +/- vitritis <br><br>
+<div class="citation">
+                <span style="font-weight: 500;">References </span><br>
+                <span style="font-weight:400; font-size: 0.6rem;">https://eyewiki.aao.org/Drug_Induced_Uveitis</span>      
+            </div>
     `,
     drug_induced : `
     <div class="alert alert-primary" role="alert">
@@ -694,7 +697,12 @@ Types of Endophthalmitis</div>
             * <b>Moxifloxacin</b>: acute bilateral iris depigmentation and anterior uveitis <br>
             * <b>Checkpoint inhibitor</b>: anterior uveitis, VKH-like uveitis (nivolumab), Behcet like syndrome (pembrolizumab) <br>
             * <b>Brimonidine</b>: KP, posterior synechiae, iris nodules, anterior chamber cell/flare <br>
-            * <b>Prostaglandin analogues</b>: mild anterior chamber reaction, CME <br>
+            * <b>Prostaglandin analogues</b>: mild anterior chamber reaction, CME <br><br>
+    
+    <div class="citation">
+                <span style="font-weight: 500;">References </span><br>
+                <span style="font-weight:400; font-size: 0.6rem;">https://eyewiki.aao.org/Drug_Induced_Uveitis</span>      
+            </div>
     `
 }
 
