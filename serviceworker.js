@@ -1,30 +1,18 @@
-
+// This is the "Offline page" service worker
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
 const CACHE = "pwabuilder-page";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPages = [
-  '/',
-  '/index.html',
-  '/html/au-exp.html',
-  '/html/iu-exp.html',
-  '/html/pu-exp.html',
-  '/html/classification.html',
-  '/css/style.css',
-  '/scripts/accor.js',
-  '/scripts/app-au.js',
-  '/scripts/app-iu.js',
-  '/scripts/app-pu.js',
-  '/scripts/nav.js',
-  '/scripts/new-decision.js',
-  '/scripts/phenotype.js',
-  '/scripts/phenotypeCriteria.js',
-  '/scripts/questions-pu.js',
-  '/scripts/questions.js'
-
-]
+const offlineFallbackPage = [
+  "/offline.html",
+  "/css/style.css",
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css",
+  "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css",
+  "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js",
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+];
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -35,13 +23,13 @@ self.addEventListener("message", (event) => {
 self.addEventListener('install', async (event) => {
     event.waitUntil(
       caches.open(CACHE)
-        .then((cache) => cache.addAll(offlineFallbackPages))
+        .then((cache) => cache.addAll(offlineFallbackPage))
     );
+
+    if (workbox.navigationPreload.isSupported()) {
+      workbox.navigationPreload.enable();
+    }
   });
-  
-  if (workbox.navigationPreload.isSupported()) {
-    workbox.navigationPreload.enable();
-  }
 
   self.addEventListener('fetch', (event) => {
     if (event.request.mode === 'navigate') {
@@ -58,9 +46,15 @@ self.addEventListener('install', async (event) => {
         } catch (error) {
   
           const cache = await caches.open(CACHE);
-          const cachedResp = await cache.match(offlineFallbackPages);
+          const cachedResp = await cache.match("/offline.html");
           return cachedResp;
         }
-      })());
+        })());
+      } else {
+        event.respondWith((async () => {
+          const cache = await caches.open(CACHE);
+          const cachedResp = await cache.match(event.request);
+          return cachedResp || fetch(event.request);
+        })());
     }
   });
