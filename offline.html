@@ -46,9 +46,9 @@
         }
         else {
             setTimeout(function() {
-                document.getElementById("connection").innerHTML = ""; // Clear the message
+                document.getElementById("connection").innerHTML = "No internet connection detected. Please check your connection and try again."; 
             }, 500);
-            document.getElementById("connection").innerHTML = "No internet connection detected. Please check your connection and try again.";
+            document.getElementById("connection").innerHTML = "";
         }
     }
     </script>
