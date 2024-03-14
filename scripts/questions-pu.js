@@ -281,6 +281,7 @@ export const dummyQuestionsPU = {
         }
     ),
 
+    
     'rapid-1': new Question(
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
@@ -327,7 +328,20 @@ export const dummyQuestionsPU = {
     
 
 
-
+    'ddx_syphilis' : new Result(
+        ["Syphilitic Uveitis"],
+        [`Syphilitic uveitis most often presents in the secondary stage. It causes a wide variety of ocular inflammatory conditions. 
+        <br><br>
+        *Because of the wide variety of syphilitic ocular manifestations and the fact that this disease may mimic other etiologic entities, routine use of serologic tests for syphilis in adult patients with intraocular inflammation of unknown origin is mandatory, unless the diagnosis is quite obvious or a well-known systemic disease is present and can explain the ocular inflammation.`],
+        [
+            {
+                "signs" : []
+            }
+        ],
+        {
+            "Syphilitic uveitis" : "high"
+        }
+    ),
 
 
 

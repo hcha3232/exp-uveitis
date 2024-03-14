@@ -995,7 +995,7 @@ export const dummyQuestionsIU = {
         <br><br>
         It may lead to intermediate uveitis especially if mild inflammation of the anterior segment is associated with a more pronounced vitreous reaction. 
         <br><br>
-        *Because of the wide variety of syphilitic ocular manifestations and the fact that this disease may mimic other etiologic entities, routine use of serologic tests for syphilis in adult patients with intraocular inflammation of unknown origin is mandatory, unless the diagnosis is quite obvious or a well-known systemic disease is present andcan explain the ocular inflammation.`],
+        *Because of the wide variety of syphilitic ocular manifestations and the fact that this disease may mimic other etiologic entities, routine use of serologic tests for syphilis in adult patients with intraocular inflammation of unknown origin is mandatory, unless the diagnosis is quite obvious or a well-known systemic disease is present and can explain the ocular inflammation.`],
         [
             {
                 "signs" : [`<i>Signs often associated with intermediate uveitis</i>`,
