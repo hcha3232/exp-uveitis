@@ -21,7 +21,7 @@ export const dummyQuestionsPU = {
         [
             { label: "Retinitis", nextQuestion: "retinitis" },
             { label: "Retinal vasculitis", nextQuestion: "rvasculitis" },
-            { label: "Chorioretinitis", nextQuestion: "choroiditis-1" },
+            { label: "Choroiditis/Chorioretinitis", nextQuestion: "choroiditis-1" },
             { label: "Panuveitis", nextQuestion: "panuveitis-1" },
             { label: "Rapidly vision deteriorating posterior or panuveitis", nextQuestion: "rapid-1"}
         ],
@@ -49,9 +49,11 @@ export const dummyQuestionsPU = {
             "MEWDS" : "low",
             "MFCPU" : "low",
             "PIC" : "low",
-            "SC" : "low",
-            "SO" : "low",
-            "VKH" : "low"
+            "Serpiginous Choroiditis" : "low",
+            "Sympathetic Ophthalmia" : "low",
+            "VKH" : "low",
+            "Endophthalmitis" : "low",
+            "Drug-induced" : "low"
         }
     ),
     'rvasculitis': new Question(
@@ -63,16 +65,18 @@ export const dummyQuestionsPU = {
             { label: `Retinal vasculitis WITH <br><br>${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_rvasculitis" },
             { label: `None above`, nextQuestion: "ddx_un_rvasculitis" }
         ],
-        "",
+        "<b>Note.</b> ARN, CMV retinitis, and Toxoplasmic retinis could have vasculitis - But the primary site of involvement is retina",
         {   
             "APMPPE" : "low",
             "BSCR" : "low",
             "MEWDS" : "low",
             "MFCPU" : "low",
             "PIC" : "low",
-            "SC" : "low",
-            "SO" : "low",
-            "VKH" : "low"
+            "Serpiginous Choroiditis" : "low",
+            "Sympathetic Ophthalmia" : "low",
+            "VKH" : "low",
+            "Endophthalmitis" : "low",
+            "Drug-induced" : "low"
         }
     ),
     'choroiditis-1': new Question(
@@ -82,14 +86,15 @@ export const dummyQuestionsPU = {
             { label: `Pauci-focal`, nextQuestion: "choroiditis-pauci" },
             { label: `Multi-focal`, nextQuestion: "choroiditis-multi" },
         ],
-        "",
+        "<b>Note.</b> Bacterial and Fungal endophthalmitis often manifest as chorioretinitis - But the primary type is panuveitis with significant vitritis",
         {
             "ARN" : "low",
             "CMV retinitis" : "low",
             "Toxoplasmic retinitis" : "low",
             "Behcet Disease uveitis" : "low",
-            "SO" : "low",
-            "VKH" : "low"
+            "Sympathetic Ophthalmia" : "low",
+            "VKH" : "low",
+            "Drug-induced" : "low"
         }
     ),
     'choroiditis-pauci': new Question(
@@ -98,7 +103,7 @@ export const dummyQuestionsPU = {
         [
             { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA<br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF<br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
             { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA<br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
-            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_posterior" },
+            { label: `A choroidal nodule (Tuberculoma) WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_posterior" },
             { label: `None above`, nextQuestion: "ddx_un_choroiditis" }
         ],
         "",
@@ -107,6 +112,7 @@ export const dummyQuestionsPU = {
             "MEWDS" : "low",
             "MFCPU" : "low",
             "PIC" : "low",
+            "Sarcoid uveitis" : "low"
         }
     ),
     'choroiditis-multi': new Question(
@@ -135,6 +141,7 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
+
         }
     ),
     'check-tb-sc': new Question(
@@ -146,7 +153,7 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-            "SC" : "high",
+            "Serpiginous Choroiditis" : "high",
             "Tubercular uveitis" : "high"
         }
     ),
