@@ -22,7 +22,7 @@ nav.innerHTML = `
       <i class="bi bi-download"></i>
     </button>
 
-    <button class="navbar-toggler install-btn" id="signOutBtn" type="button">
+    <button class="navbar-toggler" id="signOutBtn" type="button">
       <i class="bi bi-power"></i>
     </button>
 
