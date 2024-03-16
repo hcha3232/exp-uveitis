@@ -33,7 +33,37 @@
     
     
     
-
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+                apiKey: "AIzaSyCzOmDJUdo4Zb6JdqyV4Z9wJAR-oNN3KPU",
+                authDomain: "uveitistree.firebaseapp.com",
+                projectId: "uveitistree",
+                storageBucket: "uveitistree.appspot.com",
+                messagingSenderId: "10694666072",
+                appId: "1:10694666072:web:061c2e6f94e29361a0672d"
+            };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+    
+        // Check if a user is signed in
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, you can access user data here
+                console.log("User is signed in:", user);
+            } else {
+                // No user is signed in, redirect to login page or handle as desired
+                console.log("No user is signed in");
+                // Example: redirect to login page
+                window.location.href = '/login.html';
+            }
+    });
+    </script>
     <script src="/scripts/nav.js"></script>
     <script>
         let classIcon = document.getElementById('class-icon');
