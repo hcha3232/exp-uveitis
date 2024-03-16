@@ -14,9 +14,21 @@ nav.innerHTML = `
 
     <a class="navbar-brand" href="#" style="font-weight:600">Uveitis Tree</a>
 
-    <button class="navbar-toggler install-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasShare" aria-controls="offcanvasNavbar">
-  <i class="bi bi-download"></i>
-  </button>
+
+    <!-- Button container -->
+    <div class="button-container d-flex align-items-center ">
+
+    <button style="margin-right:5px;" class="navbar-toggler install-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasShare" aria-controls="offcanvasNavbar">
+      <i class="bi bi-download"></i>
+    </button>
+
+    <button class="navbar-toggler install-btn" id="signOutBtn" type="button">
+      <i class="bi bi-power"></i>
+    </button>
+
+    </div>
+
+  
     <div class="offcanvas offcanvas-end" style="width: 100%;" tabindex="-1" id="offcanvasShare" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header nav-border">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Installation</h5>
@@ -87,3 +99,4 @@ navFooter.innerHTML = `
   </div>
 </nav>
 `
+

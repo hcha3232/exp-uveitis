@@ -30,12 +30,12 @@
     <div style="min-height: 100px"></div>
 
     <nav id="nav-footer" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"> </nav>
-    
+    <script src="/scripts/nav.js"></script>
     
     
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
     
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -62,9 +62,19 @@
                 // Example: redirect to login page
                 window.location.href = '/login.html';
             }
-    });
+        });
+
+        const LogOutBtn = document.getElementById('signOutBtn')
+        LogOutBtn.addEventListener('click', ()=> {
+            signOut(auth).then(() => {
+                // Sign-out successful.
+                window.location.href = '/login.html';
+            }).catch((error) => {
+                // An error happened.
+            });
+        })
+        
     </script>
-    <script src="/scripts/nav.js"></script>
     <script>
         let classIcon = document.getElementById('class-icon');
         classIcon.style.color = '#000';
