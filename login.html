@@ -100,16 +100,14 @@
 
 
     let SignBtn = document.getElementById('signBtn')
+    const EmailInp = document.getElementById('floatingInput')
+    const PassInp = document.getElementById('floatingPassword')
     
-    SignBtn.addEventListener('click', () => {
-        console.log("hi")
-        const EmailInp = document.getElementById('floatingInput')
-        const PassInp = document.getElementById('floatingPassword')
-        
+
+    const signIn = () => {
         signInWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
         .then((userCredential) => {
             // Signed in 
-            console.log(userCredential)
             const user = userCredential.user;
 
             // Retrieve researchID from realtime db
@@ -139,7 +137,23 @@
             const errorMessage = error.message;
             alert("Invalid email or password. Please try again.")
         });
-    })
+    }
+
+    // Add event listener to button
+    SignBtn.addEventListener('click', signIn);
+
+    // Add event listener to input fields
+    EmailInp.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            signIn();
+        }
+    });
+
+    PassInp.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            signIn();
+        }
+    });
 
 </script>
 
