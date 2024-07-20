@@ -54,6 +54,10 @@ self.addEventListener('install', async (event) => {
         event.respondWith((async () => {
           const cache = await caches.open(CACHE);
           const cachedResp = await cache.match(event.request);
+          if (event.request.url.includes('gtm.js')) {
+            // Always fetch the latest GTM script
+            return fetch(event.request);
+          }
           return cachedResp || fetch(event.request);
         })());
     }
