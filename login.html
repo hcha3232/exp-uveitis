@@ -1,6 +1,13 @@
 <html lang="en">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MCQDTPWJ');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -34,6 +41,10 @@
 </head>
 
 <body class="text-center">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCQDTPWJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
    
         <main class="form-signin">
         
@@ -65,7 +76,9 @@
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-    import {getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
+    import {getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+    import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+    
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -76,12 +89,14 @@
         projectId: "uveitistree",
         storageBucket: "uveitistree.appspot.com",
         messagingSenderId: "10694666072",
-        appId: "1:10694666072:web:061c2e6f94e29361a0672d"
+        appId: "1:10694666072:web:061c2e6f94e29361a0672d",
+        databaseURL: "https://uveitistree-default-rtdb.firebaseio.com"
     };
   
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
+    const db = getDatabase(app)
 
 
     let SignBtn = document.getElementById('signBtn')
@@ -96,6 +111,26 @@
             // Signed in 
             console.log(userCredential)
             const user = userCredential.user;
+
+            // Retrieve researchID from realtime db
+            const userRef = ref(db, 'users/' + user.uid)
+                get(userRef).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const researchID = snapshot.val().researchID;
+
+                        localStorage.setItem('researchID', researchID);
+
+                        // Push to dataLayer
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            'event': 'userLogin',
+                            'userID': researchID
+                        });
+                    }
+                });
+
+            
+
             window.location.href = '/index.html'
             // ...
         })
@@ -106,9 +141,6 @@
         });
     })
 
-  </script>
-  <script>
-    
-  </script>
+</script>
 
 </html>

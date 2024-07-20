@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MCQDTPWJ');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +26,10 @@
     <meta name="apple-mobile-web-app-title" content="uveitis" />
 </head>
 <body style="background-color: #fbf8f8;">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCQDTPWJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 <!--body style="background-color: #f6ece3;"-->
     <nav id="nav"> </nav>
     
@@ -54,8 +65,9 @@
     
     
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getApps, initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
         import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
     
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -64,18 +76,39 @@
                 projectId: "uveitistree",
                 storageBucket: "uveitistree.appspot.com",
                 messagingSenderId: "10694666072",
-                appId: "1:10694666072:web:061c2e6f94e29361a0672d"
+                appId: "1:10694666072:web:061c2e6f94e29361a0672d",
+                databaseURL: "https://uveitistree-default-rtdb.asia-southeast1.firebasedatabase.app"
             };
     
         // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+        if (!getApps().length) {
+            // Initialize Firebase
+            initializeApp(firebaseConfig);
+        }
+        const auth = getAuth();
+        const db = getDatabase()
     
         // Check if a user is signed in
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, you can access user data here
-                console.log("User is signed in:", user);
+                console.log("User is signed in:");
+                // Retrieve researchID from realtime db
+                const userRef = ref(db, 'users/' + user.uid)
+                get(userRef).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const researchID = snapshot.val().researchID;
+
+                        localStorage.setItem('researchID', researchID);
+
+                        // Push to dataLayer
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            'event': 'userLogin',
+                            'userID': researchID
+                        });
+                    }
+                });
             } else {
                 // No user is signed in, redirect to login page or handle as desired
                 console.log("No user is signed in");
