@@ -46,3 +46,24 @@ function accor_item(dis,k){
   
     return accorDiv;
 }
+
+// Event listener for accordion buttons to track clicks
+document.querySelectorAll('.accordion-button').forEach(button => {
+  button.addEventListener('click', function() {
+    // Read the aria-expanded attribute
+    // Use a small delay to ensure aria-expanded is updated
+    setTimeout(() => {
+      let isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+      // Fire GTM event
+      if (isExpanded) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'accordionExpand',
+          'accordionName': this.textContent.trim()
+        });
+      }
+      
+    }, 0)
+  });
+});
