@@ -393,6 +393,26 @@ export const dummyQuestions = {
         {
         }
     ),
+    'ddx_not_jia_nor_tinu_c_bl_ng' : new Result(
+        ["Undifferentiated anterior uveitis"], 
+        [`The SUN Working Group has recommended that uveitis cases not meeting criteria for a specific disease be classified as undifferentiated with the course, laterality, and anatomic class. 
+        <br><br>
+        About 50% of uveitis are undifferentiated. 
+        <br><br>
+        Refer to <b>differential diagnosis</b> section below to see which causes are more likely.  `],
+        [
+            {
+                "signs" : ['Course',
+
+                'Laterality',
+                
+                'Anatomic class']
+            }
+        ],
+        {
+            "Undifferentiated Anterior uveitis" : "high"
+        }
+    ),
 
     'q4': new Question(
         "<b>Question 4:</b> Finished",

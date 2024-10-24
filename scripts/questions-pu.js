@@ -90,7 +90,6 @@ export const dummyQuestionsPU = {
         {
             "ARN" : "low",
             "CMV retinitis" : "low",
-            "Toxoplasmic retinitis" : "low",
             "Behcet Disease uveitis" : "low",
             "Sympathetic Ophthalmia" : "low",
             "VKH" : "low",
@@ -104,6 +103,7 @@ export const dummyQuestionsPU = {
             { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA<br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF<br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
             { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA<br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
             { label: `A choroidal nodule (Tuberculoma) WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_posterior" },
+            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
             { label: `None above`, nextQuestion: "ddx_un_choroiditis" }
         ],
         "",
@@ -129,7 +129,7 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-
+            "Toxoplasmic retinitis" : "low"
         }
     ),
     'check_post_sarcoidosis': new Question(
