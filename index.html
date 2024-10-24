@@ -97,7 +97,7 @@
     
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+        import { getAuth, onAuthStateChanged, signOut, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
         import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
     
         // Your web app's Firebase configuration
@@ -115,6 +115,22 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getDatabase(app)
+
+        // Hard-coded credentials
+        const knownEmail = "uveitisproject@gmail.com";  // Replace with your known email
+        const knownPassword = "password";     // Replace with your known password
+
+        const signInWithHardCodedCredentials = () => {
+            signInWithEmailAndPassword(auth, knownEmail, knownPassword)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log("User signed in as:", user.email);
+                })
+                .catch((error) => {
+                    console.error("Error signing in:", error.message);
+                });
+        }
     
         // Check if a user is signed in
         onAuthStateChanged(auth, (user) => {
@@ -137,12 +153,19 @@
                         });
                     }
                 });
-            } else {
+            }
+            else {
+                // No user is signed in, attempt to log in with hard-coded credentials
+                console.log("No user is signed in, attempting to log in with hard-coded credentials");
+                signInWithHardCodedCredentials();
+            } 
+            
+            /*else {
                 // No user is signed in, redirect to login page or handle as desired
                 console.log("No user is signed in");
                 // Example: redirect to login page
                 window.location.href = '/login.html';
-            }
+            }*/
         });
 
         const LogOutBtn = document.getElementById('signOutBtn')
