@@ -184,7 +184,7 @@ export const dummyQuestionsPU = {
             "MEWDS" : "low",
             "MFCPU" : "low",
             "PIC" : "low",
-            "SC" : "low",
+            "Serpiginous Choroiditis" : "low",
         }
     ),
 
@@ -199,7 +199,7 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-            "SO" : "high",
+            "Sympathetic Ophthalmia" : "high",
             "VKH" : "high"
         }
     ),
@@ -217,7 +217,7 @@ export const dummyQuestionsPU = {
         ],
         "",
         {
-            "SO" : "low",
+            "Sympathetic Ophthalmia" : "low",
             "VKH" : "low"
         }
     ),
@@ -309,8 +309,8 @@ export const dummyQuestionsPU = {
             "MEWDS" : "low",
             "MFCPU" : "low",
             "PIC" : "low",
-            "SC" : "low",
-            "SO" : "low",
+            "Serpiginous Choroiditis" : "low",
+            "Sympathetic Ophthalmia" : "low",
             "VKH" : "low",
             "Sarcoid uveitis" : "low",
             "Drug-induced" : "low"
