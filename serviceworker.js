@@ -8,7 +8,7 @@ const CACHE = "pwabuilder-page-v3";
 const offlineFallbackPage = [
   //html 
   "/offline.html",
-  "/index.html",
+  "/index.html", "/html/au-exp.html","/html/iu-exp.html","/html/pu-exp.html","/html/classification.html",
   //images
   "/img/auHom.webp", "/img/iuHom.webp", "/img/puHom.webp",
   "/img/duet.png","/img/SUN-ASAS.png","/img/SUN-ASAS2.png","/img/SUN-JIA-Category.png","/img/SUN-SYPHILIS-SCREENING.png",
