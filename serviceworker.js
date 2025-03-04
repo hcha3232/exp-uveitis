@@ -2,14 +2,23 @@
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "pwabuilder-page-v2";
+const CACHE = "pwabuilder-page-v1";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
 const offlineFallbackPage = [
+  //html 
   "/offline.html",
   "/index.html",
-  "/img/auHom.webp", "/img/iuHom.webp", "/img/puHom.webp", "/scripts/nav.js",
+  //images
+  "/img/auHom.webp", "/img/iuHom.webp", "/img/puHom.webp",
+  "/img/duet.png","/img/SUN-ASAS.png","/img/SUN-ASAS2.png","/img/SUN-JIA-Category.png","/img/SUN-SYPHILIS-SCREENING.png",
+  //js scripts
+  "/scripts/nav.js",
+  "/scripts/accor.js","/scripts/app-au.js","/scripts/app-iu.js","/scripts/app-pu.js","/scripts/new-decision.js","/scripts/phenotype.js",
+  "/scripts/phenotypeCriteria.js","/scripts/question-pu.js","/scripts/questions.js",
+  //css
   "/css/style.css",
+  //cdns
   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css",
   "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css",
   "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js",
