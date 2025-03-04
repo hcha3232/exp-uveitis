@@ -14,8 +14,8 @@ const offlineFallbackPage = [
   "/img/duet.png","/img/SUN-ASAS.png","/img/SUN-ASAS2.png","/img/SUN-JIA-Category.png","/img/SUN-SYPHILIS-SCREENING.png",
   //js scripts
   "/scripts/nav.js",
-  "/scripts/accor.js","/scripts/app-au.js","/scripts/app-iu.js","/scripts/app-pu.js","/scripts/new-decision.js","/scripts/phenotype.js",
-  "/scripts/phenotypeCriteria.js","/scripts/question-pu.js","/scripts/questions.js",
+  /*"/scripts/accor.js","/scripts/app-au.js","/scripts/app-iu.js","/scripts/app-pu.js","/scripts/new-decision.js","/scripts/phenotype.js",
+  "/scripts/phenotypeCriteria.js","/scripts/question-pu.js","/scripts/questions.js",*/
   //css
   "/css/style.css",
   //cdns
