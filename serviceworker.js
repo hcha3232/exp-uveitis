@@ -11,7 +11,7 @@ const offlineFallbackPage = [
   "/index.html",
   //images
   "/img/auHom.webp", "/img/iuHom.webp", "/img/puHom.webp",
-  /*"/img/duet.png","/img/SUN-ASAS.png","/img/SUN-ASAS2.png","/img/SUN-JIA-Category.png","/img/SUN-SYPHILIS-SCREENING.png",*/
+  "/img/duet.png","/img/SUN-ASAS.png","/img/SUN-ASAS2.png","/img/SUN-JIA-Category.png","/img/SUN-SYPHILIS-SCREENING.png",
   //js scripts
   "/scripts/nav.js",
   /*"/scripts/accor.js","/scripts/app-au.js","/scripts/app-iu.js","/scripts/app-pu.js","/scripts/new-decision.js","/scripts/phenotype.js",

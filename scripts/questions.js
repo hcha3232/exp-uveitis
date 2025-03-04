@@ -577,7 +577,7 @@ export const dummyQuestions = {
         <br><br>
         *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.
         <br><br>
-        <div><img src="/img/duet.png" class="img-fluid"></div>`],
+        <div><img src="/img/duet.webp" class="img-fluid"></div>`],
         [
             {
                 "signs": ['Abrupt in onset',
@@ -695,7 +695,7 @@ export const dummyQuestions = {
         <br><br>
         *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.
         <br><br>
-        <div><img src="/img/duet.png" class="img-fluid"></div>`],
+        <div><img src="/img/duet.webp" class="img-fluid"></div>`],
         [
             {
                 "signs": ['Abrupt in onset',
@@ -774,7 +774,7 @@ export const dummyQuestions = {
         <br><br>
         *Refer to DUET algorithm to diagnose Spondyloarthritis/HLA-B27-associated Anterior Uveitis.
         <br><br>
-        <div><img src="/img/duet.png" class="img-fluid"></div>
+        <div><img src="/img/duet.webp" class="img-fluid"></div>
         `],
         [
             {

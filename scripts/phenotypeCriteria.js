@@ -600,12 +600,12 @@ export const database = {
     fus : classification(audiseases.fus),
     jia : classification(audiseases.jia) +
     `
-    <img src="/img/SUN-JIA-Category.png" class="img-fluid container-gap"></img>
+    <img src="/img/SUN-JIA-Category.webp" class="img-fluid container-gap"></img>
     `,
     hlab27 : classification(audiseases.hlab27) + 
     `
-        <img src="/img/SUN-ASAS.png" class="img-fluid container-gap"></img>
-        <img src="/img/SUN-ASAS2.png" class="img-fluid container-gap"></img>
+        <img src="/img/SUN-ASAS.webp" class="img-fluid container-gap"></img>
+        <img src="/img/SUN-ASAS2.webp" class="img-fluid container-gap"></img>
     `,
     tinu : classification(audiseases.tinu),
     sarcoidosisAU : classification(audiseases.sarcoidosisAU),
@@ -615,7 +615,7 @@ export const database = {
     syphilisAU : classification(audiseases.syphilisAU)
     +
     `
-    <img src="/img/SUN-SYPHILIS-SCREENING.png" class="img-fluid container-gap"></img>
+    <img src="/img/SUN-SYPHILIS-SCREENING.webp" class="img-fluid container-gap"></img>
     `,
     uau : `
     <div class="alert alert-primary" role="alert">
