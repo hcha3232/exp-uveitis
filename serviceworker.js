@@ -8,6 +8,7 @@ const CACHE = "pwabuilder-page-v2";
 const offlineFallbackPage = [
   "/offline.html",
   "/index.html",
+  "/img/auHome.webp", "/img/iuHome.webp", "/img/puHome.webp", "/scripts/nav.js",
   "/css/style.css",
   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css",
   "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css",
