@@ -3,7 +3,7 @@ let navFooter = document.getElementById("nav-footer");
 //<i class="bi bi-share"></i>
 nav.innerHTML = `
 <nav class="shadow-sm navbar navbar-light bg-light fixed-top nav-border">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
+  <div class="container-fluid d-flex justify-content-between align-items-center" style="padding: 0px 30px 0px 30px;">
     <!-- Left Spacer (empty) to push the brand to the center -->
     
       <a class="navbar-brand" href="#" style="font-weight:600;">Uveitis Tree</a>
