@@ -3,7 +3,7 @@ let navFooter = document.getElementById("nav-footer");
 //<i class="bi bi-share"></i>
 nav.innerHTML = `
 <nav class=" shadow-sm navbar navbar-light bg-light fixed-top nav-border">
-  <div class="container-fluid">
+  <div class="container-fluid d-flex justify-content-center align-items-center">
 
   
 
@@ -12,7 +12,7 @@ nav.innerHTML = `
   <div style="padding-right: 32px;" ></div>
 
 
-    <a class="navbar-brand" href="#" style="font-weight:600">Uveitis Tree</a>
+    <a class="navbar-brand mx-auto" href="#" style="font-weight:600">Uveitis Tree</a>
 
 
     <!-- Button container -->
