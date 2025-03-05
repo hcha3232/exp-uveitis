@@ -195,9 +195,10 @@
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
 
-                // Unregister old SWs
                 navigator.serviceWorker.getRegistrations().then(reg => {
+                    console.log(reg);
                     if (!reg) {
+                        
                         // Cache busting 
                         navigator.serviceWorker.register("/serviceworker.js?v=" + new Date().getTime()) // Cache busting
                             .then(reg => {
