@@ -14,7 +14,7 @@ export class Result {
     }
 
     render() {
-        let resultContent = `<div class="result-text">Final Diagnosis</div>`
+        let resultContent = `<div class="result-text">Top Differential</div>`
     
         /*foreach item in result => create button  */
 

@@ -154,6 +154,26 @@ const audiseases = {
         excop : ['Positive serology for syphilis using a treponemal test','Evidence of infection with Mycobacterium tuberculosis'],
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for sarcoidosis-associated uveitis.  Am J Ophthalmol 2021;228:220-30.'
     },
+    tbAU : {
+        satisfy: '#1 and #2',
+        rules: [
+            {
+                title: 'Evidence of a tubercular uveitis compatible uveitic syndrome',
+                list: ['<b>anterior uveitis with iris nodules</b>','serpiginous-like tubercular choroiditis','choroidal nodule (i.e. tuberculoma)','in individuals with active systemic tuberculosis, multifocal choroiditis','occlusive retinal vasculitis']
+            },
+            {
+                title: 'Evidence of infection with Mycobacterium tuberculosis, either',
+                list: ['histologically- or microbiologically-confirmed infection with M. tuberculosis* OR',
+                'positive interferon-γ release assay (IGRA)† OR','positive tuberculin skin test‡']
+            },
+        ],
+        excop: ['Positive serology for syphilis using a treponemal test',
+        'Positive biopsy for sarcoidosis (and therefore an absence of histological or microbiologic confirmation of infection with M. tuberculosis)',
+        'Uveitic syndrome compatible with either sarcoidosis-associated uveitis or tubercular \
+        uveitis and bilateral hilar adenopathy on chest imaging without histological or \
+        microbiologic confirmation of the diagnosis of infection with M. tuberculosis §'],
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for tubercular uveitis. Am J Ophthalmol 2021;228:142-51.'
+    },
     syphilisAU : {
         satisfy: '#1 and #2',
         rules: [
@@ -239,6 +259,26 @@ const iudiseases = {
         ],
         excop : ['Positive serology for syphilis using a treponemal test','Evidence of infection with Mycobacterium tuberculosis'],
         citation: 'Standardization of Uveitis Nomenclature Working Group.  Classification criteria for sarcoidosis-associated uveitis.  Am J Ophthalmol 2021;228:220-30.'
+    },
+    tbIU : {
+        satisfy: '#1 and #2',
+        rules: [
+            {
+                title: 'Evidence of a tubercular uveitis compatible uveitic syndrome',
+                list: ['anterior uveitis with iris nodules','serpiginous-like tubercular choroiditis','choroidal nodule (i.e. tuberculoma)','in individuals with active systemic tuberculosis, multifocal choroiditis','occlusive retinal vasculitis']
+            },
+            {
+                title: 'Evidence of infection with Mycobacterium tuberculosis, either',
+                list: ['histologically- or microbiologically-confirmed infection with M. tuberculosis* OR',
+                'positive interferon-γ release assay (IGRA)† OR','positive tuberculin skin test‡']
+            },
+        ],
+        excop: ['Positive serology for syphilis using a treponemal test',
+        'Positive biopsy for sarcoidosis (and therefore an absence of histological or microbiologic confirmation of infection with M. tuberculosis)',
+        'Uveitic syndrome compatible with either sarcoidosis-associated uveitis or tubercular \
+        uveitis and bilateral hilar adenopathy on chest imaging without histological or \
+        microbiologic confirmation of the diagnosis of infection with M. tuberculosis §'],
+        citation: 'Standardization of Uveitis Nomenclature Working Group. Classification criteria for tubercular uveitis. Am J Ophthalmol 2021;228:142-51.'
     },
     syphilisIU : {
         satisfy: '#1 and #2',
@@ -609,9 +649,7 @@ export const database = {
     `,
     tinu : classification(audiseases.tinu),
     sarcoidosisAU : classification(audiseases.sarcoidosisAU),
-    tb : `
-        <img src="/img/SUN-TB.png" class="img-fluid container-gap"></img>
-    `,
+    tbAU : classification(audiseases.tbAU),
     syphilisAU : classification(audiseases.syphilisAU)
     +
     `
@@ -635,6 +673,7 @@ export const database = {
     npp : classification(iudiseases.npp),
     ms : classification(iudiseases.ms),
     sarcoidosisIU : classification(iudiseases.sarcoidosisIU),
+    tbIU: `<div class="alert alert-primary" role="alert">Tubercular intermediate uveitis can have vitreous inflammation (cells and haze) along with snowballs. The SUN criteria does not treat tubercular intermediate uveitis.</div>`+classification(iudiseases.tbIU),
     syphilisIU : classification(iudiseases.syphilisIU),
     piolIU: `
     <div class="alert alert-primary" role="alert">

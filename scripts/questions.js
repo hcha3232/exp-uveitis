@@ -943,6 +943,7 @@ export const dummyQuestionsIU = {
         [
             { label: `${imaging_render('Neurological symptoms','',['Limb weakness','Numbness','Tingling','Excessive fatigue'])}`, nextQuestion: "ddx_ms" },
             { label: `${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoidosis" },
+            { label: `${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb" },
             { label: `${imaging_render('History','',['Recent travel to a Lyme-endemic region',' Outdoor activities in wooded areas','Exposure to large animals'])} ${imaging_render('Dermatological symptoms','',['A characteristic pink or red erythema migrans rash'])}`, nextQuestion: "ddx_lyme" },
             { label: `${imaging_render('History','',[`Above the age of 50 presenting with uveitis for the first time`])} ${imaging_render('Neurological symptoms','',['Balance issues','Cognitive impairment','Palsies','Seizures','Dizziness'])}   
             ${imaging_render('Ophthalmic','',[`Patches or subretinal tumour infiltration`])}`
@@ -1007,6 +1008,26 @@ export const dummyQuestionsIU = {
         ],
         {
             "Sarcoid Intermediate uveitis" : "high"
+        }
+    ),
+    'ddx_tb' : new Result(
+        ["Tubercular Intermediate Uveitis"],
+        [`Tubercular intermediate uveitis is rare but an important differential not to miss.  
+        <br><br>
+        Snowball are typical features of TB intermediate uveitis.`],
+        [
+            {
+                "signs" : [`<i>Signs often associated with intermediate uveitis</i>`,
+
+                    'Snowball',
+                    
+                    'Vitreous opacities',
+                    
+                    'Diagnosed TB or signs of TB']
+            }
+        ],
+        {
+            "TB Intermediate uveitis" : "high"
         }
     ),
     'ddx_syphilis' : new Result(

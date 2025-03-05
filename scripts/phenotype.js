@@ -29,24 +29,26 @@ const jiaAU = new Phenotype(`Juvenile Idiopathic Arthritis-associated Chronic An
 const hlab27AU = new Phenotype(`Spondyloarthritis/HLA-B27-associated Anterior Uveitis`,`HLA-B27 Anterior uveitis`, database['hlab27']);
 const tinuAU = new Phenotype(`Tubulointerstitial Nephritis with Uveitis Syndrome`,`TINU Anterior uveitis`, database['tinu']);
 const sarcAU = new Phenotype(`Sarcoidosis-associated Anterior Uveitis`,`Sarcoid Anterior uveitis`, database['sarcoidosisAU']);
+const tbAU = new Phenotype(`Tubercular Anterior Uveitis`,`TB Anterior uveitis`,database[`tbAU`]);
 const syphAU = new Phenotype(`Syphilitic Anterior Uveitis`,`Syphilis Anterior uveitis`, database['syphilisAU']);
 const undiffAU = new Phenotype(`Undifferentiated Anterior uveitis`,`Undifferentiated Anterior uveitis`, database['uau']);
 
-export const auPhenotypes = [hsvAU, vzvAU, cmvAU, fusAU, jiaAU,hlab27AU, tinuAU,sarcAU, syphAU,undiffAU]
+export const auPhenotypes = [hsvAU, vzvAU, cmvAU, fusAU, jiaAU,hlab27AU, tinuAU,sarcAU, tbAU, syphAU,undiffAU]
 
 const ppIU = new Phenotype(`Pars Planitis`,"PP Intermediate uveitis", database['pp']);
 const nppIU = new Phenotype(`Intermediate Uveitis, Non-Pars Planitis Type`,"NPP Intermediate uveitis", database['npp']);
 const msIU = new Phenotype(`Multiple Sclerosis-associated Intermediate Uveitis`,"MS Intermediate uveitis", database['ms']);
 const sarcIU = new Phenotype(`Sarcoidosis-associated Intermediate Uveitis`,"Sarcoid Intermediate uveitis", database['sarcoidosisIU']);
+const tbIU = new Phenotype(`Tubercular Intermediate Uveitis`,`TB Intermediate uveitis`,database[`tbIU`]);
 const syphIU = new Phenotype(`Syphilitic Intermediate Uveitis`,"Syphilis Intermediate uveitis", database['syphilisIU']);
 const piolIU = new Phenotype(`Primary Intraocular Lymphoma`,"PIOL", database['piolIU']);
 const lymeIU = new Phenotype(`Lyme Disease Intermediate Uveitis`,"Lyme Intermediate uveitis", database['lymeIU']);
 
-export const iuPhenotypes = [ppIU, nppIU, msIU, sarcIU, syphIU, lymeIU, piolIU]
+export const iuPhenotypes = [ppIU, nppIU, msIU, sarcIU, tbIU, syphIU, lymeIU, piolIU]
 
 const arnPU = new Phenotype(`Acute Retinal Necrosis`,"ARN", database['arn']);
 const cmvPU = new Phenotype(`Cytomegalovirus Retinitis`,"CMV retinitis", database['cmvRet']);
-const toxoPU = new Phenotype(`Toxoplasmic Retinitis`,"Toxoplasmic retinitis", database['toxo']);
+const toxoPU = new Phenotype(`Toxoplasma Chorioretinitis`,"Toxoplasma chorioretinitis", database['toxo']);
 const behcetPU = new Phenotype(`Behçet Disease Uveitis`,"Behcet Disease uveitis", database['behcet']);
 const tbPU = new Phenotype(`Tubercular Uveitis`,"Tubercular uveitis", database['tbPU']);
 const sarcPU = new Phenotype(`Sarcoid Uveitis`,"Sarcoid uveitis", database['sarcoidosisPU']);
