@@ -2,7 +2,7 @@
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "pwabuilder-page-v4";
+const CACHE = "pwabuilder-page-v5";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
 const offlineFallbackPage = [
@@ -14,10 +14,10 @@ const offlineFallbackPage = [
   "/img/duet.png","/img/SUN-ASAS.png","/img/SUN-ASAS2.png","/img/SUN-JIA-Category.png","/img/SUN-SYPHILIS-SCREENING.png",
   //js scripts
   "/scripts/nav.js",
-  /*
+  
   "/scripts/accor.js","/scripts/app-au.js","/scripts/app-iu.js","/scripts/app-pu.js","/scripts/new-decision.js","/scripts/phenotype.js",
   "/scripts/phenotypeCriteria.js","/scripts/question-pu.js","/scripts/questions.js",
-  */
+  
   //css
   "/css/style.css",
   //cdns
