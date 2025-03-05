@@ -2,7 +2,7 @@
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "pwabuilder-page-v3";
+const CACHE = "pwabuilder-page-v4";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
 const offlineFallbackPage = [
@@ -31,8 +31,10 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE);
+      // Add offline fallback page to cache
       await cache.addAll(offlineFallbackPage);
-
+      
+      // Enable navigation preload if supported
       if (workbox.navigationPreload.isSupported()) {
         workbox.navigationPreload.enable();
       }
