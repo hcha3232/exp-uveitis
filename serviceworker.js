@@ -2,7 +2,7 @@
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "pwabuilder-page-v1";
+const CACHE = "pwabuilder-page-v2";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
 const offlineFallbackPage = [
@@ -21,7 +21,6 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE);
-      // Add offline fallback page to cache
       await cache.addAll(offlineFallbackPage);
       
       // Enable navigation preload if supported
@@ -40,12 +39,14 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
       const cacheNames = await caches.keys();
-      
-      await Promise.all(
-        cacheNames
-          .filter((cacheName) => cacheName !== CACHE) // Delete old caches
-          .map((cacheName) => caches.delete(cacheName))
-      );
+
+      const deletePromises = cacheNames.map(async (cacheName) => {
+        // If the cache is not the current version, delete it
+        if (cacheName !== CACHE) {
+          console.log(`Deleting old cache: ${cacheName}`);
+          await caches.delete(cacheName); // Delete the old cache
+        }
+      });
 
       await clients.claim(); // Immediately take control of pages
     })()
