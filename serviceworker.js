@@ -8,16 +8,6 @@ const CACHE = "pwabuilder-page-v5";
 const offlineFallbackPage = [
   //html 
   "/offline.html",
-  "/index.html", "/html/au-exp.html","/html/iu-exp.html","/html/pu-exp.html","/html/classification.html",
-  //images
-  "/img/auHom.webp", "/img/iuHom.webp", "/img/puHom.webp",
-  "/img/duet.png","/img/SUN-ASAS.png","/img/SUN-ASAS2.png","/img/SUN-JIA-Category.png","/img/SUN-SYPHILIS-SCREENING.png",
-  //js scripts
-  "/scripts/nav.js",
-  
-  "/scripts/accor.js","/scripts/app-au.js","/scripts/app-iu.js","/scripts/app-pu.js","/scripts/new-decision.js","/scripts/phenotype.js",
-  "/scripts/phenotypeCriteria.js","/scripts/question-pu.js","/scripts/questions.js",
-  
   //css
   "/css/style.css",
   //cdns
@@ -71,7 +61,7 @@ self.addEventListener('fetch', (event) => {
         } catch (error) {
           // If network fails, return cached fallback page
           const cache = await caches.open(CACHE);
-          const cachedResp = await cache.match("/index.html");
+          const cachedResp = await cache.match("/offline.html");
           return cachedResp || fetch(event.request); // Fallback to network if cache is also missing
         }
       })());
