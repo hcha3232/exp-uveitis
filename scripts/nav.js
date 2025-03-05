@@ -30,27 +30,28 @@ nav.innerHTML = `
     <div class="offcanvas-body">
       <div class="d-flex p-2"></div>
       
-      <div style="padding-bottom: 100px">
+      <div style="padding-bottom: 100px; line-height:1.7;">
         <span style="font-size: 1.25rem;">How to install UVEITIS TREE</span>
-        <br><br><b>On iOS</b> (Safari only)<br><br>
-        <ol>
+        <br><div style="margin-bottom: 0.8rem;"></div><b>On iOS</b> (Safari only)<br>
+        <ol style="padding:0 0 0 16px;">
           <li>Tap the share icon <i class="bi bi-box-arrow-up"></i> located at the bottom centre or top right corner of the browser.</li>
           <li>Scroll down in the share sheet and look for the "Add to Home Screen" option.</li>
           <li>Tap on "Add to Home Screen <i class="bi bi-plus-square"></i>".</li>
           <li>A confirmation message will appear, asking if you want to add <b>Uveitis Tree</b> to your home screen. Tap "Add" or "Install."</li>
           <li>The app icon will now be added to your iOS device's home screen for quick access.</li>
         </ol>
-        <br><br><b>On Android</b> (Chrome)<br>
-        <div><i>Some devices recognize Uveitis Tree as PWA and will automatically ask users for installation.</i></div><br>
-        <ol>
+        <div style="margin-bottom: 0.8rem;"></div><b>On Android</b> (Chrome)<br>
+        <div><i>Some devices recognize Uveitis Tree as PWA and will automatically ask users for installation.</i></div>
+        <div style="margin-bottom: 0.8rem;"></div>
+        <ol style="padding:0 0 0 16px;">
           <li>Tap the menu icon (usually three dots) located at the top right corner of the browser.</li>
           <li>From the menu options, select "Add to Home screen"</li>
           <li>A confirmation message will appear, asking if you want to add <b>Uveitis Tree</b> to your home screen. Tap "Add" or "Install."</li>
           <li>The app icon will now be added to your Android device's home screen for quick access.</li>
         </ol>
 
-        <br><br><b>On Windows</b><br><br>
-        <ol>
+        <br><b>On Windows</b><br><div style="margin-bottom: 0.8rem;"></div>
+        <ol style="padding:0 0 0 16px;">
           <li>Tap the install icon located at the top right corner of the browser.</li>
           <li>A pop-up will appear, asking if you want to add <b>Uveitis Tree</b>, click "install"</li>
           <li><b>Uveitis Tree</b> PWA will appear</li>
