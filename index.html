@@ -194,11 +194,16 @@
     <script>
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
+
+                // Unregister old SWs
                 navigator.serviceWorker.getRegistrations().then(registrations => {
                     registrations.forEach(registration => {
                         registration.unregister(); // Unregister old SWs
                         console.log('Old service worker unregistered:', registration);
-                    })});
+                    })
+                });
+
+                // Cache busting 
                 navigator.serviceWorker.register("/serviceworker.js?v=" + new Date().getTime()) // Cache busting
                     .then(reg => {
                         console.log("Service Worker Registered:", reg);
@@ -222,12 +227,6 @@
                     .catch(err => {
                         console.log("Service Worker Registration Failed:", err);
                     });
-            });
-
-            // Auto-reload if a new SW takes control
-            navigator.serviceWorker.addEventListener("controllerchange", () => {
-                console.log("New Service Worker Activated. Reloading...");
-                window.location.reload();
             });
         }
 
