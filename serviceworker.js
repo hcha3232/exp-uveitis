@@ -25,35 +25,34 @@ const offlineFallbackPage = [
   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
 ];
 
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
-    self.skipWaiting();
-  }
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    (async () => {
+      const cache = await caches.open(CACHE);
+      await cache.addAll(offlineFallbackPage);
+
+      if (workbox.navigationPreload.isSupported()) {
+        workbox.navigationPreload.enable();
+      }
+
+      self.skipWaiting(); // Forces activation immediately
+    })()
+  );
 });
 
-self.addEventListener('install', async (event) => {
-    event.waitUntil(
-      caches.open(CACHE)
-        .then((cache) => cache.addAll(offlineFallbackPage))
-    );
-
-    if (workbox.navigationPreload.isSupported()) {
-      workbox.navigationPreload.enable();
-    }
-  });
-
 // Activate event - delete old caches (previous versions)
-self.addEventListener('activate', (event) => {
-  const currentCaches = [CACHE]; // List of active caches (the new version)
-
+self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
+    (async () => {
+      const cacheNames = await caches.keys();
+      await Promise.all(
         cacheNames
-          .filter((cacheName) => !currentCaches.includes(cacheName)) // Delete caches not used anymore
+          .filter((cacheName) => cacheName !== CACHE) // Delete old caches
           .map((cacheName) => caches.delete(cacheName))
       );
-    })
+
+      await clients.claim(); // Immediately take control of pages
+    })()
   );
 });
 
