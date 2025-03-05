@@ -198,8 +198,10 @@
                 // Unregister old SWs
                 navigator.serviceWorker.getRegistrations().then(registrations => {
                     registrations.forEach(registration => {
-                        registration.unregister(); // Unregister old SWs
-                        console.log('Old service worker unregistered:', registration);
+                        if (shouldUnregister(registration)) {  // A custom condition to decide if it should be unregistered
+                            registration.unregister();  // Unregister outdated service worker
+                            console.log('Outdated service worker unregistered:', registration);
+                        }
                     })
                 });
 
@@ -228,6 +230,12 @@
                         console.log("Service Worker Registration Failed:", err);
                     });
             });
+        }
+
+        function shouldUnregister(registration) {
+            // Example condition: You could check the SW version or some other custom condition
+            // For simplicity, let's say we always unregister old ones, but you can change this logic
+            return true;  // Unregister old SWs for now, but adjust this condition if needed
         }
 
     </script>
