@@ -62,22 +62,18 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
-    event.respondWith((async () => {
-      try {
-        const preloadResp = await event.preloadResponse;
-
-        if (preloadResp) {
-          return preloadResp;
+    event.respondWith(
+      (async () => {
+        try {
+          // Try to fetch from network first
+          const networkResp = await fetch(event.request);
+          return networkResp;
+        } catch (error) {
+          // If network fails, return cached fallback page
+          const cache = await caches.open(CACHE);
+          const cachedResp = await cache.match("/index.html");
+          return cachedResp || fetch(event.request); // Fallback to network if cache is also missing
         }
-
-        const networkResp = await fetch(event.request);
-        return networkResp;
-      } catch (error) {
-
-        const cache = await caches.open(CACHE);
-        const cachedResp = await cache.match("/index.html");
-        return cachedResp;
-      }
       })());
     } else {
       event.respondWith((async () => {
