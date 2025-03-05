@@ -100,8 +100,8 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA<br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF<br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
-            { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA<br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
+            { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA: Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF: Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
+            { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA: Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
             { label: `A choroidal nodule (Sarcoid Granuloma) WITH <br><br>${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_panuveitis" },
             { label: `A choroidal nodule (Tuberculoma) WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_posterior" },
             { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
@@ -947,10 +947,11 @@ function other_feature_render(text1, text2, textList){
 }
 
 function imaging_render(text1, text2, textList){
-    let text = '';
+    let text = ``;
     text += text1;
-    text += `${text2}`
-    text += `<ul class='custom-list'>`
+    text += `<span style='margin-bottom: 0.8rem;'>${text2}</span>` 
+    
+    text += `<ul class='custom-list' style='line-height: 1.7;'>`;
     textList.forEach(item => {
         text += `<li><i class='bi bi-check'></i><span>${item}</span></li>`
     })
