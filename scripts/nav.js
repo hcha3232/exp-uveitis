@@ -136,27 +136,25 @@ nav.innerHTML = `
 
 navFooter.innerHTML = `
 <nav class="shadow-sm navbar navbar-light bg-light fixed-bottom nav-border" style="border-top: 1px solid #dddddd;">
-  <!--div class="container-fluid" style="padding: 0px 30px 20px 30px; color: #6b6b6a"-->
+  
   <div class="container-fluid" style="padding: 0px 30px 20px 30px; color: #6b6b6a">
+    
     <a class="nav-link active" aria-current="page" href="/">
       <div id='home-icon' style="display:flex; flex-direction: column; align-items: center; color: '#cfcdca';"><i style="font-size: 1.5rem;" class="bi bi-house-door"></i><span style="font-size:0.9rem;">Home</span></div>
     </a>
    
 
     <div class="nav-icon">
-    <a class="nav-link" href="/html/classification.html">
-      <div id='class-icon' style="display:flex; flex-direction: column; align-items: center; color: '#cfcdca';"><i style="font-size: 1.5rem;" class="bi bi-card-list"></i><span style="font-size:0.9rem;">Criteria</span></div>
-    </a>
+      <a class="nav-link" href="/html/classification.html">
+        <div id='class-icon' style="display:flex; flex-direction: column; align-items: center; color: '#cfcdca';"><i style="font-size: 1.5rem;" class="bi bi-card-list"></i><span style="font-size:0.9rem;">Criteria</span></div>
+      </a>
     </div>
 
-    <!--a class="nav-link" href="#">
-      <div id='info-icon' style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-diagram-3"></i><span style="font-size:0.9rem;">Tree</span></div>
-    </a-->
-
-
-    <a class="nav-link" href="/html/info.html">
-      <div style="display:flex; flex-direction: column; align-items: center;"><i style="font-size: 1.5rem;" class="bi bi-info-circle"></i><span style="font-size:0.9rem;">Info</span></div>
-    </a>
+    <div class="nav-icon">
+      <a class="nav-link" href="/html/info.html">
+        <div id='info-icon' style="display:flex; flex-direction: column; align-items: center; color: '#cfcdca';"><i style="font-size: 1.5rem;" class="bi bi-info-circle"></i><span style="font-size:0.9rem;">Info</span></div>
+      </a>
+    </div>
   </div>
 </nav>
 `
