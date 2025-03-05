@@ -198,9 +198,6 @@
                     .then(reg => {
                         console.log("Service Worker Registered:", reg);
 
-                        // Force update check on page load
-                        reg.update();
-
                         // Detect when a new SW is installed
                         reg.onupdatefound = () => {
                             const newWorker = reg.installing;
@@ -208,11 +205,14 @@
                                 newWorker.onstatechange = () => {
                                     if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
                                         console.log("New Service Worker installed. Reloading...");
+                                        // Ensure the new service worker takes control immediately
+                                        newWorker.postMessage({ action: 'skipWaiting' });
                                         window.location.reload(); // Auto-reload to apply the update
                                     }
                                 };
                             }
                         };
+                   
                     })
                     .catch(err => {
                         console.log("Service Worker Registration Failed:", err);

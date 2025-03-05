@@ -40,15 +40,17 @@ self.addEventListener("activate", (event) => {
     (async () => {
       const cacheNames = await caches.keys();
 
-      const deletePromises = cacheNames.map(async (cacheName) => {
-        // If the cache is not the current version, delete it
-        if (cacheName !== CACHE) {
-          console.log(`Deleting old cache: ${cacheName}`);
-          await caches.delete(cacheName); // Delete the old cache
-        }
-      });
+      await Promise.all(
+        cacheNames.map(async (cacheName) => {
+            if (cacheName !== CACHE) {
+                console.log(`Deleting old cache: ${cacheName}`);
+                await caches.delete(cacheName); // Delete the old cache
+            }
+        })
+      );
 
       await clients.claim(); // Immediately take control of pages
+      
     })()
   );
 });
