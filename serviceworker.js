@@ -36,9 +36,11 @@ self.addEventListener("install", (event) => {
 
 // Activate event - delete old caches (previous versions)
 self.addEventListener("activate", (event) => {
+  console.log("active running")
   event.waitUntil(
     (async () => {
       const cacheNames = await caches.keys();
+      
       await Promise.all(
         cacheNames
           .filter((cacheName) => cacheName !== CACHE) // Delete old caches
