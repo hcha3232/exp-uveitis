@@ -194,14 +194,38 @@
     <script>
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
-                navigator.serviceWorker.register("/serviceworker.js")
-                .then(reg => {
-                    console.log("Registered", reg);
-                }).catch(err => {
-                    console.log("Registration failed", err);
-                });
+                navigator.serviceWorker.register("/serviceworker.js?v=" + new Date().getTime()) // Cache busting
+                    .then(reg => {
+                        console.log("Service Worker Registered:", reg);
+
+                        // Force update check on page load
+                        reg.update();
+
+                        // Detect when a new SW is installed
+                        reg.onupdatefound = () => {
+                            const newWorker = reg.installing;
+                            if (newWorker) {
+                                newWorker.onstatechange = () => {
+                                    if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+                                        console.log("New Service Worker installed. Reloading...");
+                                        window.location.reload(); // Auto-reload to apply the update
+                                    }
+                                };
+                            }
+                        };
+                    })
+                    .catch(err => {
+                        console.log("Service Worker Registration Failed:", err);
+                    });
+            });
+
+            // Auto-reload if a new SW takes control
+            navigator.serviceWorker.addEventListener("controllerchange", () => {
+                console.log("New Service Worker Activated. Reloading...");
+                window.location.reload();
             });
         }
+
     </script>
 
     
