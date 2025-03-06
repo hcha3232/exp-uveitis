@@ -54,45 +54,48 @@
     <link rel="apple-touch-startup-image" href="/output/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
     <link rel="apple-touch-startup-image" href="/output/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
 </head>
-<body style="background-color: #fbf8f8;">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCQDTPWJ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <nav id="nav"> </nav>
-    <div style="padding-top: 5rem;"></div>
+<body style="background-color: #fbf8f8; display: none;" id="body-content">
+    <div id="main-content" style="display: none;">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCQDTPWJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <nav id="nav"> </nav>
+        <div style="padding-top: 5rem;"></div>
 
-    <div class="container" style="padding: 10px 0; display:flex; flex-direction: column; align-items: center; gap: 10px;">
-        <div class="card shadow-sm" style="width: 18rem;">
-            <img src="/img/auHom.webp" class="card-img-top home-icon" alt="...">
-            <div class="card-body">
-            <h5 class="card-title" style="text-align: center">Anterior uveitis</h5>
-            <p class="card-text"></p>
-            <a href="/html/au-exp.html" class="btn btn-outline-primary" style="width:100%;">Start diagnosis</a>
+        <div class="container" style="padding: 10px 0; display:flex; flex-direction: column; align-items: center; gap: 10px;">
+            <div class="card shadow-sm" style="width: 18rem;">
+                <img src="/img/auHom.webp" class="card-img-top home-icon" alt="...">
+                <div class="card-body">
+                <h5 class="card-title" style="text-align: center">Anterior uveitis</h5>
+                <p class="card-text"></p>
+                <a href="/html/au-exp.html" class="btn btn-outline-primary" style="width:100%;">Start diagnosis</a>
+                </div>
+            </div>
+            <div class="card shadow-sm" style="width: 18rem;">
+                <img src="/img/iuHom.webp" class="card-img-top home-icon" alt="...">
+                <div class="card-body">
+                <h5 class="card-title" style="text-align: center">Intermediate uveitis</h5>    
+                <p class="card-text"></p>
+                <a href="/html/iu-exp.html" class="btn btn-outline-primary" style="width:100%;">Start diagnosis</a>
+                </div>
+            </div>
+            <div class="card shadow-sm" style="width: 18rem;">
+                <img src="img/puHom.webp"  class="card-img-top home-icon" alt="...">
+                <div class="card-body">
+                <h5 class="card-title" style="text-align: center">Posterior uveitis and Panuveitis</h5>
+                <p class="card-text"></p>
+                <a href="/html/pu-exp.html" class="btn btn-outline-primary" style="width:100%;">Start diagnosis</a>
+                </div>
             </div>
         </div>
-        <div class="card shadow-sm" style="width: 18rem;">
-            <img src="/img/iuHom.webp" class="card-img-top home-icon" alt="...">
-            <div class="card-body">
-            <h5 class="card-title" style="text-align: center">Intermediate uveitis</h5>    
-            <p class="card-text"></p>
-            <a href="/html/iu-exp.html" class="btn btn-outline-primary" style="width:100%;">Start diagnosis</a>
-            </div>
-        </div>
-        <div class="card shadow-sm" style="width: 18rem;">
-            <img src="img/puHom.webp"  class="card-img-top home-icon" alt="...">
-            <div class="card-body">
-            <h5 class="card-title" style="text-align: center">Posterior uveitis and Panuveitis</h5>
-            <p class="card-text"></p>
-            <a href="/html/pu-exp.html" class="btn btn-outline-primary" style="width:100%;">Start diagnosis</a>
-            </div>
-        </div>
+
+        <div style="min-height: 100px"></div>
+        
+        <nav id="nav-footer" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"> </nav>
+        <script src="/scripts/nav.js"></script>
     </div>
-
-    <div style="min-height: 100px"></div>
-    
-    <nav id="nav-footer" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"> </nav>
-    <script src="/scripts/nav.js"></script>
+    <div id="redirecting" style="display: none;">Loading...</div>
     
     
     <script type="module">
@@ -135,28 +138,36 @@
         }
         */
     
-        // Check if a user is signed in
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // User is signed in, you can access user data here
-                console.log("User is signed in:");
-                // Retrieve researchID from realtime db
-                const userRef = ref(db, 'users/' + user.uid)
-                get(userRef).then((snapshot) => {
-                    if (snapshot.exists()) {
-                        const researchID = snapshot.val().researchID;
+       
+            // Check if a user is signed in
+            onAuthStateChanged(auth, (user) => {
+                const body_content = document.getElementById('body-content');
+                const main_content = document.getElementById('main-content');
+                if (user) {
+                    // User is signed in, you can access user data here
+                    body_content.style.display = 'block';  // Show body content
+                    main_content.style.display = 'block';
+                    console.log("User is signed in:");
+                    // Retrieve researchID from realtime db
+                    const userRef = ref(db, 'users/' + user.uid)
+                    get(userRef).then((snapshot) => {
+                        if (snapshot.exists()) {
+                            const researchID = snapshot.val().researchID;
 
-                        localStorage.setItem('researchID', researchID);
+                            localStorage.setItem('researchID', researchID);
 
-                        // Push to dataLayer
-                        window.dataLayer = window.dataLayer || [];
-                        window.dataLayer.push({
-                            'event': 'userLogin',
-                            'userID': researchID
-                        });
-                    }
-                });
-            }
+                            // Push to dataLayer
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'userLogin',
+                                'userID': researchID
+                            });
+
+                            
+                        }
+                    });
+                }
+            
             /*
             else {
                 // No user is signed in, attempt to log in with hard-coded credentials
@@ -164,13 +175,14 @@
                 signInWithHardCodedCredentials();
             }*/
             
-            else {
-                // No user is signed in, redirect to login page or handle as desired
-                console.log("No user is signed in");
-                // Example: redirect to login page
-                window.location.href = '/login.html';
-            }
-        });
+                else {
+                    // No user is signed in, redirect to login page or handle as desired
+                    console.log("No user is signed in");
+                    // Example: redirect to login page
+                    window.location.href = '/login.html';
+                }
+            });
+        
 
         const LogOutBtn = document.getElementById('signOutBtn')
         LogOutBtn.addEventListener('click', ()=> {
