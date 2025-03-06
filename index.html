@@ -117,8 +117,10 @@
         const db = getDatabase(app)
 
         // Hard-coded credentials
+        /*
         const knownEmail = "uveitisproject@gmail.com";  // Replace with your known email
         const knownPassword = "password";     // Replace with your known password
+        
 
         const signInWithHardCodedCredentials = () => {
             signInWithEmailAndPassword(auth, knownEmail, knownPassword)
@@ -131,6 +133,7 @@
                     console.error("Error signing in:", error.message);
                 });
         }
+        */
     
         // Check if a user is signed in
         onAuthStateChanged(auth, (user) => {
