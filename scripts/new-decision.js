@@ -19,8 +19,8 @@ export class Result {
         /*foreach item in result => create button  */
 
         resultContent += `
-        <div class="border-unpressed p-3 mb-3 rounded">
-            <div style="font-weight: bold; font-size: 20px">Condition</div>`
+        <div class="border-unpressed p-3 mb-3 rounded" style='line-heigh:1.7;'>
+            <div style="font-weight: bold; font-size: 20px; margin-bottom: 0.8rem;">Condition</div>`
 
         this.result.forEach(element => {
             resultContent += this.createButton(element);
@@ -33,8 +33,8 @@ export class Result {
         ////////////////////////////////////////////////////////////////////
         
         resultContent += `
-        <div class="border-unpressed p-3 mb-3 rounded" >
-            <div style="font-weight: bold; font-size: 20px">Summary</div>`
+        <div class="border-unpressed p-3 mb-3 rounded" style='line-heigh:1.7;'>
+            <div style="font-weight: bold; font-size: 20px; margin-bottom: 0.8rem;" >Summary</div>`
 
         this.content.forEach(element => {
             resultContent += `<div>${element}</div>`
@@ -48,13 +48,13 @@ export class Result {
         /////////////////////////////////////////////////////////////////////
 
         resultContent += `
-        <div class="border-unpressed p-3 mb-3 rounded">
-            <div style="font-weight: bold; font-size: 20px">Look for</div>`
+        <div class="border-unpressed p-3 mb-3 rounded" style='line-heigh:1.7;'>
+            <div style="font-weight: bold; font-size: 20px; margin-bottom: 0.8rem;">Look for</div>`
 
         this.manifestation.forEach(element => {
-            resultContent += `<ul class="custom-list">`
+            resultContent += `<ul style='padding-left:1rem;'>`
             element["signs"].forEach(item => {
-                resultContent += `<li><i class="bi bi-check"></i><span>${item}</span></li>`
+                resultContent += `<li><span>${item}</span></li>`
             })
             resultContent += `</ul><br>`
         });
