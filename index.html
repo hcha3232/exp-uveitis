@@ -54,8 +54,8 @@
     <link rel="apple-touch-startup-image" href="/output/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
     <link rel="apple-touch-startup-image" href="/output/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
 </head>
-<body style="background-color: #fbf8f8; display: none;" id="body-content">
-    <div id="main-content" style="display: none;">
+<body style="background-color: #fbf8f8;" id="body-content">
+    <div id="main-content">
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCQDTPWJ"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -141,12 +141,10 @@
        
             // Check if a user is signed in
             onAuthStateChanged(auth, (user) => {
-                const body_content = document.getElementById('body-content');
-                const main_content = document.getElementById('main-content');
+   
                 if (user) {
                     // User is signed in, you can access user data here
-                    body_content.style.display = 'block';  // Show body content
-                    main_content.style.display = 'block';
+         
                     console.log("User is signed in:");
                     // Retrieve researchID from realtime db
                     const userRef = ref(db, 'users/' + user.uid)

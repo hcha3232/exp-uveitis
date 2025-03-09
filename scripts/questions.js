@@ -941,12 +941,12 @@ export const dummyQuestionsIU = {
         "Question",
         "Which systemic symptoms aligns with the patient's presentation?",
         [
-            { label: `${imaging_render('Neurological symptoms','',['Limb weakness','Numbness','Tingling','Excessive fatigue'])}`, nextQuestion: "ddx_ms" },
-            { label: `${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoidosis" },
-            { label: `${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb" },
-            { label: `${imaging_render('History','',['Recent travel to a Lyme-endemic region',' Outdoor activities in wooded areas','Exposure to large animals'])} ${imaging_render('Dermatological symptoms','',['A characteristic pink or red erythema migrans rash'])}`, nextQuestion: "ddx_lyme" },
-            { label: `${imaging_render('History','',[`Above the age of 50 presenting with uveitis for the first time`])} ${imaging_render('Neurological symptoms','',['Balance issues','Cognitive impairment','Palsies','Seizures','Dizziness'])}   
-            ${imaging_render('Ophthalmic','',[`Patches or subretinal tumour infiltration`])}`
+            { label: `${imaging_render('','Neurological symptoms',['Limb weakness','Numbness','Tingling','Excessive fatigue'])}`, nextQuestion: "ddx_ms" },
+            { label: `${imaging_render('','Respiratory symptoms',['Shortness of breath','Cough'])} ${imaging_render('','Other findings',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoidosis" },
+            { label: `${imaging_render('','History',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb" },
+            { label: `${imaging_render('','History',['Recent travel to a Lyme-endemic region',' Outdoor activities in wooded areas','Exposure to large animals'])} ${imaging_render('','Dermatological symptoms',['A characteristic pink or red erythema migrans rash'])}`, nextQuestion: "ddx_lyme" },
+            { label: `${imaging_render('','History',[`Above the age of 50 presenting with uveitis for the first time`])} ${imaging_render('','Neurological symptoms',['Balance issues','Cognitive impairment','Palsies','Seizures','Dizziness'])}   
+            ${imaging_render('','Ophthalmic',[`Patches or subretinal tumour infiltration`])}`
             , nextQuestion: "ddx_piol"},
             { label: "None above", nextQuestion: "snow-2" }
         ],
@@ -1146,27 +1146,28 @@ export const dummyQuestionsIU = {
 
 
 function other_feature_render(text1, text2, textList){
-    let text = '';
-    text += text1 + '<br><br>';
+    let text = `<div style='line-height: 1.7;'>`;
+    text += `${text1}` + '<br><br>';
     text += `${text2}`
-    text += `<ul class='custom-list'>`
+    text += `<ul style='padding-left:1rem;'>`
     textList.forEach(item => {
-        text += `<li><i class='bi bi-check'></i><span>${item}</span></li>`
+        text += `<li><span>${item}</span></li>`
     })
-    text += `</ul>`
+    text += `</ul></div>`
     console.log(text)
     return text;
 }
 
 function imaging_render(text1, text2, textList){
-    let text = '';
+    let text = `<div style='line-height: 1.7;'>`;
     text += text1;
-    text += `${text2}`
-    text += `<ul class='custom-list'>`
+    text += `<span style='margin-bottom: 0.8rem; font-weight: 500;'>${text2}</span>` 
+    
+    text += `<ul style='padding-left:1rem;'>`;
     textList.forEach(item => {
-        text += `<li><i class='bi bi-check'></i><span>${item}</span></li>`
+        text += `<li><span>${item}</span></li>`
     })
-    text += `</ul>`
+    text += `</ul></div>`
     console.log(text)
     return text;
 }

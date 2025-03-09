@@ -34,10 +34,10 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','Other features include',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "ddx_arn" },
-            { label: `${other_feature_render('Necrotizing retinitis with indistinct borders due to numerous small (<50µm) satellite) in a systemic or  ocular immune-compromised patient','Other features include',['Absent to mild vitritis','Wedge-shaped area of retinitis','Hemorrhagic appearance of retinitis','Granular appearance of retinitis'])}`, nextQuestion: "ddx_cmv_retinitis" },
-            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
-            { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_retinitis" },
+            { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','<b>Other features include</b>',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "ddx_arn" },
+            { label: `${other_feature_render('Necrotizing retinitis with indistinct borders due to numerous small (<50µm) satellite) in a systemic or  ocular immune-compromised patient','<b>Other features include</b>',['Absent to mild vitritis','Wedge-shaped area of retinitis','Hemorrhagic appearance of retinitis','Granular appearance of retinitis'])}`, nextQuestion: "ddx_cmv_retinitis" },
+            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','<b>Other features include</b>',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
+            { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','<b>Other findings include</b>',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_retinitis" },
             { label: `None above`, nextQuestion: "ddx_un_retinitis" }
         ],
         "",
@@ -60,9 +60,9 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_rvasculitis" },
-            { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_rvasculitis" },
-            { label: `Retinal vasculitis WITH <br><br>${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_rvasculitis" },
+            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('','History',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_rvasculitis" },
+            { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','<b>Other findings include</b>',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_rvasculitis" },
+            { label: `Retinal vasculitis WITH <br><br>${imaging_render('','Respiratory symptoms',['Shortness of breath','Cough'])} ${imaging_render('','Other findings',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_rvasculitis" },
             { label: `None above`, nextQuestion: "ddx_un_rvasculitis" }
         ],
         "<b>Note.</b> ARN, CMV retinitis, and Toxoplasma chorioretinis could have vasculitis - But the primary site of involvement is retina",
@@ -100,11 +100,11 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA: Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF: Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
-            { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA: Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
-            { label: `A choroidal nodule (Sarcoid Granuloma) WITH <br><br>${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_panuveitis" },
-            { label: `A choroidal nodule (Tuberculoma) WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_posterior" },
-            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
+            { label: `${imaging_render('','<b>Morphology</b>',['Ameboid or serpentine shape'])} ${imaging_render('','<b>Imaging</b>',['<b>FA</b>: Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','<b>FAF</b>: Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
+            { label: `${imaging_render('','<b>Morphology</b>',['Plaque-like placoid appearance'])} ${imaging_render('','<b>Imaging</b>',['<b>FA</b>: Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
+            { label: `A choroidal nodule (Sarcoid Granuloma) WITH <br><br>${imaging_render('<b>Respiratory symptoms</b>','',['Shortness of breath','Cough'])} ${imaging_render('<b>Other findings</b>','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_panuveitis" },
+            { label: `A choroidal nodule (Tuberculoma) WITH <br><br>${imaging_render('<b>History</b>','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_posterior" },
+            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','<b>Other features include</b>',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
             { label: `None above`, nextQuestion: "ddx_un_choroiditis" }
         ],
         "",
@@ -119,12 +119,12 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['FA<br>Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','FAF<br>Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
-            { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['FA<br>Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
-            { label: `${imaging_render('History and Examination','',['Unilateral eye involvement'])} ${imaging_render('','Morphology',['Gray-white spots with foveal granularity'])}, ${imaging_render('','Imaging',['FA<br>“Wreath-like” hyper-fluorescent lesions','OCT<br>Hyper-reflective lesions extending from the retinal pigment epithelium, into and/or through the ellipsoid zone into the outer nuclear layer of the retina'])}`, nextQuestion: "ddx_mewds" },
-            { label: `${imaging_render('History and Examination','',['Bilateral eye involvement','Mid-periphery or peripheral involvement'])} ${imaging_render('','Morphology',['Oval or round lesions with predominant lesion size > 250 µm',`“Punched-out atrophic” scars or active lesions`])}`, nextQuestion: "check-tb-mfcpu" },
-            { label: `${imaging_render('History and Examination','',['No anterior and vitreous inflammation','Concentrated in posterior pole'])} ${imaging_render('','Morphology',['Punctate lesion appearance with predominant lesion size < 250 µm (typically < 125 µm)',`Yellow-white or cream-coloured`])}`, nextQuestion: "ddx_pic" },
-            { label: `${imaging_render('History and Examination','',['Bilateral eye involvement','Absent to mild anterior chamber inflammation','Absent to moderate vitritis'])} ${imaging_render('','Morphology',['Cream-colored or yellow-orange',`Oval or round choroidal lesions (“birdshot spots”)`])}`, nextQuestion: "ddx_bscr" },       
+            { label: `${imaging_render('','Morphology',['Ameboid or serpentine shape'])} ${imaging_render('','Imaging',['<b>FA</b>: Early diffuse hypo-fluorescent lesion, late hyper-fluorescent lesion border','<b>FAF</b>: Hypo-autofluorescent lesion with hyper-autofluorescent border'])}`, nextQuestion: "check-tb-sc" },
+            { label: `${imaging_render('','Morphology',['Plaque-like placoid appearance'])} ${imaging_render('','Imaging',['<b>FA</b>: Early hypo-fluorescent lesion and late diffuse hyper-fluorescent lesion<br>*During acute phase of the disease'])}`, nextQuestion: "ddx_apmppe" },
+            { label: `${imaging_render('','History and Examination',['Unilateral eye involvement'])} ${imaging_render('','Morphology',['Gray-white spots with foveal granularity'])}, ${imaging_render('','Imaging',['<b>FA</b>: “Wreath-like” hyper-fluorescent lesions','<b>OCT</b>: Hyper-reflective lesions extending from the retinal pigment epithelium, into and/or through the ellipsoid zone into the outer nuclear layer of the retina'])}`, nextQuestion: "ddx_mewds" },
+            { label: `${imaging_render('','History and Examination',['Bilateral eye involvement','Mid-periphery or peripheral involvement'])} ${imaging_render('','Morphology',['Oval or round lesions with predominant lesion size > 250 µm',`“Punched-out atrophic” scars or active lesions`])}`, nextQuestion: "check-tb-mfcpu" },
+            { label: `${imaging_render('','History and Examination',['No anterior and vitreous inflammation','Concentrated in posterior pole'])} ${imaging_render('','Morphology',['Punctate lesion appearance with predominant lesion size < 250 µm (typically < 125 µm)',`Yellow-white or cream-coloured`])}`, nextQuestion: "ddx_pic" },
+            { label: `${imaging_render('','History and Examination',['Bilateral eye involvement','Absent to mild anterior chamber inflammation','Absent to moderate vitritis'])} ${imaging_render('','Morphology',['Cream-colored or yellow-orange',`Oval or round choroidal lesions (“birdshot spots”)`])}`, nextQuestion: "ddx_bscr" },       
             { label: `None above`, nextQuestion: "check_post_sarcoidosis" }
         ],
         "",
@@ -226,10 +226,10 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','Other features include',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "ddx_arn" },
-            { label: `${other_feature_render('Necrotizing retinitis with indistinct borders due to numerous small (<50µm) satellite) in a systemic or  ocular immune-compromised patient','Other features include',['Absent to mild vitritis','Wedge-shaped area of retinitis','Hemorrhagic appearance of retinitis','Granular appearance of retinitis'])}`, nextQuestion: "ddx_cmv_retinitis" },
-            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
-            { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_retinitis" },
+            { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','<b>Other features include</b>',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "ddx_arn" },
+            { label: `${other_feature_render('Necrotizing retinitis with indistinct borders due to numerous small (<50µm) satellite) in a systemic or  ocular immune-compromised patient','<b>Other features include</b>',['Absent to mild vitritis','Wedge-shaped area of retinitis','Hemorrhagic appearance of retinitis','Granular appearance of retinitis'])}`, nextQuestion: "ddx_cmv_retinitis" },
+            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','<b>Other features include</b>',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
+            { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','<b>Other findings include</b>',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_retinitis" },
             { label: `None above`, nextQuestion: "ddx_un_panuveitis" }
         ],
         "",
@@ -243,9 +243,9 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_rvasculitis" },
-            { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_rvasculitis" },
-            { label: `Retinal vasculitis WITH <br><br>${imaging_render('Respiratory symptoms','',['Shortness of breath','Cough'])} ${imaging_render('Others','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_rvasculitis" },
+            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('','History',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_rvasculitis" },
+            { label: `${other_feature_render('Retinal vasculitis and/or focal retinal infiltrates','<b>Other findings include</b>',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_rvasculitis" },
+            { label: `Retinal vasculitis WITH <br><br>${imaging_render('<b>Respiratory symptoms</b>','',['Shortness of breath','Cough'])} ${imaging_render('<b>Other findings</b>','',['Skin lumps','Joint aches'])}`, nextQuestion: "ddx_sarcoid_rvasculitis" },
             { label: `None above`, nextQuestion: "ddx_un_panuveitis" }
         ],
         "",
@@ -274,12 +274,12 @@ export const dummyQuestionsPU = {
         "Question",
         "Check if patient's drug history matches the uveitis presentation",
         [
-            { label: `${imaging_render('','',['Rifabutin: conjunctival injection, keratic precipitates, anterior chamber cell/flare with or without hypopyon, vitreous cell, perivascular retinal infiltrates',
-            'Bisphosphonates: conjunctivitis, scleritis, iritis - anterior chamber reaction with cell/flare',
-            'Moxifloxacin: acute bilateral iris depigmentation and anterior uveitis',
-            'Checkpoint inhibitor: anterior uveitis, VKH-like uveitis (nivolumab), Behcet like syndrome (pembrolizumab)',
-            'Brimonidine: KP, posterior synechiae, iris nodules, anterior chamber cell/flare',
-            'Prostaglandin analogues: mild anterior chamber reaction, CME'])}`, nextQuestion: "ddx_drug_induced" },
+            { label: `${imaging_render('','',['<b>Rifabutin</b>: conjunctival injection, keratic precipitates, anterior chamber cell/flare with or without hypopyon, vitreous cell, perivascular retinal infiltrates',
+            '<b>Bisphosphonates</b>: conjunctivitis, scleritis, iritis - anterior chamber reaction with cell/flare',
+            '<b>Moxifloxacin</b>: acute bilateral iris depigmentation and anterior uveitis',
+            '<b>Checkpoint inhibitor</b>: anterior uveitis, VKH-like uveitis (nivolumab), Behcet like syndrome (pembrolizumab)',
+            '<b>Brimonidine</b>: KP, posterior synechiae, iris nodules, anterior chamber cell/flare',
+            '<b>Prostaglandin analogues</b>: mild anterior chamber reaction, CME'])}`, nextQuestion: "ddx_drug_induced" },
             { label: `No relevance`, nextQuestion: "ddx_un_panuveitis" }
         ],
         "",
@@ -293,12 +293,12 @@ export const dummyQuestionsPU = {
         "Question",
         "Which clinical feature aligns with the patient's presentation?",
         [
-            { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','Other features include',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "ddx_arn" },
-            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','Other features include',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
-            { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','Other findings include',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_panuveitis" },
-            { label: `Progressive vitritis and hypopyon WITH <br><br>${imaging_render('History','',['Ocular surgery, intravitreali injections, trauma, IV drug abuse, dental surgery, or sepsis'])}`, nextQuestion: 'rapid_endophthalmitis'},
-            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('History','',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_panuveitis"},
-            { label: `High-risk sexual behaviour`, nextQuestion: "ddx_syphilis"},
+            { label: `${other_feature_render('Necrotizing retinitis involving the peripheral retina','<b>Other features include</b>',['Circumferential or confluent retinitis','Retinal vasculitis','More than minimal vitritis'])}`, nextQuestion: "ddx_arn" },
+            { label: `${other_feature_render('Focal or pauci-focal necrotizing retinitis in a immuno-competent patient','<b>Other features include</b>',['Hyperpigmented and/or atrophic chorioretinal scar','Round or oval retinitis lesions','Recurrent acute (episodic) courses'])}`, nextQuestion: "ddx_toxo" },
+            { label: `${other_feature_render('Focal retinal infiltrates with retinal vasculitis','<b>Other findings include</b>',['Oral aphthous ulcers','Genital ulcers',"Typical defined Behcet's disease skin lesions"])}`, nextQuestion: "ddx_behcet_panuveitis" },
+            { label: `Progressive vitritis and hypopyon WITH <br><br>${imaging_render('','History',['Ocular surgery, intravitreali injections, trauma, IV drug abuse, dental surgery, or sepsis'])}`, nextQuestion: 'rapid_endophthalmitis'},
+            { label: `Occlusive retinal vasculitis WITH <br><br>${imaging_render('','History',['Exposure to individuals diagnosed with TB','Travelled to a TB-endemic region recently'])}`, nextQuestion: "ddx_tb_panuveitis"},
+            { label: `High-risk sexual behaviour/any risk of syphilis`, nextQuestion: "ddx_syphilis"},
             { label: `None above`, nextQuestion: "ddx_un_panuveitis"}
         ],
         "",
@@ -934,28 +934,28 @@ export const dummyQuestionsPU = {
 }
 
 function other_feature_render(text1, text2, textList){
-    let text = '';
-    text += text1 + '<br><br>';
+    let text = `<div style='line-height: 1.7;'>`;
+    text += `${text1}` + '<br><br>';
     text += `${text2}`
-    text += `<ul class='custom-list'>`
+    text += `<ul style='padding-left:1rem;'>`
     textList.forEach(item => {
-        text += `<li><i class='bi bi-check'></i><span>${item}</span></li>`
+        text += `<li><span>${item}</span></li>`
     })
-    text += `</ul>`
+    text += `</ul></div>`
     console.log(text)
     return text;
 }
 
 function imaging_render(text1, text2, textList){
-    let text = ``;
+    let text = `<div style='line-height: 1.7;'>`;
     text += text1;
-    text += `<span style='margin-bottom: 0.8rem;'>${text2}</span>` 
+    text += `<span style='margin-bottom: 0.8rem; font-weight: 500;'>${text2}</span>` 
     
-    text += `<ul class='custom-list' style='line-height: 1.7;'>`;
+    text += `<ul style='padding-left:1rem;'>`;
     textList.forEach(item => {
-        text += `<li><i class='bi bi-check'></i><span>${item}</span></li>`
+        text += `<li><span>${item}</span></li>`
     })
-    text += `</ul>`
+    text += `</ul></div>`
     console.log(text)
     return text;
 }
