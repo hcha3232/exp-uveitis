@@ -679,11 +679,21 @@ export const database = {
     <div class="alert alert-primary" role="alert">
     If patient is above the age of 50 presenting with uveitis for the first time, masquerade syndrome from PIOL should be suspected. Look for
     neurological signs such as balance issues, cognitive impairment, palsies, seizures, and dizziness. Patches or subretinal tumour infiltration could be observed.
-    </div>`,
+    </div>
+    <div class="citation">
+                <span style="font-weight: 500;">References </span><br>
+                <span style="font-weight:400; font-size: 0.6rem;">Practical Uveitis: Understanding the Grape</span>      
+            </div>
+    `,
     lymeIU: `
     <div class="alert alert-primary" role="alert">
     Lyme disease is suspected if patient has reported recent travel to a Lyme-endemic region, outdoor activities in wooded areas, or exposure to large animals, with the presence of a characteristic pink or red erythema migrans rash.
-    </div>`,
+    </div>
+    <div class="citation">
+                <span style="font-weight: 500;">References </span><br>
+                <span style="font-weight:400; font-size: 0.6rem;">Practical Uveitis: Understanding the Grape</span>      
+            </div>
+    `,
 
     ////// Posterior + Panuveitis ////
     apmppe : classification(pudiseases.apmppe),
@@ -729,7 +739,7 @@ Types of Endophthalmitis</div>
 * Bacterial or fungal endogenous chorioretinitis +/- vitritis <br><br>
 <div class="citation">
                 <span style="font-weight: 500;">References </span><br>
-                <span style="font-weight:400; font-size: 0.6rem;">https://eyewiki.aao.org/Drug_Induced_Uveitis</span>      
+                <span style="font-weight:400; font-size: 0.6rem;">https://eyewiki.aao.org/Endophthalmitis</span>      
             </div>
     `,
     drug_induced : `
