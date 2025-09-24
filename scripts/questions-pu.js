@@ -830,14 +830,14 @@ export const dummyQuestionsPU = {
         <br><br>
         VKH-associated uveitis is typically a bilateral, diffuse granulomatous uveitis.
         <br><br>
-        There are early and late forms of VKH.`],
+        There are early and late forms of VKH. Early VKH is associated with multiple serous retinal detachment and late VKH is associated with Sunset glow fundus.`],
         [
             {
-                "signs" : [`Bilateral, diffuse granulomatous uveitis`,
+                "signs" : [`Bilateral, diffuse granulomatous uveitis`,`multiple serous retinal detachment`,
                 
                 `Vitiligo`,
                 
-                `Poliosis`]
+                `Poliosis`,`Neurological symptoms`]
             }
         ],
         {
@@ -851,10 +851,10 @@ export const dummyQuestionsPU = {
         <br><br>
         VKH-associated uveitis is typically a bilateral, diffuse granulomatous uveitis.
         <br><br>
-        There are early and late forms of VKH.`],
+        There are early and late forms of VKH. Early VKH is associated with multiple serous retinal detachment and late VKH is associated with Sunset glow fundus.`],
         [
             {
-                "signs" : [`Bilateral, diffuse granulomatous uveitis`,
+                "signs" : [`Bilateral, diffuse granulomatous uveitis`,`Sunset glow fundus`,
                 
                 `Vitiligo`,
                 
