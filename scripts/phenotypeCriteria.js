@@ -696,7 +696,10 @@ export const database = {
     `,
 
     ////// Posterior + Panuveitis ////
-    apmppe : classification(pudiseases.apmppe),
+    apmppe : classification(pudiseases.apmppe)+
+    `
+    <img src="/img-pu/APMPPE.png" class="img-fluid container-gap"></img>
+    `,
     pic : classification(pudiseases.pic),
     mfcpu : classification(pudiseases.mfcpu),
     bscr : classification(pudiseases.bscr),
