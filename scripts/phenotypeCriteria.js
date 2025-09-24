@@ -698,64 +698,64 @@ export const database = {
     ////// Posterior + Panuveitis ////
     apmppe : classification(pudiseases.apmppe)+
     `
-    <img src="/img-pu/APMPPE.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/APMPPE.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     pic : classification(pudiseases.pic)+
     `
-    <img src="/img-pu/PIC.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/PIC.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     mfcpu : classification(pudiseases.mfcpu)+
     `
-    <img src="/img-pu/MFCPU.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/MFCPU.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     bscr : classification(pudiseases.bscr)+
     `
-    <img src="/img-pu/birdshot.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/birdshot.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     mewds : classification(pudiseases.mewds)+
     `
-    <img src="/img-pu/MEWDS.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/MEWDS.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     sc : classification(pudiseases.sc)+
     `
-    <img src="/img-pu/SC.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/SC.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     behcet : classification(pudiseases.behcet)+
     `
-    <img src="/img-pu/Behcets.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/Behcets.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     so : classification(pudiseases.so),
     vkh : '<span style="font-size: 16px;">Early VKH<br><br></span>' + classification(pudiseases.evkh) +
     `
-    <img src="/img-pu/VKH.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/VKH.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `+ '<br><br><span style="font-size: 16px;">Late VKH<br><br></span>' + classification(pudiseases.lvkh),
     arn: classification(pudiseases.arn)+
     `
-    <img src="/img-pu/ARN.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/ARN.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     cmvRet: classification(pudiseases.cmvRet)+
     `
-    <img src="/img-pu/cmvRET.png" class="img-fluid container-gap"></img><br>
+    <img src="/img-pu/cmvRET.webp" loading="lazy" class="img-fluid container-gap"></img><br>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     sarcoidosisPU: classification(pudiseases.sarcoidosisPU),
     syphilisPU: classification(pudiseases.syphilisPU)+
     `
-    <img src="/img-pu/syphilis.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/syphilis.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     toxo: classification(pudiseases.toxo)+
     `
-    <img src="/img-pu/toxo.png" class="img-fluid container-gap"></img>
+    <img src="/img-pu/toxo.webp" loading="lazy" class="img-fluid container-gap"></img>
     <span style="font-weight:400; font-size: 0.6rem;"><i>Image courtesy of Prof. Peter McCluskey</i></span>
     `,
     tbPU: classification(pudiseases.tbPU),
